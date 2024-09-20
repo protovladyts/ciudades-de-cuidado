@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 
 export const Span = ({
   children,
-  className,
 }: {
   children: ReactNode;
   className?: string;
