@@ -67,7 +67,7 @@ export function LanguageSelector({className}:{className?:string}) {
   const languages = ['ES', 'EN', 'DE']
 
   return (
-    <div className={`flex space-x-2 ${className}`}>
+    <div className={`flex space-x-2 justify-items-end items-center ${className}`}>
       {languages.map((lang) => (
         <LanguageButton
           key={lang}

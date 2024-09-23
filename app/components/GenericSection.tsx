@@ -13,13 +13,13 @@ export function GenericSection({
 }) {
   return (
     <section
-      className={`bg-cover bg-center ${noHScreen? "" : "h-screen"} ${className}`}
+      className={`${noHScreen ? "" : "h-screen"} ${className ?? ""}`}
       style={{
         backgroundImage: backgroundImage,
         backgroundColor: backgroundColor,
       }}
     >
-      <div className="flex items-center justify-center h-full flex-col">
+      <div className="flex items-center justify-center  h-full flex-col">
         {children}
       </div>
     </section>

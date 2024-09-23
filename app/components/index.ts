@@ -9,6 +9,9 @@ import { Template } from "./Template";
 import { Footer } from "./Footer";
 import { Divider } from "./Divider";
 import { BorderBox } from "./BorderBox";
+import { BigCard } from "./Cards/BigCard";
+import { SmallCard } from "./Cards/SmallCard";
+
 
 export {
   Image,
@@ -22,4 +25,6 @@ export {
   Footer,
   Divider,
   BorderBox,
+  BigCard,
+  SmallCard,
 };

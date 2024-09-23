@@ -21,7 +21,7 @@ export function Navbar() {
             />
           </Link>
         </div>
-        <LanguageSelector className="col-span-3" />
+        <LanguageSelector className="col-span-3 grid grid-cols-3" />
 
       </div>
 

@@ -20,7 +20,7 @@ export function Template({
       className={className}
       noHScreen={noHScreen}
     >
-      <div className="w-full container px-8">
+      <div className="w-full container">
         <div className="flex items-center justify-center h-full flex-col">
           {children}
         </div>
