@@ -22,7 +22,7 @@ export function Hero() {
             className="mx-auto mb-8"
           />
           <div className="text-center">
-            <h1 className={`text-6xl font-bold mb-4 tracking-tight ${titleFont.className}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold mb-4 tracking-tight ${titleFont.className}`}>
               CIUDADES DE CUIDADO
             </h1>
             <div className="mb-8">

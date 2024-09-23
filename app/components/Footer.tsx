@@ -1,9 +1,11 @@
 import React from "react";
-import { Instagram, MessageCircle, Twitter, Link } from "lucide-react";
+import { FaXTwitter, FaLink, FaInstagram, FaWhatsapp } from "react-icons/fa6";
+
+
 import Image from "next/image";
 
 const GradientSeparator = () => (
-  <div className="w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] mt-12" />
+  <div className="w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] mt-0 md:mt-12" />
 );
 
 const CircleLink = ({ children }: { children: React.ReactNode }) => (
@@ -15,24 +17,24 @@ const CircleLink = ({ children }: { children: React.ReactNode }) => (
   </a>
 );
 
-const ContactLinks = () => {
+const ContactLinks = ({className}:{className?:string}) => {
   return (
-    <div className="flex space-x-4 mb-4">
+    <div className={`grid grid-cols-4 gap-2 mb-4 ${className}`}>
       <CircleLink>
         <span className="sr-only">Instagram</span>
-        <Instagram className="h-6 w-6" />
+        <FaInstagram className="h-10 w-10 md:h-6 md:w-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">WhatsApp</span>
-        <MessageCircle className="h-6 w-6" />
+        <FaWhatsapp className="h-10 w-10 md:h-6 md:w-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">Twitter</span>
-        <Twitter className="h-6 w-6" />
+        <FaXTwitter className="h-10 w-10 md:h-6 md:w-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">Website</span>
-        <Link className="h-6 w-6" />
+        <FaLink className="h-10 w-10 md:h-6 md:w-6" />
       </CircleLink>
     </div>
   );
@@ -40,8 +42,8 @@ const ContactLinks = () => {
 
 export function Footer() {
   return (
-    <footer className="relative py-8 px-4 sm:px-6 lg:px-8">
-      <div className="absolute inset-0 z-0">
+    <footer className="relative mt-80 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="https://i.ibb.co/QH9ZYRG/Recurso-1-2x-3-3.png"
           alt="Background"
@@ -52,21 +54,35 @@ export function Footer() {
         />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row">
-        <div className="md:w-2/3 mb-8 md:mb-0 md:pr-8">
-          <ContactLinks />
+        <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
+          <div className="w-full grid grid-cols-12 place-items-center ">
+            <ContactLinks className="col-span-8" />
+
+            <div className="flex sm:hidden col-span-4 place-self-end">
+              <Image
+                src="https://i.ibb.co/8PFqG48/Group-31.png"
+                alt="Tree"
+                width={24}
+                height={24}
+                layout="responsive"
+                className="object-contain"
+              />
+            </div>
+          </div>
+
           <GradientSeparator />
-          <p className="mt-4 text-base">
+          <p className="mt-4 text-xs md:text-base">
             La Rosa-Luxemburg-Stiftung es una organización sin ánimo de lucro de
             formación política, de izquierdas y activa a nivel internacional,
             cercana al partido DIE LINKE en Alemania. Trabajamos por un mundo
             más justo basado en la solidaridad internacional.
           </p>
-          <p className="mt-4 text-base">
+          <p className="mt-4 text-xs md:text-base">
             Contacto: Alex Wischnewski, alex.wischnewski@rosalux.org
           </p>
         </div>
 
-        <div className="md:w-1/3">
+        <div className="md:w-1/3 hidden sm:block">
           <Image
             src="https://i.ibb.co/fp5dFBj/Tren-3.png"
             alt="Ilustración de estación de tren"

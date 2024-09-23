@@ -11,7 +11,7 @@ export function GradientUnderlineButton({
 
   return (
     <button
-      className="relative bg-transparent bg-white text-black px-4 py-2 rounded transition-all duration-300 ease-in-out"
+      className="relative bg-transparent text-black px-4 py-2 rounded transition-all duration-300 ease-in-out"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

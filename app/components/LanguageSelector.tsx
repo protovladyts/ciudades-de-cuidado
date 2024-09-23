@@ -24,7 +24,8 @@ function GradientBorderButton({ children, isSelected, onClick }: {
         text-gray-800
         overflow-hidden
         flex items-center justify-center
-        px-6
+        lg:px-6
+        px-2
       `}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
