@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
-import { buttonFont } from "../config";
+import { basicFont } from "../config";
 import { Image } from "./Image";
 import { Divider } from "./Divider";
-import { GradientUnderlineButton } from "./GradientUnderlineButton";
+import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { LanguageSelector } from "./LanguageSelector";
 
 export function Navbar() {
   return (
     <nav
-      className={`w-full py-4 px-60 text-sm lg:text-xl text-center  ${buttonFont.className}`}
+      className={`absolute top-0 left-0 z-50 w-full py-4 px-60 text-sm lg:text-xl text-center  ${basicFont.className}`}
     >
       <div className="grid grid-cols-12 py-2">
         <div className="col-span-9 p-0">

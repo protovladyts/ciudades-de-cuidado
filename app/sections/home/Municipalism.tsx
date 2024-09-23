@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { titleFont } from "@/app/config";
 import { Template } from "../../components";
 
 export function Municipalism() {
@@ -16,7 +17,9 @@ export function Municipalism() {
       <Template>
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex flex-col">
-            <h2 className="text-5xl font-bold md:mb-0 md:w-1/3 pb-12">
+            <h2
+              className={`text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}
+            >
               MUNICIPALISMO
             </h2>
             <p className="text-lg pb-12">
@@ -29,7 +32,11 @@ export function Municipalism() {
               imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
               mollis pretium. Integer tincidunt. Cras dapibu
             </p>
-            <h2 className="text-5xl font-bold text-right">Y CIUDADES SIN MIEDO</h2>
+            <h2
+              className={`text-5xl font-bold text-right ${titleFont.className}`}
+            >
+              Y CIUDADES SIN MIEDO
+            </h2>
           </div>
         </div>
       </Template>

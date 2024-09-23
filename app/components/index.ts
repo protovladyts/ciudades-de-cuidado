@@ -11,7 +11,9 @@ import { Divider } from "./Divider";
 import { BorderBox } from "./BorderBox";
 import { BigCard } from "./Cards/BigCard";
 import { SmallCard } from "./Cards/SmallCard";
-
+import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
+import { GradientUnderline } from "./Gradient/GradientUnderline";
+import { GradientArrowButton } from "./Gradient/GradientArrowButton";
 
 export {
   Image,
@@ -27,4 +29,7 @@ export {
   BorderBox,
   BigCard,
   SmallCard,
+  GradientUnderlineButton,
+  GradientUnderline,
+  GradientArrowButton,
 };

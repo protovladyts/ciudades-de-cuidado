@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Template } from "../../components";
+import { titleFont } from "@/app/config";
+import { GradientArrowButton, GradientUnderlineButton } from "@/app/components";
 
 export function Concept() {
   return (
@@ -16,7 +18,9 @@ export function Concept() {
       <Template>
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-            <h2 className="text-5xl font-bold mb-6 md:mb-0 md:w-1/3">
+            <h2
+              className={`text-5xl font-bold mb-6 md:mb-0 md:w-1/3 ${titleFont.className}`}
+            >
               CONCEPTO
             </h2>
             <div className="md:w-2/3 p-6 rounded-lg">
@@ -26,23 +30,12 @@ export function Concept() {
                 penatibus et magnis dis parturient montes, nascetur ridiculus
                 mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.
               </p>
-              <a href="#" className="text-sm font-semibold text-black w-full flex justify-end">
-                <p> LEER MÁS</p>
-                <svg
-                  className="ml-2 w-5 h-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 5L21 12M21 12L14 19M21 12H3"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
+              <div className="w-full flex justify-end">
+              <GradientUnderlineButton>
+                <GradientArrowButton>LEER MÁS</GradientArrowButton>
+              </GradientUnderlineButton>
+              </div>
+
             </div>
           </div>
         </div>

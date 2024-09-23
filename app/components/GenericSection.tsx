@@ -1,3 +1,5 @@
+import { basicFont } from "@/app/config";
+
 export function GenericSection({
   children,
   backgroundImage,
@@ -13,7 +15,7 @@ export function GenericSection({
 }) {
   return (
     <section
-      className={`${noHScreen ? "" : "h-screen"} ${className ?? ""}`}
+      className={`${noHScreen ? "" : "h-screen"} ${className ?? ""} ${basicFont.className}`}
       style={{
         backgroundImage: backgroundImage,
         backgroundColor: backgroundColor,

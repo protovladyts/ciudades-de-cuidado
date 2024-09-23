@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Template } from "../../components";
+import { Template, GradientUnderline } from "../../components";
+import { titleFont, focusFont } from "@/app/config";
 
 export function Hero() {
   return (
@@ -21,13 +22,18 @@ export function Hero() {
             className="mx-auto mb-8"
           />
           <div className="text-center">
-            <h1 className="text-6xl font-bold mb-4 tracking-tight">
+            <h1 className={`text-6xl font-bold mb-4 tracking-tight ${titleFont.className}`}>
               CIUDADES DE CUIDADO
             </h1>
-            <p className="text-xl mb-8 tracking-wide">
-              ESTRATEGIAS PARA LA SOCIALIZACIÓN FEMINISTA
-            </p>
-            <p className="max-w-3xl mx-auto text-lg">
+            <div className="mb-8">
+              <GradientUnderline>
+                <p className={`text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}>
+                  ESTRATEGIAS PARA LA SOCIALIZACIÓN FEMINISTA
+                </p>
+              </GradientUnderline>
+            </div>
+
+            <p className="max-w-3xl mx-auto text-lg text-left">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.
