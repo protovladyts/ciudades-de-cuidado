@@ -10,7 +10,6 @@ import {
 } from "../../components";
 
 export function Proyects() {
-  const placeholderImage = "https://i.ibb.co/nLdH4Mh/background02.png"; //TODO: Remove this
   const projectsUrls = [
     "https://i.ibb.co/3cc3bDY/Rectangle-1.png",
     "https://i.ibb.co/10tyY1w/Rectangle-1-3.png",
