@@ -8,7 +8,7 @@ import { LanguageSelector } from "./LanguageSelector";
 
 const ReferenceButtons = () => {
   return (
-    <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center">
+    <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-lg xl:text-base">
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="#home" className="px-6 py-2">

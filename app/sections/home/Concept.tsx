@@ -16,10 +16,10 @@ export function Concept() {
         />
       </div>
       <Template>
-        <div className="relative z-10 max-w-6xl container mx-auto px-20 2xl:px-0">
+        <div className="relative z-10 max-w-6xl container mx-auto px-12 lg:px-20 2xl:px-0">
           <div className="grid grid-cols-2 items-start md:items-center justify-between">
             <h2
-              className={`text-5xl font-bold mb-6 md:mb-0 md:w-1/3 ${titleFont.className}`}
+              className={`text-4xl lg:text-5xl font-bold mb-6 md:mb-0 md:w-1/3 ${titleFont.className}`}
             >
               CONCEPTO
             </h2>

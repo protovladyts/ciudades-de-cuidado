@@ -52,7 +52,7 @@ export function Proyects() {
             imageSrc="https://i.ibb.co/V3wzgW7/bigcardimage.png"
             title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
             alt="Proyecto principal"
-            className="col-span-5"
+            className="col-span-5 hidden lg:block"
           />
           <div className="col-span-7 grid grid-cols-2 gap-x-16 gap-y-5 place-items-center">
             {projectsUrls.map((url, index) => (

@@ -13,7 +13,7 @@ export function Hero() {
         className="opacity-80"
       />
       <Template>
-        <div className="relative container mx-auto px-4 py-16">
+        <div className="relative container mx-auto px-12 lg:px-4 py-16">
           <Image
             src="https://i.ibb.co/NpSbzWp/logo.png"
             alt="Houses"
@@ -27,7 +27,7 @@ export function Hero() {
             </h1>
             <div className="mb-8">
               <GradientUnderline>
-                <p className={`text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}>
+                <p className={`text-2xl lg:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}>
                   ESTRATEGIAS PARA LA SOCIALIZACIÓN FEMINISTA
                 </p>
               </GradientUnderline>
