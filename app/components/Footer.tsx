@@ -42,7 +42,7 @@ const ContactLinks = ({className}:{className?:string}) => {
 
 export function Footer() {
   return (
-    <footer className="relative mt-80 py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="relative py-8 px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="https://i.ibb.co/QH9ZYRG/Recurso-1-2x-3-3.png"
@@ -55,7 +55,7 @@ export function Footer() {
       </div>
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row">
         <div className="w-full md:w-2/3 mb-8 md:mb-0 md:pr-8">
-          <div className="w-full grid grid-cols-12 place-items-center ">
+          <div className="w-full grid grid-cols-12 place-items-center md:place-items-start">
             <ContactLinks className="col-span-8" />
 
             <div className="flex sm:hidden col-span-4 place-self-end">
