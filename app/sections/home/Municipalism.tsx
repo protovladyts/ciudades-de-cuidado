@@ -15,7 +15,7 @@ export function Municipalism() {
         />
       </div>
       <Template>
-        <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="relative z-10 max-w-6xl container mx-auto px-20 2xl:px-0">
           <div className="flex flex-col">
             <h2
               className={`text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}

@@ -23,12 +23,12 @@ export function Proyects() {
         <Image
           src="https://i.ibb.co/8PFqG48/Group-31.png"
           alt="Tree"
-          className="absolute right-28 top-16 z-10"
+          className="absolute right-0 xl:right-20 2xl:right-28 top-60 xl:top-48 2xl:top-16 z-10"
           width={100}
           height={100}
         />
       </div>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl container mx-auto px-20 2xl:px-0">
         <h2 className={`text-4xl font-bold mb-4 ${titleFont.className}`}>
           PROYECTOS
         </h2>

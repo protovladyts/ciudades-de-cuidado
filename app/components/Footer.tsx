@@ -5,7 +5,7 @@ import { FaXTwitter, FaLink, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
 
 const GradientSeparator = () => (
-  <div className="w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] mt-0 md:mt-12" />
+  <div className="w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] mt-0 md:mt-12 lg:mt-6" />
 );
 
 const CircleLink = ({ children }: { children: React.ReactNode }) => (
