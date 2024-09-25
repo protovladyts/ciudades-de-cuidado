@@ -11,21 +11,21 @@ const ReferenceButtons = () => {
     <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-xs sm:text-lg xl:text-base">
       <li className="col-span-1">
         <GradientUnderlineButton>
-          <Link href="#home" className="px-6 py-2">
+          <Link href="#concept" className="px-6 py-2">
             CONCEPTO
           </Link>
         </GradientUnderlineButton>
       </li>
       <li className="col-span-1">
         <GradientUnderlineButton>
-          <Link href="#home" className="px-6 py-2">
+          <Link href="#projects" className="px-6 py-2">
             PROYECTOS
           </Link>
         </GradientUnderlineButton>
       </li>
       <li className="col-span-1">
         <GradientUnderlineButton>
-          <Link href="#home" className="px-6 py-2">
+          <Link href="#municipalism" className="px-6 py-2">
             MUNICIPALISMO
           </Link>
         </GradientUnderlineButton>

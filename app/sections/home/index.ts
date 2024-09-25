@@ -6,6 +6,6 @@ import { Municipalism } from "./Municipalism";
 export const sections = [
   { component: Hero, key: "hero" },
   { component: Concept, key: "concept" },
-  { component: Proyects, key: "proyects" },
+  { component: Proyects, key: "projects" },
   { component: Municipalism, key: "municipalism" },
 ];
