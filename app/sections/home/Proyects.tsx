@@ -18,8 +18,8 @@ export function Proyects() {
   ];
 
   return (
-    <Template className="text-left">
-      <div className="w-full relative">
+    <Template className="text-left"  noHScreenInSm={true}>
+      <div className="w-full relative hidden lg:block">
         <Image
           src="https://i.ibb.co/8PFqG48/Group-31.png"
           alt="Tree"
@@ -28,8 +28,8 @@ export function Proyects() {
           height={100}
         />
       </div>
-      <div className="max-w-6xl container mx-auto px-20 2xl:px-0">
-        <h2 className={`text-4xl font-bold mb-4 ${titleFont.className}`}>
+      <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
+        <h2 className={`text-2xl md:text-4xl font-bold mt-8 sm:mt-0 mb-4 ${titleFont.className}`}>
           PROYECTOS
         </h2>
         <p className="mb-8 text-lg">
@@ -54,7 +54,7 @@ export function Proyects() {
             alt="Proyecto principal"
             className="col-span-5 hidden lg:block"
           />
-          <div className="col-span-7 grid grid-cols-2 gap-x-16 gap-y-5 place-items-center">
+          <div className="col-span-7 grid sm:grid-cols-2 gap-x-16 gap-y-5 place-items-center">
             {projectsUrls.map((url, index) => (
               <SmallCard
                 key={index}
@@ -66,7 +66,7 @@ export function Proyects() {
           </div>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end pb-8 sm:pb-0">
           <GradientUnderlineButton>
             <GradientArrowButton>LEER MÁS</GradientArrowButton>
           </GradientUnderlineButton>

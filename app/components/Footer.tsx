@@ -1,7 +1,6 @@
 import React from "react";
 import { FaXTwitter, FaLink, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
-
 import Image from "next/image";
 
 const GradientSeparator = () => (
@@ -11,13 +10,13 @@ const GradientSeparator = () => (
 const CircleLink = ({ children }: { children: React.ReactNode }) => (
   <a
     href="#"
-    className="text-[#383D38] hover:text-[#5a5c5a] border-[2.5px] rounded-full p-1 border-[#383D38] hover:border-[#5a5c5a] transition-colors"
+    className="border-[2.5px] rounded-full border-[#383D38]  text-[#383D38] hover:text-[#5a5c5a] min-[360]:border-[2.5px] min-[360]:rounded-full p-1 min-[360]:border-[#383D38] hover:border-[#5a5c5a] transition-colors"
   >
     {children}
   </a>
 );
 
-const ContactLinks = ({className}:{className?:string}) => {
+const ContactLinks = ({ className }: { className?: string }) => {
   return (
     <div className={`grid grid-cols-4 gap-2 mb-4 ${className}`}>
       <CircleLink>
@@ -58,7 +57,7 @@ export function Footer() {
           <div className="w-full grid grid-cols-12 place-items-center md:place-items-start">
             <ContactLinks className="col-span-8" />
 
-            <div className="flex sm:hidden col-span-4 place-self-end">
+            <div className="flex md:hidden col-span-4 place-self-end">
               <Image
                 src="https://i.ibb.co/8PFqG48/Group-31.png"
                 alt="Tree"
@@ -82,7 +81,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="md:w-1/3 hidden sm:block">
+        <div className="md:w-1/3 hidden md:block">
           <Image
             src="https://i.ibb.co/fp5dFBj/Tren-3.png"
             alt="Ilustración de estación de tren"

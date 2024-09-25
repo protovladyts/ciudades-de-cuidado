@@ -5,17 +5,17 @@ export function GenericSection({
   backgroundImage,
   backgroundColor,
   className,
-  noHScreen = false,
+  noHScreenInSm = false,
 }: {
   readonly children: React.ReactNode;
   readonly backgroundImage?: string;
   readonly backgroundColor?: string;
   readonly className?: string;
-  readonly noHScreen?: boolean;
+  readonly noHScreenInSm?: boolean;
 }) {
   return (
     <section
-      className={`${noHScreen ? "" : "h-screen"} ${className ?? ""} ${basicFont.className}`}
+      className={`${noHScreenInSm ? "md:h-screen" : "h-screen"} ${className ?? ""} ${basicFont.className}`}
       style={{
         backgroundImage: backgroundImage,
         backgroundColor: backgroundColor,

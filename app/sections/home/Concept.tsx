@@ -16,14 +16,14 @@ export function Concept() {
         />
       </div>
       <Template>
-        <div className="relative z-10 max-w-6xl container mx-auto px-12 lg:px-20 2xl:px-0">
-          <div className="grid grid-cols-2 items-start md:items-center justify-between">
+        <div className="relative z-10 max-w-6xl container mx-auto  px-8 md:px-12 lg:px-20 2xl:px-0">
+          <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center justify-between gap-4">
             <h2
-              className={`text-4xl lg:text-5xl font-bold mb-6 md:mb-0 md:w-1/3 ${titleFont.className}`}
+              className={`text-4xl lg:text-5xl font-bold md:mb-0 mb-4 ${titleFont.className}`}
             >
               CONCEPTO
             </h2>
-            <p className="text-lg mb-6">
+            <p className="text-base md:text-lg">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.

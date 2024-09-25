@@ -4,13 +4,13 @@ export function Template({
   children,
   backgroundImage,
   backgroundColor,
-  noHScreen = false,
+  noHScreenInSm = false,
   className,
 }: Readonly<{
   children: React.ReactNode;
   backgroundImage?: string;
   backgroundColor?: string;
-  noHScreen?: boolean;
+  noHScreenInSm?: boolean;
   className?: string;
 }>) {
   return (
@@ -18,7 +18,7 @@ export function Template({
       backgroundImage={backgroundImage}
       backgroundColor={backgroundColor}
       className={className}
-      noHScreen={noHScreen}
+      noHScreenInSm={noHScreenInSm}
     >
       <div className="w-full container">
         <div className="flex items-center justify-center h-full flex-col">
