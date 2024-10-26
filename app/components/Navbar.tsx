@@ -41,7 +41,7 @@ export function Navbar() {
     >
       <div className="grid grid-cols-12 py-2">
         <div className="min-[2500px]:col-span-11 2xl:col-span-10 xl:col-span-9 lg:col-span-8 md:col-span-10 sm:col-span-10 col-span-6 p-0">
-          <Link href="#home p-0">
+          <Link href="#home">
             <Image
               src="https://i.ibb.co/NpSbzWp/logo.png"
               alt=""

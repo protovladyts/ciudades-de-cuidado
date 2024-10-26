@@ -1,20 +1,32 @@
 import Image from "next/image";
-import { Template } from "../../components";
+import { Divider, Template } from "../../components";
 import { titleFont } from "@/app/config";
 import { GradientArrowButton, GradientUnderlineButton } from "@/app/components";
 
 export function Concept() {
   return (
     <div className="relative">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://i.ibb.co/nLdH4Mh/background02.png"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-        />
-      </div>
+      <Image
+        src={"https://i.ibb.co/3SKmx4R/Recurso-9-2x-8-3.png"}
+        alt="Background"
+        width={300}
+        height={300}
+        className="-z-10 absolute right-0 md:block hidden"
+      />
+      <Image
+        src={"https://i.ibb.co/rGFCZxx/Capa-1.png"}
+        alt="Background"
+        width={300}
+        height={300}
+        className="-z-10 absolute left-0 top-52 md:block hidden"
+      />
+      <Image
+        src={"https://i.ibb.co/CQy4mFd/Clip-path-group.png"}
+        alt="Background"
+        width={150}
+        height={150}
+        className="absolute left-0 bottom-48 md:hidden block"
+      />
       <Template>
         <div className="relative z-10 max-w-6xl container mx-auto  px-8 md:px-12 lg:px-20 2xl:px-0">
           <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center justify-between gap-4">
@@ -36,6 +48,7 @@ export function Concept() {
             </div>
           </div>
         </div>
+        <Divider className="absolute bottom-0 !w-2/3" />
       </Template>
     </div>
   );

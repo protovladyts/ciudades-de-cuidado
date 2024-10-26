@@ -1,19 +1,24 @@
-import Image from "next/image";
 import { titleFont } from "@/app/config";
-import { Template } from "../../components";
+import { Divider, Template } from "../../components";
+import Image from "next/image";
 
 export function Municipalism() {
   return (
     <div className="relative">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://i.ibb.co/L5DQhcq/background03.png"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-50"
-        />
-      </div>
+      <Image
+        src={"https://i.ibb.co/BcxbNmx/Recurso-9-2x-8-3-1.png"}
+        alt="Background"
+        width={150}
+        height={300}
+        className="-z-10 absolute right-0 md:block hidden"
+      />
+      <Image
+        src={"https://i.ibb.co/LxRHgnv/Group-68.png"}
+        alt="Background"
+        width={500}
+        height={300}
+        className="-z-10 absolute left-0 top-52 md:block hidden"
+      />
       <Template>
         <div className="relative z-10 max-w-6xl container mx-auto px-8 md:px-20 2xl:px-0">
           <div className="flex flex-col">
@@ -39,7 +44,10 @@ export function Municipalism() {
             </h2>
           </div>
         </div>
+        <Divider className="absolute bottom-0 !w-2/3  md:block hidden" />
       </Template>
     </div>
   );
 }
+
+//https://i.ibb.co/BcxbNmx/Recurso-9-2x-8-3-1.png
