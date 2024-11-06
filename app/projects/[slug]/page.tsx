@@ -1,4 +1,4 @@
-// app/projects/[slug]/page.js
+"use client";
 import { Template } from '@/app/components';
 import { useRouter } from 'next/router';
 
