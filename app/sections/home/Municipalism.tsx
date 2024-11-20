@@ -2,7 +2,17 @@ import { titleFont } from "@/app/config";
 import { Divider, Template } from "../../components";
 import Image from "next/image";
 
-export function Municipalism() {
+type MunicipalismProps = {
+  data: {
+    title: string;
+    description: string;
+    end_title: string;
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Municipalism({ data }: MunicipalismProps) {
+  console.log({data})
   return (
     <div className="relative">
       <Image

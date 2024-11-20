@@ -10,13 +10,24 @@ import {
   Divider,
 } from "../../components";
 
-export function Projects() {
+type ProjectsProps = {
+  data: {
+    title: string;
+    description: string;
+    cta_label: string;
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Projects({ data }: ProjectsProps) {
   const projectsUrls = [
     "https://i.ibb.co/3cc3bDY/Rectangle-1.png",
     "https://i.ibb.co/10tyY1w/Rectangle-1-3.png",
     "https://i.ibb.co/HGby1bH/Rectangle-1-2.png",
     "https://i.ibb.co/tztcNgD/Rectangle-1-1.png",
   ];
+
+  console.log({data})
 
   return (
     <div className="relative">

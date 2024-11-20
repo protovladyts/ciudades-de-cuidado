@@ -2,7 +2,15 @@ import Image from "next/image";
 import { Divider, Template } from "../../components";
 import { titleFont, focusFont } from "@/app/config";
 
-export function Hero() {
+type HeroProps = {
+  data: {
+    title: string;
+    subtitle: string;
+    description: string;
+  };
+};
+
+export function Hero({ data }: HeroProps) {
   return (
     <div className="relative">
       <Image
@@ -52,14 +60,14 @@ export function Hero() {
             <h1
               className={`text-left sm:text-center text-3xl sm:text-4xl md:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
             >
-              CIUDADES DE CUIDADO
+              {data.title}
             </h1>
 
             <div className="mb-8 hidden md:block">
               <p
                 className={`text-2xl lg:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
               >
-                ESTRATEGIAS PARA LA SOCIALIZACIÓN FEMINISTA
+                {data.subtitle}
               </p>
             </div>
             <div
@@ -71,14 +79,7 @@ export function Hero() {
             </div>
 
             <p className="max-w-3xl mx-auto text-sm sm:text-lg text-left pr-6 sm:p-0 sm:mt-0 mt-20">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-              mollis pretium. Integer tincidunt.
+              {data.description}
             </p>
           </div>
         </div>

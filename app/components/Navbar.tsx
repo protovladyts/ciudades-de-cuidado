@@ -4,7 +4,7 @@ import { basicFont } from "../config";
 import { Image } from "./Image";
 import { Divider } from "./Divider";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
-import { LanguageSelector } from "./LanguageSelector";
+import { getLanguageUrl } from "../utils/getLanguageUrl"; // Nueva función para obtener URL por idioma
 
 const ReferenceButtons = () => {
   return (
@@ -31,6 +31,36 @@ const ReferenceButtons = () => {
         </GradientUnderlineButton>
       </li>
     </ul>
+  );
+};
+
+const LanguageSelector = ({ className }: { className?: string }) => {
+  const handleLanguageChange = (language: "es" | "de" | "en") => {
+    const url = getLanguageUrl(language); // Obtén la URL del idioma
+    window.location.href = url; // Redirige al dominio correspondiente
+  };
+
+  return (
+    <div className={className}>
+      <button
+        className="text-sm px-2 py-1"
+        onClick={() => handleLanguageChange("en")}
+      >
+        EN
+      </button>
+      <button
+        className="text-sm px-2 py-1"
+        onClick={() => handleLanguageChange("es")}
+      >
+        ES
+      </button>
+      <button
+        className="text-sm px-2 py-1"
+        onClick={() => handleLanguageChange("de")}
+      >
+        DE
+      </button>
+    </div>
   );
 };
 

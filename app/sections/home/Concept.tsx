@@ -3,7 +3,17 @@ import { Divider, Template } from "../../components";
 import { titleFont } from "@/app/config";
 import { GradientArrowButton, GradientUnderlineButton } from "@/app/components";
 
-export function Concept() {
+type ConceptProps = {
+  data: {
+    title: string;
+    description: string;
+    cta_label: string;
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Concept({ data }: ConceptProps) {
+  console.log({ data });
   return (
     <div className="relative">
       <Image
