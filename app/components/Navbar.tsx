@@ -4,7 +4,7 @@ import { basicFont } from "../config";
 import { Image } from "./Image";
 import { Divider } from "./Divider";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
-import { getLanguageUrl } from "../utils/getLanguageUrl"; // Nueva función para obtener URL por idioma
+import { LanguageSelector } from "./LanguageSelector";
 
 const ReferenceButtons = () => {
   return (
@@ -34,37 +34,15 @@ const ReferenceButtons = () => {
   );
 };
 
-const LanguageSelector = ({ className }: { className?: string }) => {
-  const handleLanguageChange = (language: "es" | "de" | "en") => {
-    const url = getLanguageUrl(language); // Obtén la URL del idioma
-    window.location.href = url; // Redirige al dominio correspondiente
+export function Navbar({ language }: { language: "es" | "de" | "en" }) {
+  const handleLanguageChange = (lang: "ES" | "EN" | "DE") => {
+    const languageMap: Record<string, string> = {
+      ES: "https://ciudades-de-cuidado.org",
+      DE: "https://sorgende-staedte.org",
+      EN: "https://caring-cities.org",
+    };
+    window.location.href = languageMap[lang]; // Redirigir al dominio correspondiente
   };
-
-  return (
-    <div className={className}>
-      <button
-        className="text-sm px-2 py-1"
-        onClick={() => handleLanguageChange("en")}
-      >
-        EN
-      </button>
-      <button
-        className="text-sm px-2 py-1"
-        onClick={() => handleLanguageChange("es")}
-      >
-        ES
-      </button>
-      <button
-        className="text-sm px-2 py-1"
-        onClick={() => handleLanguageChange("de")}
-      >
-        DE
-      </button>
-    </div>
-  );
-};
-
-export function Navbar() {
   return (
     <nav
       className={`absolute top-0 z-50 w-full py-4 px-8 lg:px-16 xl:px-60 text-sm lg:text-xl text-center  ${basicFont.className}`}
@@ -79,7 +57,11 @@ export function Navbar() {
             />
           </Link>
         </div>
-        <LanguageSelector className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-2 sm:col-span-2 col-span-6 grid grid-cols-3" />
+        <LanguageSelector
+          selectedLanguage={language.toUpperCase() as "ES" | "EN" | "DE"}
+          onLanguageChange={handleLanguageChange}
+          className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-2 sm:col-span-2 col-span-6 grid grid-cols-3"
+        />
       </div>
 
       <div className="w-full py-2">

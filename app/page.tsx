@@ -1,9 +1,13 @@
 import { fetchLocalizedPage } from "./api/wordpress/services/fetchLocalizedPage";
 import { sections } from "./sections/home";
+import { SITE_LOCALE } from "./config";
 
 export default async function Home() {
-  const language = 'de'; // Obtén esto dinámicamente según el idioma del sitio
-  const content = await fetchLocalizedPage('home', language);
+  // Detecta el idioma basado en el host
+  const language = SITE_LOCALE
+
+  // Obtén el contenido localizado
+  const content = await fetchLocalizedPage("home", language);
 
   return (
     <main>

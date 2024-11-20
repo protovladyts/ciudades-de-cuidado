@@ -1,10 +1,11 @@
+import { Language } from '@/app/types';
 import { fetchFromApi } from '../../helpers/fetchFromApi';
 import { mapLocalizedData } from '../mappers/mapLocalizedData';
 import { AcfResponse } from '../types/AcfResponse';
 
 export async function fetchLocalizedPage(
   slug: string,
-  language: 'es' | 'en' | 'de'
+  language: Language
 ) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [page] = await fetchFromApi<any[]>(
