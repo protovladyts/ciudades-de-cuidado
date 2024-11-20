@@ -34,6 +34,8 @@ export const SITE_LOCALE = (() => {
 
 export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIRONMENT;
 
+console.log('🎈',{ENVIRONMENT})
+
 export const IS_LOCAL_ENV = ENVIRONMENT?.toLowerCase() === "local";
 
 export const SITE_URL = {
@@ -117,3 +119,6 @@ const metadataByLanguage: Record<string, Metadata> = {
 // Seleccionar metadata basada en el idioma actual
 export const metadata: Metadata =
   metadataByLanguage[SITE_LOCALE] || metadataByLanguage.es;
+
+
+console.log('🎈',{metadata})

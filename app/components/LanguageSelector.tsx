@@ -82,10 +82,7 @@ export function LanguageSelector({
           key={lang}
           code={lang.toUpperCase()}
           isSelected={selectedLanguage === lang}
-          onClick={() => {
-            console.log('🎈onLanguageChange',{lang})
-            onLanguageChange(lang)
-          }}
+          onClick={() => onLanguageChange(lang)}
         />
       ))}
     </div>

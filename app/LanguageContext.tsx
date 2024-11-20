@@ -18,9 +18,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   const [language, setLanguage] = useState<Language>("es");
 
   const handleSetLanguage = (lang: Language) => {
-    console.log('🎈handleSetLanguage', {IS_LOCAL_ENV}, {lang})
     if (IS_LOCAL_ENV) {
-      console.log('🎈es local! setting', lang)
       setLanguage(lang); // Cambia el idioma en local
     } else {
       const languageMap: Record<string, string> = {
