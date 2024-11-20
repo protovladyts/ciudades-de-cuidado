@@ -12,7 +12,6 @@ type MunicipalismProps = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Municipalism({ data }: MunicipalismProps) {
-  console.log({data})
   return (
     <div className="relative">
       <Image
@@ -35,7 +34,7 @@ export function Municipalism({ data }: MunicipalismProps) {
             <h2
               className={`text-xl md:text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}
             >
-              MUNICIPALISMO
+              {data.title.toUpperCase()}
             </h2>
             <p className="text-base md:text-lg pb-12">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

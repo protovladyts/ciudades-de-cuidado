@@ -27,8 +27,6 @@ export function Projects({ data }: ProjectsProps) {
     "https://i.ibb.co/tztcNgD/Rectangle-1-1.png",
   ];
 
-  console.log({data})
-
   return (
     <div className="relative">
       <Image
@@ -44,7 +42,7 @@ export function Projects({ data }: ProjectsProps) {
             <h2
               className={`text-2xl md:text-4xl font-bold mt-8 sm:mt-0 mb-4 ${titleFont.className}`}
             >
-              PROYECTOS
+              {data.title.toUpperCase()}
             </h2>
             <p className="mb-8 text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur

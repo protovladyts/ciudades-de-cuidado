@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar, Footer } from "./components/";
 import Head from "next/head";
 import { metadata as localizedMetadata, SITE_LOCALE } from "./config";
+import { LanguageProvider } from "./LanguageContext";
 
 export const metadata: Metadata = localizedMetadata;
 
@@ -19,9 +20,11 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <body>
-        <Navbar language={language} />
-        {children}
-        <Footer />
+        <LanguageProvider>
+          <Navbar/>
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

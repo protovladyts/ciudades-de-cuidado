@@ -60,7 +60,7 @@ export function Hero({ data }: HeroProps) {
             <h1
               className={`text-left sm:text-center text-3xl sm:text-4xl md:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
             >
-              {data.title}
+              {data.title.toUpperCase()}
             </h1>
 
             <div className="mb-8 hidden md:block">

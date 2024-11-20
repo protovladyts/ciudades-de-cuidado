@@ -5,6 +5,7 @@ import { Image } from "./Image";
 import { Divider } from "./Divider";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { LanguageSelector } from "./LanguageSelector";
+import { useLanguage } from "../LanguageContext";
 
 const ReferenceButtons = () => {
   return (
@@ -34,15 +35,9 @@ const ReferenceButtons = () => {
   );
 };
 
-export function Navbar({ language }: { language: "es" | "de" | "en" }) {
-  const handleLanguageChange = (lang: "ES" | "EN" | "DE") => {
-    const languageMap: Record<string, string> = {
-      ES: "https://ciudades-de-cuidado.org",
-      DE: "https://sorgende-staedte.org",
-      EN: "https://caring-cities.org",
-    };
-    window.location.href = languageMap[lang]; // Redirigir al dominio correspondiente
-  };
+export function Navbar() {
+  const { language, setLanguage } = useLanguage();
+
   return (
     <nav
       className={`absolute top-0 z-50 w-full py-4 px-8 lg:px-16 xl:px-60 text-sm lg:text-xl text-center  ${basicFont.className}`}
@@ -58,8 +53,10 @@ export function Navbar({ language }: { language: "es" | "de" | "en" }) {
           </Link>
         </div>
         <LanguageSelector
-          selectedLanguage={language.toUpperCase() as "ES" | "EN" | "DE"}
-          onLanguageChange={handleLanguageChange}
+          selectedLanguage={language}
+          onLanguageChange={(lang) =>
+            setLanguage(lang.toLowerCase() as "es" | "de" | "en")
+          }
           className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-2 sm:col-span-2 col-span-6 grid grid-cols-3"
         />
       </div>

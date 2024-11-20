@@ -13,7 +13,6 @@ type ConceptProps = {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Concept({ data }: ConceptProps) {
-  console.log({ data });
   return (
     <div className="relative">
       <Image
@@ -43,7 +42,7 @@ export function Concept({ data }: ConceptProps) {
             <h2
               className={`text-4xl lg:text-5xl font-bold md:mb-0 mb-4 ${titleFont.className}`}
             >
-              CONCEPTO
+              {data.title.toUpperCase()}
             </h2>
             <p className="text-base md:text-lg">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean

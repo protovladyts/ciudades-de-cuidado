@@ -1,7 +1,9 @@
+import { Language } from "../types";
+
 interface LanguageButtonProps {
-  code: string
-  isSelected: boolean
-  onClick: () => void
+  code: string;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
 function GradientBorderButton({
@@ -20,11 +22,7 @@ function GradientBorderButton({
         w-8 h-8
         rounded-full
         transition-all duration-300 ease-in-out
-        ${
-          isSelected
-            ? "border-transparent"
-            : "border-2 border-[#EBEAED]"
-        }
+        ${isSelected ? "border-transparent" : "border-2 border-[#EBEAED]"}
         text-gray-800
         overflow-hidden
         flex items-center justify-center
@@ -61,7 +59,7 @@ function LanguageButton({ code, isSelected, onClick }: LanguageButtonProps) {
     <GradientBorderButton isSelected={isSelected} onClick={onClick}>
       {code}
     </GradientBorderButton>
-  )
+  );
 }
 
 export function LanguageSelector({
@@ -70,10 +68,10 @@ export function LanguageSelector({
   onLanguageChange,
 }: {
   className?: string;
-  selectedLanguage: "ES" | "EN" | "DE";
-  onLanguageChange: (language: "ES" | "EN" | "DE") => void;
+  selectedLanguage: Language;
+  onLanguageChange: (language: Language) => void;
 }) {
-  const languages: Array<"ES" | "EN" | "DE"> = ["ES", "EN", "DE"];
+  const languages: Array<Language> = ["es", "en", "de"];
 
   return (
     <div
@@ -82,9 +80,12 @@ export function LanguageSelector({
       {languages.map((lang) => (
         <LanguageButton
           key={lang}
-          code={lang}
+          code={lang.toUpperCase()}
           isSelected={selectedLanguage === lang}
-          onClick={() => onLanguageChange(lang)}
+          onClick={() => {
+            console.log('🎈onLanguageChange',{lang})
+            onLanguageChange(lang)
+          }}
         />
       ))}
     </div>

@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import { Language } from "./types";
 
 export const titleFont = Unbounded({
-  weight: ["400", "500", "600","700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
 export const focusFont = Roboto_Condensed({
-  weight: ["400", "500", "600","700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -18,10 +18,10 @@ export const basicFont = DM_Sans({
 });
 
 export const SITE_LOCALE = (() => {
-  const envLocale = process.env.LOCALE?.toLowerCase();
+  const envLocale = process.env.NEXT_PUBLIC_LOCALE?.toLowerCase();
 
   // Lista de idiomas permitidos
-  const validLocales: Language[] = ['es', 'en', 'de'];
+  const validLocales: Language[] = ["es", "en", "de"];
 
   // Verifica si el valor de entorno es válido
   if (validLocales.includes(envLocale as Language)) {
@@ -29,9 +29,18 @@ export const SITE_LOCALE = (() => {
   }
 
   // Retorna un idioma predeterminado si el valor no es válido
-  return 'es';
+  return "es";
 })();
 
+export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIRONMENT;
+
+export const IS_LOCAL_ENV = ENVIRONMENT?.toLowerCase() === "local";
+
+export const SITE_URL = {
+  es: process.env.NEXT_PUBLIC_URL_ES_SITE ?? "https://ciudades-de-cuidado.org",
+  en: process.env.NEXT_PUBLIC_URL_EN_SITE ?? "https://caring-cities.org",
+  de: process.env.NEXT_PUBLIC_URL_DE_SITE ?? "https://sorgende-staedte.org",
+};
 
 const metadataByLanguage: Record<string, Metadata> = {
   es: {
@@ -106,4 +115,5 @@ const metadataByLanguage: Record<string, Metadata> = {
 };
 
 // Seleccionar metadata basada en el idioma actual
-export const metadata: Metadata = metadataByLanguage[SITE_LOCALE] || metadataByLanguage.es;
+export const metadata: Metadata =
+  metadataByLanguage[SITE_LOCALE] || metadataByLanguage.es;
