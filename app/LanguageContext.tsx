@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
-import { IS_LOCAL_ENV, SITE_URL } from "./config";
+import { IS_LOCAL_ENV, SITE_LOCALE, SITE_URL } from "./config";
 import { Language } from "./types";
 
 interface LanguageContextProps {
@@ -15,7 +15,7 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [language, setLanguage] = useState<Language>("es");
+  const [language, setLanguage] = useState<Language>(SITE_LOCALE);
 
   const handleSetLanguage = (lang: Language) => {
     if (IS_LOCAL_ENV) {
