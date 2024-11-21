@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import { FaXTwitter, FaLink, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 import Image from "next/image";
+import { useLanguage } from "../LanguageContext";
+import { mapLayoutData } from "../api/wordpress/mappers/mapLayoutData";
+import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
 
 const GradientSeparator = () => (
   <div className="w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] mt-0 md:mt-12 lg:mt-6" />
@@ -39,7 +43,11 @@ const ContactLinks = ({ className }: { className?: string }) => {
   );
 };
 
-export function Footer() {
+export function Footer({ content }: { content: WordPressLayout }) {
+  const { language } = useLanguage();
+  const { footer } = mapLayoutData(content);
+  const localizedFooter = footer[language];
+
   return (
     <footer className="relative py-8 px-4 sm:px-6 lg:px-8">
       <Image
@@ -74,15 +82,8 @@ export function Footer() {
           </div>
 
           <GradientSeparator />
-          <p className="mt-4 text-xs md:text-base">
-            La Rosa-Luxemburg-Stiftung es una organización sin ánimo de lucro de
-            formación política, de izquierdas y activa a nivel internacional,
-            cercana al partido DIE LINKE en Alemania. Trabajamos por un mundo
-            más justo basado en la solidaridad internacional.
-          </p>
-          <p className="mt-4 text-xs md:text-base">
-            Contacto: Alex Wischnewski, alex.wischnewski@rosalux.org
-          </p>
+          <p className="mt-4 text-xs md:text-base">{localizedFooter.text}</p>
+          <p className="mt-4 text-xs md:text-base">{localizedFooter.contact}</p>
         </div>
       </div>
     </footer>

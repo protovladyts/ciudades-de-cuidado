@@ -6,11 +6,9 @@ import { Divider } from "./Divider";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { LanguageSelector } from "./LanguageSelector";
 import { useLanguage } from "../LanguageContext";
-import {
-  AcfHomeResponse,
-  Header,
-} from "../api/wordpress/types/AcfHomeResponse";
-import { mapLocalizedData } from "../api/wordpress/mappers/mapLocalizedData";
+import { Header } from "../api/wordpress/types/AcfHomeResponse";
+import { mapLayoutData } from "../api/wordpress/mappers/mapLayoutData";
+import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
 
 const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
   return (
@@ -41,12 +39,11 @@ const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function Navbar({ content }: any) {
+export function Navbar({ content }: { content: WordPressLayout }) {
   const { language, setLanguage } = useLanguage();
-  const localizedHeader = mapLocalizedData(
-    content.acf as AcfHomeResponse,
-    language
-  ).header;
+  const { header } = mapLayoutData(content);
+
+  const localizedHeader = header[language];
 
   return (
     <nav
