@@ -44,16 +44,13 @@ export function Concept({ data }: ConceptProps) {
             >
               {data.title.toUpperCase()}
             </h2>
-            <p className="text-base md:text-lg">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium.
+            <p className="pl-0 md:pl-8 text-base md:text-lg">
+              {data.description}
             </p>
             <div className="col-span-2 w-full flex justify-end">
-              <GradientUnderlineButton>
-                <GradientArrowButton>LEER MÁS</GradientArrowButton>
-              </GradientUnderlineButton>
+                <GradientUnderlineButton>
+                  <GradientArrowButton href="/concept">{data.cta_label.toUpperCase()}</GradientArrowButton>
+                </GradientUnderlineButton>
             </div>
           </div>
         </div>

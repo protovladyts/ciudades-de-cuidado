@@ -33,7 +33,7 @@ export function Projects({ data, posts }: ProjectsProps) {
         width={100}
         height={100}
       />
-      <Template className="text-left" noHScreenInSm={true}>
+      <Template className="text-left">
         <div className="w-full relative">
           <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
             <h2
@@ -73,7 +73,7 @@ export function Projects({ data, posts }: ProjectsProps) {
 
             <div className="flex justify-end pb-8 sm:pb-0">
               <GradientUnderlineButton>
-                <GradientArrowButton>LEER MÁS</GradientArrowButton>
+                <GradientArrowButton href="/projects">{data.cta_label.toUpperCase()}</GradientArrowButton>
               </GradientUnderlineButton>
             </div>
           </div>

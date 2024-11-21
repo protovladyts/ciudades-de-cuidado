@@ -1,6 +1,5 @@
-import { fetchPost } from '@/app/api/wordpress/services/fetchPost';
-import { Template } from '@/app/components';
-import { ProjectSection } from '@/app/sections/projects/project';
+import { fetchPost } from "@/app/api/wordpress/services/fetchPost";
+import { ProjectSection } from "@/app/sections/projects/project";
 
 type Props = {
   params: {
@@ -8,13 +7,9 @@ type Props = {
   };
 };
 
-export default async function Project({params}: Props) {
-  const { slug } = params; 
-  const posts = await fetchPost(slug)
+export default async function Project({ params }: Props) {
+  const { slug } = params;
+  const posts = await fetchPost(slug);
 
-  return (
-    <Template>
-      <ProjectSection content={posts[0]}/>
-    </Template>
-  );
+  return <ProjectSection content={posts[0]}/>;
 }
