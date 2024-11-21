@@ -23,8 +23,14 @@ export const sections: {
   { component: Municipalism, key: "municipalism" },
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const HomeSections = ({ content, posts }: { content: any, posts: Array<Post>}) => {
+export const HomeSections = ({
+  content,
+  posts,
+}: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  content: any;
+  posts: Array<Post>;
+}) => {
   const { language } = useLanguage();
 
   const localizedContent = mapLocalizedData(

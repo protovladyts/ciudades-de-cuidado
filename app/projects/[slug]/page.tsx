@@ -11,5 +11,5 @@ export default async function Project({ params }: Props) {
   const { slug } = params;
   const posts = await fetchPost(slug);
 
-  return <ProjectSection content={posts[0]}/>;
+  return <ProjectSection content={posts[0]} />;
 }

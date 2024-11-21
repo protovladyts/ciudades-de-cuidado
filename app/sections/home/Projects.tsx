@@ -41,18 +41,14 @@ export function Projects({ data, posts }: ProjectsProps) {
             >
               {data.title.toUpperCase()}
             </h2>
-            <p className="mb-8 text-lg">
-              {data.description}
-            </p>
+            <p className="mb-8 text-lg">{data.description}</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
               {/* BigCard for the main post */}
               {mainPost && (
                 <BigCard
                   imageSrc={mainPost.image || ""}
-                  title={
-                    mainPost.title || "No title available"
-                  }
+                  title={mainPost.title || "No title available"}
                   alt="Main Project"
                   className="col-span-5 hidden lg:block"
                 />
@@ -73,7 +69,9 @@ export function Projects({ data, posts }: ProjectsProps) {
 
             <div className="flex justify-end pb-8 sm:pb-0">
               <GradientUnderlineButton>
-                <GradientArrowButton href="/projects">{data.cta_label.toUpperCase()}</GradientArrowButton>
+                <GradientArrowButton href="/projects">
+                  {data.cta_label.toUpperCase()}
+                </GradientArrowButton>
               </GradientUnderlineButton>
             </div>
           </div>

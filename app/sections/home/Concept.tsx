@@ -48,9 +48,11 @@ export function Concept({ data }: ConceptProps) {
               {data.description}
             </p>
             <div className="col-span-2 w-full flex justify-end">
-                <GradientUnderlineButton>
-                  <GradientArrowButton href="/concept">{data.cta_label.toUpperCase()}</GradientArrowButton>
-                </GradientUnderlineButton>
+              <GradientUnderlineButton>
+                <GradientArrowButton href="/concept">
+                  {data.cta_label.toUpperCase()}
+                </GradientArrowButton>
+              </GradientUnderlineButton>
             </div>
           </div>
         </div>

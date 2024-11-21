@@ -36,9 +36,7 @@ export function Municipalism({ data }: MunicipalismProps) {
             >
               {data.title.toUpperCase()}
             </h2>
-            <p className="text-base md:text-lg pb-12">
-              {data.description}
-            </p>
+            <p className="text-base md:text-lg pb-12">{data.description}</p>
             <h2
               className={`text-xl md:text-5xl font-bold text-right ${titleFont.className}`}
             >
