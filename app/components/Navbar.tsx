@@ -6,29 +6,33 @@ import { Divider } from "./Divider";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { LanguageSelector } from "./LanguageSelector";
 import { useLanguage } from "../LanguageContext";
-import { Language } from "../types";
+import {
+  AcfHomeResponse,
+  Header,
+} from "../api/wordpress/types/AcfHomeResponse";
+import { mapLocalizedData } from "../api/wordpress/mappers/mapLocalizedData";
 
-const ReferenceButtons = ({ language }: { language: Language }) => {
+const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
   return (
     <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-xs sm:text-lg xl:text-base">
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="/concept" className="px-6 py-2">
-            CONCEPTO
+            {concept.toUpperCase()}
           </Link>
         </GradientUnderlineButton>
       </li>
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="/projects" className="px-6 py-2">
-            {language === "de" ? "PROYEJCSSDASDASIUJHDA" : "PROYECTOS"}
+            {projects.toUpperCase()}
           </Link>
         </GradientUnderlineButton>
       </li>
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="/#municipalism" className="px-6 py-2">
-            MUNICIPALISMO
+            {municipalism.toUpperCase()}
           </Link>
         </GradientUnderlineButton>
       </li>
@@ -36,8 +40,13 @@ const ReferenceButtons = ({ language }: { language: Language }) => {
   );
 };
 
-export function Navbar() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Navbar({ content }: any) {
   const { language, setLanguage } = useLanguage();
+  const localizedHeader = mapLocalizedData(
+    content.acf as AcfHomeResponse,
+    language
+  ).header;
 
   return (
     <nav
@@ -67,7 +76,7 @@ export function Navbar() {
       </div>
 
       <div className="w-full py-2">
-        <ReferenceButtons language={language} />
+        <ReferenceButtons {...localizedHeader} />
       </div>
     </nav>
   );

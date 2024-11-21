@@ -1,5 +1,5 @@
 export type AcfHomeResponse = {
-  header: LanguageSections;
+  header: LanguageHeader;
   hero: LanguageHero;
   concept: LanguageSections;
   projects: LanguageSections;
@@ -41,3 +41,15 @@ export type MunicipalismContent = {
   description: string;
   end_title: string;
 };
+
+export type LanguageHeader = {
+  es: Header;
+  en: Header;
+  de: Header;
+}
+
+export type Header = {
+  concept: string;
+  projects: string;
+  municipalism: string;
+}

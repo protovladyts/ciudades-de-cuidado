@@ -4,15 +4,17 @@ import { Navbar, Footer } from "./components/";
 import Head from "next/head";
 import { metadata as localizedMetadata, SITE_LOCALE } from "./config";
 import { LanguageProvider } from "./LanguageContext";
+import { fetchPage } from "./api/wordpress/services/fetchPage";
 
 export const metadata: Metadata = localizedMetadata;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const language = SITE_LOCALE;
+  const homeContent = await fetchPage("home");
 
   return (
     <html lang={language} className="scroll-smooth">
@@ -21,7 +23,7 @@ export default function RootLayout({
       </Head>
       <body>
         <LanguageProvider>
-          <Navbar/>
+          <Navbar content={homeContent}/>
           {children}
           <Footer />
         </LanguageProvider>
