@@ -1,7 +1,7 @@
-import { AcfResponse } from "../types/AcfResponse";
+import { AcfHomeResponse } from "../types/AcfHomeResponse";
 
 export function mapLocalizedData(
-  acf: AcfResponse,
+  acf: AcfHomeResponse,
   language: "es" | "en" | "de"
 ) {
   return {

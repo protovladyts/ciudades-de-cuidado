@@ -1,18 +1,20 @@
-"use client";
+import { fetchPost } from '@/app/api/wordpress/services/fetchPost';
 import { Template } from '@/app/components';
-import { useRouter } from 'next/router';
+import { ProjectSection } from '@/app/sections/projects/project';
 
-export default function ProjectArticle() {
-  const router = useRouter();
-  const { slug } = router.query;
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-  // Llamada a API o lógica para obtener el contenido del proyecto basado en el slug.
-  const projectContent = `Detalles del proyecto con el slug: ${slug}`;
+export default async function Project({params}: Props) {
+  const { slug } = params; 
+  const posts = await fetchPost(slug)
 
   return (
     <Template>
-      <h1>Project: {slug}</h1>
-      <p>{projectContent}</p>
+      <ProjectSection content={posts[0]}/>
     </Template>
   );
 }

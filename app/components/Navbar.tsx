@@ -6,8 +6,9 @@ import { Divider } from "./Divider";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { LanguageSelector } from "./LanguageSelector";
 import { useLanguage } from "../LanguageContext";
+import { Language } from "../types";
 
-const ReferenceButtons = () => {
+const ReferenceButtons = ({ language }: { language: Language }) => {
   return (
     <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-xs sm:text-lg xl:text-base">
       <li className="col-span-1">
@@ -20,7 +21,7 @@ const ReferenceButtons = () => {
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="/projects" className="px-6 py-2">
-            PROYECTOS
+            {language === "de" ? "PROYEJCSSDASDASIUJHDA" : "PROYECTOS"}
           </Link>
         </GradientUnderlineButton>
       </li>
@@ -44,7 +45,7 @@ export function Navbar() {
     >
       <div className="grid grid-cols-12 py-2">
         <div className="min-[2500px]:col-span-11 2xl:col-span-10 xl:col-span-9 lg:col-span-8 md:col-span-10 sm:col-span-10 col-span-6 p-0">
-          <Link href="#home">
+          <Link href="/">
             <Image
               src="https://i.ibb.co/NpSbzWp/logo.png"
               alt=""
@@ -54,9 +55,9 @@ export function Navbar() {
         </div>
         <LanguageSelector
           selectedLanguage={language}
-          onLanguageChange={(lang) =>
-            setLanguage(lang.toLowerCase() as "es" | "de" | "en")
-          }
+          onLanguageChange={(lang) => {
+            setLanguage(lang.toLowerCase() as "es" | "de" | "en");
+          }}
           className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-2 sm:col-span-2 col-span-6 grid grid-cols-3"
         />
       </div>
@@ -66,7 +67,7 @@ export function Navbar() {
       </div>
 
       <div className="w-full py-2">
-        <ReferenceButtons />
+        <ReferenceButtons language={language} />
       </div>
     </nav>
   );

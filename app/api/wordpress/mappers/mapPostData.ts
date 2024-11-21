@@ -1,11 +1,17 @@
-/* 
+import { Post } from "../types/Post";
+import { WordPressPost } from "../types/WordPressPost";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const mapPostData = (rawPost: any): WordPressPos => ({
-  id: rawPost.id,
-  title: rawPost.title.rendered,
-  content: rawPost.content.rendered,
-  date: new Date(rawPost.date),
-  customFields: rawPost.acf,
-});
- */
+export function mapPostData(rawPost: WordPressPost): Post {
+  const mapLocalizedData = (locale: 'en' | 'es' | 'de') => ({
+    title: rawPost.acf?.project?.[locale]?.title ?? "",
+    image: rawPost.acf?.project?.image ?? "",
+    text: rawPost.acf?.project?.[locale]?.text ?? "",
+    slug: rawPost.slug ?? "",
+  });
+
+  return {
+    en: mapLocalizedData('en'),
+    es: mapLocalizedData('es'),
+    de: mapLocalizedData('de'),
+  };
+}

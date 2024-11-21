@@ -2,6 +2,7 @@
 
 const nextConfig = {
   images: {
+    domains: ['ciudades-de-cuidado.org'], // Agrega tu dominio aquí
     remotePatterns: [
       {
         protocol: 'https',

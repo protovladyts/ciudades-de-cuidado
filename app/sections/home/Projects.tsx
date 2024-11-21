@@ -9,6 +9,7 @@ import {
   Template,
   Divider,
 } from "../../components";
+import { LocalizedPost } from "@/app/api/wordpress/types/Post";
 
 type ProjectsProps = {
   data: {
@@ -16,16 +17,12 @@ type ProjectsProps = {
     description: string;
     cta_label: string;
   };
+  posts: Array<LocalizedPost>;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function Projects({ data }: ProjectsProps) {
-  const projectsUrls = [
-    "https://i.ibb.co/3cc3bDY/Rectangle-1.png",
-    "https://i.ibb.co/10tyY1w/Rectangle-1-3.png",
-    "https://i.ibb.co/HGby1bH/Rectangle-1-2.png",
-    "https://i.ibb.co/tztcNgD/Rectangle-1-1.png",
-  ];
+export function Projects({ data, posts }: ProjectsProps) {
+  const mainPost = posts[0]; // The first post for the BigCard
+  const secondaryPosts = posts.slice(1, 5); // The next 4 posts for SmallCards
 
   return (
     <div className="relative">
@@ -45,34 +42,30 @@ export function Projects({ data }: ProjectsProps) {
               {data.title.toUpperCase()}
             </h2>
             <p className="mb-8 text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              ornare aliquet leo, id hendrerit lectus porttitor eget. Duis a
-              elit interdum, tempor nisl non, elementum tellus. Cras at nisi
-              rhoncus, porta risus eget, scelerisque ex. Integer sit amet
-              facilisis eros. Cras volutpat quam vitae nisl scelerisque finibus
-              vitae in ante. Sed velit eros, luctus vitae auctor at, volutpat
-              nec sem. Donec sed elementum lectus. Nam vitae magna est. Nam
-              viverra tellus eget convallis eleifend. Duis diam sapien, pharetra
-              a convallis eget, mattis vitae tellus. Vivamus non enim mi. Fusce
-              commodo nunc vel elit pulvinar consequat. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Phasellus convallis dictum
-              sapien, eget convallis tortor vestibulum eros.
+              {data.description}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
-              <BigCard
-                imageSrc="https://i.ibb.co/V3wzgW7/bigcardimage.png"
-                title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                alt="Proyecto principal"
-                className="col-span-5 hidden lg:block"
-              />
+              {/* BigCard for the main post */}
+              {mainPost && (
+                <BigCard
+                  imageSrc={mainPost.image || ""}
+                  title={
+                    mainPost.title || "No title available"
+                  }
+                  alt="Main Project"
+                  className="col-span-5 hidden lg:block"
+                />
+              )}
+
+              {/* SmallCards for the secondary posts */}
               <div className="col-span-7 grid sm:grid-cols-2 gap-x-16 gap-y-5 place-items-center">
-                {projectsUrls.map((url, index) => (
+                {secondaryPosts.map((post, index) => (
                   <SmallCard
-                    key={index}
-                    imageSrc={url}
-                    title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-                    alt={`Proyecto ${index + 2}`}
+                    key={post.title}
+                    imageSrc={post.image || ""}
+                    title={post.title || "No title available"}
+                    alt={`Project ${index + 2}`}
                   />
                 ))}
               </div>

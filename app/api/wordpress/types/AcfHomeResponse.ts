@@ -1,4 +1,4 @@
-export type AcfResponse = {
+export type AcfHomeResponse = {
   header: LanguageSections;
   hero: LanguageHero;
   concept: LanguageSections;

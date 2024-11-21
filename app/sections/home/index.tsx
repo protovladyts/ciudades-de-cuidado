@@ -4,11 +4,13 @@ import { Hero } from "./Hero";
 import { Concept } from "./Concept";
 import { Projects } from "./Projects";
 import { Municipalism } from "./Municipalism";
-import { AcfResponse } from "@/app/api/wordpress/types/AcfResponse";
+import { AcfHomeResponse } from "@/app/api/wordpress/types/AcfHomeResponse";
 import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedData } from "@/app/api/wordpress/mappers/mapLocalizedData";
+import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
+import { Post } from "@/app/api/wordpress/types/Post";
 
-type SectionKey = keyof AcfResponse;
+type SectionKey = keyof AcfHomeResponse;
 
 export const sections: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,19 +24,21 @@ export const sections: {
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const HomeSections = ({ content }: any) => {
+export const HomeSections = ({ content, posts }: { content: any, posts: Array<Post>}) => {
   const { language } = useLanguage();
 
   const localizedContent = mapLocalizedData(
-    content.acf as AcfResponse,
+    content.acf as AcfHomeResponse,
     language
   );
+
+  const localizedPosts = mapLocalizedPosts(posts, language);
 
   return (
     <>
       {sections.map(({ component: Component, key }) => (
         <div key={key} id={key}>
-          <Component data={localizedContent[key]} />
+          <Component data={localizedContent[key]} posts={localizedPosts} />
         </div>
       ))}
     </>

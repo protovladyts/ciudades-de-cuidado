@@ -1,7 +1,7 @@
 import { Language } from '@/app/types';
 import { fetchFromApi } from '../../helpers/fetchFromApi';
 import { mapLocalizedData } from '../mappers/mapLocalizedData';
-import { AcfResponse } from '../types/AcfResponse';
+import { AcfHomeResponse } from '../types/AcfHomeResponse';
 
 export async function fetchLocalizedPage(
   slug: string,
@@ -16,7 +16,7 @@ export async function fetchLocalizedPage(
     throw new Error(`Page with slug "${slug}" not found`);
   }
 
-  const localizedContent = mapLocalizedData(page.acf as AcfResponse, language);
+  const localizedContent = mapLocalizedData(page.acf as AcfHomeResponse, language);
 
   return localizedContent;
 }

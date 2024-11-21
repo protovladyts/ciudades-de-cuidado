@@ -37,19 +37,12 @@ export function Municipalism({ data }: MunicipalismProps) {
               {data.title.toUpperCase()}
             </h2>
             <p className="text-base md:text-lg pb-12">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-              imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-              mollis pretium. Integer tincidunt. Cras dapibu
+              {data.description}
             </p>
             <h2
               className={`text-xl md:text-5xl font-bold text-right ${titleFont.className}`}
             >
-              Y CIUDADES SIN MIEDO
+              {data.end_title.toLocaleUpperCase()}
             </h2>
           </div>
         </div>
@@ -58,5 +51,3 @@ export function Municipalism({ data }: MunicipalismProps) {
     </div>
   );
 }
-
-//https://i.ibb.co/BcxbNmx/Recurso-9-2x-8-3-1.png
