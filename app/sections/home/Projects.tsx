@@ -37,11 +37,11 @@ export function Projects({ data, posts }: ProjectsProps) {
         <div className="w-full relative">
           <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
             <h2
-              className={`text-3xl sm:text-4xl md:text-4xl 3xl:text-5xl font-bold mt-8 sm:mt-0 mb-4 ${titleFont.className}`}
+              className={`text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold mt-8 sm:mt-0 mb-4 ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h2>
-            <p className="mb-8 text-lg">{data.description}</p>
+            <p className="mb-8 text-sm sm:text-base 2xl:text-lg">{data.description}</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
               {/* BigCard for the main post */}

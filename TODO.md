@@ -22,7 +22,7 @@
 
 ### 💻 **Laptops y Computadoras de Escritorio**
 - [ ] **1280x720 px**: Resoluciones básicas de laptops pequeñas (HD).
-- [ ] **1366x768 px**: Laptops comunes, como la mayoría de las Windows.
+- [x] **1366x768 px**: Laptops comunes, como la mayoría de las Windows.
 - [x] **1440x900 px**: Resolución de MacBooks más antiguas.
 - [x] **1536x864 px**: Resoluciones intermedias.
 

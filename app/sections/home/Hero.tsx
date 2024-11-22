@@ -35,7 +35,7 @@ export function Hero({ data }: HeroProps) {
               alt="Houses"
               width={400}
               height={200}
-              className="mx-auto mb-8 w-[300px] 3xl:w-[400px]"
+              className="mx-auto mb-8 xl:w-[250px] 2xl:w-[300px] 3xl:w-[400px]"
             />
           </div>
 
@@ -58,14 +58,14 @@ export function Hero({ data }: HeroProps) {
 
           <div className="text-center">
             <h1
-              className={`text-left sm:text-center text-3xl sm:text-4xl md:text-5xl 3xl:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
+              className={`text-left sm:text-center text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h1>
 
             <div className="mb-8 hidden md:block">
               <p
-                className={`text-2xl lg:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
+                className={`text-2xl xl:text-3xl 2xl:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
               >
                 {data.subtitle}
               </p>
@@ -78,7 +78,7 @@ export function Hero({ data }: HeroProps) {
               <p>FEMINISTA</p>
             </div>
 
-            <p className="max-w-3xl mx-auto text-sm sm:text-lg text-left pr-6 sm:p-0 sm:mt-0 mt-20">
+            <p className="max-w-3xl mx-auto text-sm sm:text-base 2xl:text-lg text-left pr-6 sm:p-0 sm:mt-0 mt-20">
               {data.description}
             </p>
           </div>
