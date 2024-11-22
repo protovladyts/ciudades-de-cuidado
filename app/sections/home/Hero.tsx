@@ -18,14 +18,14 @@ export function Hero({ data }: HeroProps) {
         alt="Background"
         width={500}
         height={500}
-        className="-z-10 absolute right-0 md:block hidden"
+        className="-z-10 absolute lg:-right-24 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/S62McZM/Recurso-9-2x-8-1.png"}
         alt="Background"
         width={200}
         height={200}
-        className="-z-10 absolute left-0 top-28 md:block hidden"
+        className="-z-10 absolute lg:-left-12 xl:left-0 top-28 md:block hidden"
       />
       <Template fullScreen={true}>
         <div className="relative container mx-auto px-8 md:px-12 lg:px-4 py-0 md:py-16">
@@ -35,7 +35,7 @@ export function Hero({ data }: HeroProps) {
               alt="Houses"
               width={400}
               height={200}
-              className="mx-auto mb-8 xl:w-[200px] 2xl:w-[300px] 3xl:w-[400px]"
+              className="mx-auto mb-8 w-[200px] xl:w-[200px] 2xl:w-[300px] 3xl:w-[400px]"
             />
           </div>
 
@@ -58,7 +58,7 @@ export function Hero({ data }: HeroProps) {
 
           <div className="text-center">
             <h1
-              className={`text-left sm:text-center text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
+              className={`text-left sm:text-center text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h1>

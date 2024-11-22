@@ -20,14 +20,14 @@ export function Concept({ data }: ConceptProps) {
         alt="Background"
         width={300}
         height={300}
-        className="-z-10 absolute right-0 md:block hidden"
+        className="-z-10 absolute lg:-right-8 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/rGFCZxx/Capa-1.png"}
         alt="Background"
         width={300}
         height={300}
-        className="-z-10 absolute left-0 top-52 md:block hidden"
+        className="-z-10 absolute lg:-left-24 xl:left-0 top-52 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/CQy4mFd/Clip-path-group.png"}

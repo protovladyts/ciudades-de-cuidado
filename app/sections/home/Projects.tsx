@@ -29,7 +29,7 @@ export function Projects({ data, posts }: ProjectsProps) {
       <Image
         src="https://i.ibb.co/8PFqG48/Group-31.png"
         alt="Tree"
-        className="absolute right-0 top-60 xl:top-48 z-10 md:block hidden"
+        className="absolute lg:-right-4 xl:right-0 top-60 xl:top-48 z-10 md:block hidden"
         width={100}
         height={100}
       />

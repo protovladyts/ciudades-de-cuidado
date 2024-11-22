@@ -55,7 +55,7 @@ export function Footer({ content }: { content: WordPressLayout }) {
         alt="Background"
         width={600}
         height={500}
-        className="-z-10 absolute right-0 md:block hidden"
+        className="-z-10 absolute lg:-right-48 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/PQ1Dcbv/Casas-8.png"}
@@ -65,7 +65,7 @@ export function Footer({ content }: { content: WordPressLayout }) {
         className="z-10 absolute right-0 -top-24 md:hidden block"
       />
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 3xl:w-3/4 mb-8 md:mb-0 md:pr-8 xl:ml-52 2xl:ml-36 3xl:ml-0">
+        <div className="w-full md:w-1/2 lg:w-3/4 3xl:w-3/4 mb-8 md:mb-0 md:pr-8 lg:ml-16 xl:ml-52 2xl:ml-36 3xl:ml-0">
           <div className="w-full grid grid-cols-12 place-items-center md:place-items-start">
             <ContactLinks className="col-span-8" />
 

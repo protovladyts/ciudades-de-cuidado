@@ -19,14 +19,14 @@ export function Municipalism({ data }: MunicipalismProps) {
         alt="Background"
         width={150}
         height={300}
-        className="-z-10 absolute right-0 md:block hidden"
+        className="-z-10 absolute lg:-right-16 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/LxRHgnv/Group-68.png"}
         alt="Background"
         width={500}
         height={300}
-        className="-z-10 absolute left-0 top-52 md:block hidden"
+        className="-z-10 absolute lg:-left-8 xl:left-0 lg:top-40 xl:top-52 md:block hidden"
       />
       <Template fullScreen={true}>
         <div className="relative z-10 max-w-6xl container mx-auto px-8 md:px-20 2xl:px-0">
@@ -44,7 +44,7 @@ export function Municipalism({ data }: MunicipalismProps) {
             </h2>
           </div>
         </div>
-        <Divider className="absolute bottom-0 !w-2/3  md:block hidden" />
+        <Divider className="absolute bottom-0 lg:w-5/6 xl:w-2/3  md:block hidden" />
       </Template>
     </div>
   );

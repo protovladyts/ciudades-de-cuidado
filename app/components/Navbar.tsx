@@ -49,7 +49,7 @@ export function Navbar({ content }: { content: WordPressLayout }) {
       className={`absolute top-0 z-50 w-full py-4 px-8 lg:px-16 xl:px-60 text-sm lg:text-xl text-center  ${basicFont.className}`}
     >
       <div className="grid grid-cols-12 py-2">
-        <div className="min-[2500px]:col-span-11 2xl:col-span-10 xl:col-span-9 lg:col-span-8 md:col-span-10 sm:col-span-10 col-span-6 p-0">
+        <div className="min-[2500px]:col-span-11 2xl:col-span-10 xl:col-span-9 lg:col-span-9 md:col-span-10 sm:col-span-10 col-span-6 p-0">
           <Link href="/">
             <Image
               src="https://i.ibb.co/NpSbzWp/logo.png"
@@ -63,7 +63,7 @@ export function Navbar({ content }: { content: WordPressLayout }) {
           onLanguageChange={(lang) => {
             setLanguage(lang.toLowerCase() as "es" | "de" | "en");
           }}
-          className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-4 md:col-span-2 sm:col-span-2 col-span-6 grid grid-cols-3"
+          className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-3 md:col-span-2 sm:col-span-2 col-span-6 grid grid-cols-3"
         />
       </div>
 

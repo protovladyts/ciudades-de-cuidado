@@ -16,7 +16,7 @@
 - [ ] **600x1024 px**: Tablets pequeñas en modo vertical.
 - [ ] **768x1024 px**: iPad (9.7"), iPad Mini en modo vertical.
 - [ ] **800x1280 px**: Tablets Android en modo vertical.
-- [ ] **1024x768 px**: iPad en modo horizontal.
+- [x] **1024x768 px**: iPad en modo horizontal.
 
 ---
 
