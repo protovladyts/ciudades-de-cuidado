@@ -35,7 +35,7 @@ export function Hero({ data }: HeroProps) {
               alt="Houses"
               width={400}
               height={200}
-              className="mx-auto mb-8 xl:w-[250px] 2xl:w-[300px] 3xl:w-[400px]"
+              className="mx-auto mb-8 xl:w-[200px] 2xl:w-[300px] 3xl:w-[400px]"
             />
           </div>
 
