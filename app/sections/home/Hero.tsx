@@ -27,19 +27,19 @@ export function Hero({ data }: HeroProps) {
         height={200}
         className="-z-10 absolute left-0 top-28 md:block hidden"
       />
-      <Template>
+      <Template fullScreen={true}>
         <div className="relative container mx-auto px-8 md:px-12 lg:px-4 py-0 md:py-16">
-          <div className="hidden md:block pb-20">
+          <div className="hidden md:block 3xl:pb-20">
             <Image
               src="https://i.ibb.co/NpSbzWp/logo.png"
               alt="Houses"
               width={400}
               height={200}
-              className="mx-auto mb-8"
+              className="mx-auto mb-8 w-[300px] 3xl:w-[400px]"
             />
           </div>
 
-          <div className="">
+          <div>
             <Image
               src="https://i.ibb.co/Xtg0Yfw/Group.png"
               alt="Houses"
@@ -58,7 +58,7 @@ export function Hero({ data }: HeroProps) {
 
           <div className="text-center">
             <h1
-              className={`text-left sm:text-center text-3xl sm:text-4xl md:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
+              className={`text-left sm:text-center text-3xl sm:text-4xl md:text-5xl 3xl:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h1>

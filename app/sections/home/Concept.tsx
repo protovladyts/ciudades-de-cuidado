@@ -36,11 +36,11 @@ export function Concept({ data }: ConceptProps) {
         height={150}
         className="absolute left-0 bottom-48 md:hidden block"
       />
-      <Template>
+      <Template fullScreen={true}>
         <div className="relative z-10 max-w-6xl container mx-auto  px-8 md:px-12 lg:px-20 2xl:px-0">
           <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center justify-between gap-4">
             <h2
-              className={`text-4xl lg:text-5xl font-bold md:mb-0 mb-4 ${titleFont.className}`}
+              className={`text-right text-3xl sm:text-4xl md:text-4xl 3xl:text-5xl font-bold md:mb-0 mb-4 ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h2>

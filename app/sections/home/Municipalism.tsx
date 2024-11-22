@@ -28,17 +28,17 @@ export function Municipalism({ data }: MunicipalismProps) {
         height={300}
         className="-z-10 absolute left-0 top-52 md:block hidden"
       />
-      <Template>
+      <Template fullScreen={true}>
         <div className="relative z-10 max-w-6xl container mx-auto px-8 md:px-20 2xl:px-0">
           <div className="flex flex-col">
             <h2
-              className={`text-xl md:text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}
+              className={`text-3xl sm:text-4xl md:text-4xl 3xl:text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h2>
             <p className="text-base md:text-lg pb-12">{data.description}</p>
             <h2
-              className={`text-xl md:text-5xl font-bold text-right ${titleFont.className}`}
+              className={`text-3xl sm:text-4xl md:text-4xl 3xl:text-5xl font-bold text-right ${titleFont.className}`}
             >
               {data.end_title.toLocaleUpperCase()}
             </h2>

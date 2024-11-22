@@ -33,11 +33,11 @@ export function Projects({ data, posts }: ProjectsProps) {
         width={100}
         height={100}
       />
-      <Template className="text-left">
+      <Template className="text-left pt-36 pb-36 3xl:pb-0">
         <div className="w-full relative">
           <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
             <h2
-              className={`text-2xl md:text-4xl font-bold mt-8 sm:mt-0 mb-4 ${titleFont.className}`}
+              className={`text-3xl sm:text-4xl md:text-4xl 3xl:text-5xl font-bold mt-8 sm:mt-0 mb-4 ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h2>
