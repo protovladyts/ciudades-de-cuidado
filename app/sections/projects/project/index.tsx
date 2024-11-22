@@ -11,7 +11,7 @@ export const ProjectSection = ({ content }: { content: Post }) => {
 
   const localizedContent = mapLocalizedPosts([content], language);
   const localizedPost = localizedContent[0];
-  console.log({ localizedPost });
+
   return (
     <Template className="container mx-auto px-4" fullScreen={true}>
       <div className="pt-40">

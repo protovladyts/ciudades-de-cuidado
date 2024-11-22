@@ -16,6 +16,18 @@ export default async function RootLayout({
   const language = SITE_LOCALE;
   const layout = await fetchLayout();
 
+  if (!layout.acf?.footer?.content?.de) {
+    throw new Error("Missing German translation in layout footer");
+  }
+
+  if (!layout.acf?.footer?.content?.es) {
+    throw new Error("Missing Spanish translation in layout footer");
+  }
+
+  if (!layout.acf?.footer?.content?.en) {
+    throw new Error("Missing English translation in layout footer");
+  }
+
   return (
     <html lang={language} className="scroll-smooth">
       <Head>

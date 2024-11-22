@@ -7,7 +7,11 @@ export async function fetchLayout() {
   );
 
   if (!page) {
-    throw new Error(`LAyout with slug not found`);
+    throw new Error(`Layout with slug not found`);
+  }
+
+  if (!page.acf?.footer || !page.acf?.header) {
+    throw new Error("Invalid layout data structure");
   }
 
   return page;

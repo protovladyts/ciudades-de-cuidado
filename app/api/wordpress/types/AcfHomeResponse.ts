@@ -1,5 +1,4 @@
 export type AcfHomeResponse = {
-  header: LanguageHeader;
   hero: LanguageHero;
   concept: LanguageSections;
   projects: LanguageSections;

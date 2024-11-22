@@ -42,7 +42,6 @@ const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
 export function Navbar({ content }: { content: WordPressLayout }) {
   const { language, setLanguage } = useLanguage();
   const { header } = mapLayoutData(content);
-
   const localizedHeader = header[language];
 
   return (
