@@ -6,16 +6,12 @@
 - [ ] **320x480 px**: iPhone SE y dispositivos más antiguos.
 - [ ] **360x640 px**: Android común, como Samsung Galaxy S8/S9/S10.
 - [ ] **375x667 px**: iPhone 6/7/8.
-- [ ] **375x812 px**: iPhone X, 11 Pro.
-- [ ] **414x896 px**: iPhone 11, 11 Pro Max.
-- [ ] **480x800 px**: Tablets pequeñas en modo vertical.
+- [x] **375x812 px**: iPhone X, 11 Pro.
+- [x] **414x896 px**: iPhone 11, 11 Pro Max.
 
 ---
 
 ### 🖼️ **Tablets**
-- [ ] **600x1024 px**: Tablets pequeñas en modo vertical.
-- [ ] **768x1024 px**: iPad (9.7"), iPad Mini en modo vertical.
-- [ ] **800x1280 px**: Tablets Android en modo vertical.
 - [x] **1024x768 px**: iPad en modo horizontal.
 
 ---

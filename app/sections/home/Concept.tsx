@@ -34,7 +34,7 @@ export function Concept({ data }: ConceptProps) {
         alt="Background"
         width={150}
         height={150}
-        className="absolute left-0 bottom-48 md:hidden block"
+        className="absolute left-0 bottom-40 xs:bottom-48 md:hidden block"
       />
       <Template fullScreen={true}>
         <div className="relative z-10 max-w-6xl container mx-auto  px-8 md:px-12 lg:px-20 2xl:px-0">

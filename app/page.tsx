@@ -9,9 +9,7 @@ export default async function Home() {
 
   return (
     <main>
-      <div>
         <HomeSections content={homeContent} posts={posts} />
-      </div>
     </main>
   );
 }

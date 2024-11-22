@@ -28,7 +28,7 @@ export function Hero({ data }: HeroProps) {
         className="-z-10 absolute lg:-left-12 xl:left-0 top-28 md:block hidden"
       />
       <Template fullScreen={true}>
-        <div className="relative container mx-auto px-8 md:px-12 lg:px-4 py-0 md:py-16">
+        <div className="relative container mx-auto px-8 md:px-12 lg:px-4 pt-16 xs:py-0 md:py-16">
           <div className="hidden md:block 3xl:pb-20">
             <Image
               src="https://i.ibb.co/NpSbzWp/logo.png"
@@ -52,7 +52,7 @@ export function Hero({ data }: HeroProps) {
               alt="Houses"
               width={200}
               height={50}
-              className="mx-auto mb-8 md:hidden absolute -top-36 left-0 -z-50 min-[458px]:h-30 min-[458px]:w-auto"
+              className="mx-auto mb-8 md:hidden absolute -top-24 -left-8 xs:-top-36 xs:left-0 -z-50 min-[458px]:h-30 min-[458px]:w-auto"
             />
           </div>
 
@@ -71,14 +71,12 @@ export function Hero({ data }: HeroProps) {
               </p>
             </div>
             <div
-              className={`block md:hidden pr-8 text-right text-xl lg:text-4xl font-medium tracking-wide ${focusFont.className}`}
+              className={`flex justify-end md:hidden w-full text-right text-xl lg:text-4xl font-medium tracking-wide ${focusFont.className}`}
             >
-              <p>ESTRATEGIAS PARA LA</p>
-              <p>SOCIALIZACIÓN</p>
-              <p>FEMINISTA</p>
+              <p className="w-3/4 xs:w-1/2">{data.subtitle.toUpperCase()}</p>
             </div>
 
-            <p className="max-w-3xl mx-auto text-sm sm:text-base 2xl:text-lg text-left pr-6 sm:p-0 sm:mt-0 mt-20">
+            <p className="max-w-3xl mx-auto text-sm sm:text-base 2xl:text-lg text-left p-0 sm:mt-0 mt-10 xs:mt-20">
               {data.description}
             </p>
           </div>
