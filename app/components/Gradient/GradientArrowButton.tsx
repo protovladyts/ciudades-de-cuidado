@@ -14,7 +14,7 @@ export function GradientArrowButton({
   return (
     <a
       href={href}
-      className="inline-flex items-center lg:!text-sm 4xs:text-[0.7rem] font-semibold transition-colors duration-200 ease-in-out hover:text-gray-600"
+      className="inline-flex items-center 4xl:!text-lg lg:!text-sm 4xs:text-[0.7rem] font-semibold transition-colors duration-200 ease-in-out hover:text-gray-600"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

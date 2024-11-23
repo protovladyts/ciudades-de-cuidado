@@ -26,19 +26,19 @@ const ContactLinks = ({ className }: { className?: string }) => {
     <div className={`grid grid-cols-4 gap-2 mb-4 ${className}`}>
       <CircleLink>
         <span className="sr-only">Instagram</span>
-        <FaInstagram className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
+        <FaInstagram className="h-10 w-10 3xl:h-10 3xl:w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">WhatsApp</span>
-        <FaWhatsapp className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
+        <FaWhatsapp className="h-10 w-10  3xl:h-10 3xl:w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">Twitter</span>
-        <FaXTwitter className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
+        <FaXTwitter className="h-10 w-10  3xl:h-10 3xl:w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">Website</span>
-        <FaLink className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
+        <FaLink className="h-10 w-10  3xl:h-10 3xl:w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
     </div>
   );
@@ -53,10 +53,10 @@ export function Footer({ content }: { content: WordPressLayout }) {
     <footer className="relative py-8 px-4 sm:px-6 lg:px-8">
       <Image
         src={"https://i.ibb.co/Q8D8Lj1/Group-69.png"}
-        alt="Background"
+        alt="Background footer desktop"
         width={600}
         height={500}
-        className="-z-10 absolute  xl:right-0 md:block hidden lg:w-[400px] lg:right-20 lg:-bottom-24"
+        className="-z-10 absolute 4xl:w-[700px]  xl:right-0 md:block hidden lg:w-[400px] lg:right-20 lg:-bottom-24"
       />
       <Image
         src={"https://i.ibb.co/PQ1Dcbv/Casas-8.png"}

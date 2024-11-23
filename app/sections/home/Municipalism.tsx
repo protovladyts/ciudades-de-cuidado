@@ -18,14 +18,14 @@ export function Municipalism({ data }: MunicipalismProps) {
         alt="Background desktop municipalism right"
         width={150}
         height={300}
-        className="-z-10 absolute lg:top-10 lg:right-0 xl:right-0 md:block hidden"
+        className="-z-10 absolute 4xl:w-[200px] lg:top-10 lg:right-0 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/LxRHgnv/Group-68.png"}
         alt="Background desktop municipalism right"
         width={500}
         height={300}
-        className="-z-10 absolute lg:left-0 xl:left-0 lg:top-20 xl:top-52 md:block hidden"
+        className="-z-10 absolute 4xl:w-[700px] lg:left-0 xl:left-0 lg:top-20 xl:top-52 md:block hidden"
       />
       <Template fullScreen={true}>
         <div className="relative z-10 max-w-6xl container mx-auto px-8 md:px-20 2xl:px-0">
