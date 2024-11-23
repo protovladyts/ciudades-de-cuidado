@@ -23,14 +23,14 @@ export function Hero({ data }: HeroProps) {
         alt="Background hero right desktop"
         width={500}
         height={500}
-        className="-z-10 absolute lg:w-[400px] lg:-top-10 lg:right-0 xl:right-0 md:block hidden"
+        className="-z-10 absolute 4xl:w-[600px] lg:w-[400px] lg:-top-10 lg:right-0 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/S62McZM/Recurso-9-2x-8-1.png"}
         alt="Background hero left desktop"
         width={200}
         height={200}
-        className="-z-10 absolute lg:-left-12 xl:left-0 top-28 md:block hidden"
+        className="-z-10 absolute 4xl:w-[300px] lg:-left-12 xl:left-0 top-28 md:block hidden"
       />
       <Template fullScreen={true}>
         <div className="relative container mx-auto px-8 md:px-12 lg:px-4 pt-16 xs:py-0 md:py-16">
@@ -130,7 +130,7 @@ export function Hero({ data }: HeroProps) {
               <p className="w-3/4 xs:w-3/5">{data.subtitle.toUpperCase()}</p>
             </div>
 
-            <Paragraph className="max-w-3xl mx-auto text-left p-0 sm:mt-0 h-667:mt-2 mt-10 md:mt-20 xs:mt-8">
+            <Paragraph className="max-w-3xl 2xl:max-w-5xl mx-auto text-left p-0 sm:mt-0 h-667:mt-2 mt-10 md:mt-20 xs:mt-8">
               {data.description}
             </Paragraph>
           </div>

@@ -66,7 +66,7 @@ export function Footer({ content }: { content: WordPressLayout }) {
         className="z-10 absolute 3xs:w-[80px] 3xs:-top-6 h-667:w-[80px] h-667:-top-6 h-640:w-[80px] h-640:-top-8 right-0 -top-24 md:hidden block"
       />
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 lg:w-3/4 3xl:w-3/4 mb-8 md:mb-0 md:pr-8 lg:ml-16 xl:ml-52 2xl:ml-36 3xl:ml-0">
+        <div className="w-full md:w-1/2 lg:w-3/4 xl:w-3/5 3xl:w-3/4 mb-8 md:mb-0 md:pr-8 lg:ml-16 xl:ml-52 2xl:ml-36 3xl:ml-0">
           <div className="w-full grid grid-cols-12 place-items-center md:place-items-start">
             <ContactLinks className="col-span-8" />
 

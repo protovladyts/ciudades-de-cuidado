@@ -12,7 +12,7 @@ import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
 
 const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
   return (
-    <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-[0.6rem] xs:text-[0.75rem] leading-3 sm:!text-lg lg:!text-base xl:text-base">
+    <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-[0.6rem] xs:text-[0.75rem] leading-3 sm:!text-lg lg:!text-base xl:text-base 4xl:!text-xl">
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="/concept" className="px-6 py-2">
@@ -49,12 +49,12 @@ export function Navbar({ content }: { content: WordPressLayout }) {
       className={`absolute top-0 z-50 w-full 4xs:py-2 py-4 px-6 sm:px-8 lg:px-16 xl:px-60 text-sm lg:text-xl text-center  ${basicFont.className}`}
     >
       <div className="grid grid-cols-12 py-2">
-        <div className="min-[2500px]:col-span-11 2xl:col-span-10 xl:col-span-9 lg:col-span-9 md:col-span-10 sm:col-span-10 col-span-6 4xs:col-span-8 p-0">
+        <div className="min-[2500px]:col-span-11 3xl:col-span-10 2xl:col-span-10 xl:col-span-9 lg:col-span-9 md:col-span-10 sm:col-span-10 col-span-6 4xs:col-span-8 p-0">
           <Link href="/">
             <Image
               src="https://i.ibb.co/NpSbzWp/logo.png"
               alt=""
-              className="3xs:h-12 p-0 4xs:h-8"
+              className="3xs:h-12 p-0 4xs:h-8 3xl:h-16 4xl:h-20"
             />
           </Link>
         </div>
@@ -63,7 +63,7 @@ export function Navbar({ content }: { content: WordPressLayout }) {
           onLanguageChange={(lang) => {
             setLanguage(lang.toLowerCase() as "es" | "de" | "en");
           }}
-          className="min-[2500px]:col-span-1 2xl:col-span-2 xl:col-span-3 lg:col-span-3 md:col-span-2 sm:col-span-2 col-span-6 4xs:col-span-4 grid grid-cols-3"
+          className="min-[2500px]:col-span-1 3xl:col-span-2 2xl:col-span-2 xl:col-span-3 lg:col-span-3 md:col-span-2 sm:col-span-2 col-span-6 4xs:col-span-4 grid grid-cols-3"
         />
       </div>
 
