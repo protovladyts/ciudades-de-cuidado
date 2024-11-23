@@ -45,20 +45,78 @@ export function Hero({ data }: HeroProps) {
               alt="Houses"
               width={150}
               height={50}
-              className="mx-auto mb-8 md:hidden absolute right-0 -z-50 min-[458px]:-top-16 min-[458px]:h-24 min-[458px]:w-auto"
+              className={`
+                mx-auto
+                mb-8
+                md:hidden
+                absolute
+                right-0
+                -z-50
+                h-667:w-[70px]
+                min-[458px]:-top-16
+                min-[458px]:h-24
+                min-[458px]:w-auto
+                xs:-top-16
+                3xs:top-0
+                3xs:h-24
+                3xs:w-auto
+                3xs:right-0
+                4xs:-right-2
+                `}
             />
             <Image
               src="https://i.ibb.co/D5MYc7D/Recurso-9-2x-8-4.png"
               alt="Houses"
               width={200}
               height={50}
-              className="mx-auto mb-8 md:hidden absolute -top-24 -left-8 xs:-top-36 xs:left-0 -z-50 min-[458px]:h-30 min-[458px]:w-auto"
+              className={`
+                mx-auto
+                mb-8
+                md:hidden
+                absolute
+                -top-24
+                -left-8
+                h-667:-left-24
+                xs:-top-36
+                xs:-left-32
+                xs:h-[400px]
+                4xs:h-60
+                4xs:right-40
+                4xs:w-auto
+                4xs:top-8
+                3xs:h-80
+                3xs:-left-32
+                3xs:w-auto
+                3xs:-top-4
+                -z-50
+                min-[458px]:h-30
+                min-[458px]:w-auto
+                `}
             />
           </div>
 
-          <div className="text-center">
+          <div className="text-center 4xs:mt-12 3xs:mt-0">
             <h1
-              className={`text-left sm:text-center text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl 3xl:text-6xl font-bold mb-28 md:mb-4 tracking-tight ${titleFont.className}`}
+              className={`
+                text-left
+                sm:text-center
+                xs:text-2xl
+                3xs:mb-0
+                3xs:text-xl
+                4xs:text-lg
+                sm:text-3xl
+                md:text-4xl
+                lg:text-4xl
+                xl:text-4xl
+                2xl:text-5xl
+                3xl:text-6xl
+                font-bold
+                h-667:mb-0
+                xs:mb-12
+                mb-2
+                md:mb-4
+                tracking-tight
+                ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h1>
@@ -71,12 +129,12 @@ export function Hero({ data }: HeroProps) {
               </p>
             </div>
             <div
-              className={`flex justify-end md:hidden w-full text-right text-xl lg:text-4xl font-medium tracking-wide ${focusFont.className}`}
+              className={`flex justify-end md:hidden w-full text-right xs:text-xl 3xs:text-lg 4xs:text-base 4xs:leading-5 lg:text-4xl font-medium tracking-wide ${focusFont.className}`}
             >
-              <p className="w-3/4 xs:w-1/2">{data.subtitle.toUpperCase()}</p>
+              <p className="w-3/4 xs:w-3/5">{data.subtitle.toUpperCase()}</p>
             </div>
 
-            <p className="max-w-3xl mx-auto text-sm sm:text-base 2xl:text-lg text-left p-0 sm:mt-0 mt-10 xs:mt-20">
+            <p className="max-w-3xl mx-auto xs:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm  sm:text-base 2xl:text-lg text-left p-0 sm:mt-0 h-667:mt-2 mt-10 md:mt-20 xs:mt-8">
               {data.description}
             </p>
           </div>

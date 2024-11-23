@@ -25,19 +25,19 @@ const ContactLinks = ({ className }: { className?: string }) => {
     <div className={`grid grid-cols-4 gap-2 mb-4 ${className}`}>
       <CircleLink>
         <span className="sr-only">Instagram</span>
-        <FaInstagram className="h-10 w-10 md:h-6 md:w-6" />
+        <FaInstagram className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">WhatsApp</span>
-        <FaWhatsapp className="h-10 w-10 md:h-6 md:w-6" />
+        <FaWhatsapp className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">Twitter</span>
-        <FaXTwitter className="h-10 w-10 md:h-6 md:w-6" />
+        <FaXTwitter className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
       <CircleLink>
         <span className="sr-only">Website</span>
-        <FaLink className="h-10 w-10 md:h-6 md:w-6" />
+        <FaLink className="h-10 w-10 md:h-6 md:w-6 4xs:w-6 4xs:h-6" />
       </CircleLink>
     </div>
   );
@@ -62,7 +62,7 @@ export function Footer({ content }: { content: WordPressLayout }) {
         alt="Background"
         width={150}
         height={150}
-        className="z-10 absolute right-0 -top-24 md:hidden block"
+        className="z-10 absolute 3xs:w-[80px] 3xs:-top-6 h-667:w-[80px] h-667:-top-6 h-640:w-[80px] h-640:-top-8 right-0 -top-24 md:hidden block"
       />
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 lg:w-3/4 3xl:w-3/4 mb-8 md:mb-0 md:pr-8 lg:ml-16 xl:ml-52 2xl:ml-36 3xl:ml-0">
@@ -82,8 +82,8 @@ export function Footer({ content }: { content: WordPressLayout }) {
           </div>
 
           <GradientSeparator />
-          <p className="mt-4 text-xs md:text-base">{localizedFooter.text}</p>
-          <p className="mt-4 text-xs md:text-base">{localizedFooter.contact}</p>
+          <p className="mt-4 text-xs md:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm">{localizedFooter.text}</p>
+          <p className="mt-4 text-xs md:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm">{localizedFooter.contact}</p>
         </div>
       </div>
     </footer>

@@ -32,13 +32,13 @@ export function Municipalism({ data }: MunicipalismProps) {
         <div className="relative z-10 max-w-6xl container mx-auto px-8 md:px-20 2xl:px-0">
           <div className="flex flex-col">
             <h2
-              className={`text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}
+              className={`text-2xl 4xs:text-base 3xs:text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold md:mb-0 md:w-1/3 pb-12 ${titleFont.className}`}
             >
               {data.title.toUpperCase()}
             </h2>
-            <p className="text-sm sm:text-base 2xl:text-lg pb-12">{data.description}</p>
+            <p className="text-sm sm:text-base 2xl:text-lg pb-12 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm">{data.description}</p>
             <h2
-              className={`text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold text-right ${titleFont.className}`}
+              className={`text-2xl 4xs:text-base 3xs:text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold text-right ${titleFont.className}`}
             >
               {data.end_title.toLocaleUpperCase()}
             </h2>
