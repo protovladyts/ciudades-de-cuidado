@@ -12,7 +12,7 @@
 ---
 
 ### 🖼️ **Tablets**
-- [ ] **1024x768 px**: iPad en modo horizontal.
+- [x] **1024x768 px**: iPad en modo horizontal.
 
 ---
 

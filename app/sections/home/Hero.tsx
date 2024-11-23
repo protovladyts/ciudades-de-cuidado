@@ -1,6 +1,11 @@
 import Image from "next/image";
-import { Divider, Template } from "../../components";
-import { titleFont, focusFont } from "@/app/config";
+import {
+  Divider,
+  Paragraph,
+  Template,
+  Title,
+} from "../../components";
+import { focusFont } from "@/app/config";
 
 type HeroProps = {
   data: {
@@ -15,14 +20,14 @@ export function Hero({ data }: HeroProps) {
     <div className="relative">
       <Image
         src={"https://i.ibb.co/w7Zc62d/Group-65.png"}
-        alt="Background"
+        alt="Background hero right desktop"
         width={500}
         height={500}
-        className="-z-10 absolute lg:-right-24 xl:right-0 md:block hidden"
+        className="-z-10 absolute lg:w-[400px] lg:-top-10 lg:right-0 xl:right-0 md:block hidden"
       />
       <Image
         src={"https://i.ibb.co/S62McZM/Recurso-9-2x-8-1.png"}
-        alt="Background"
+        alt="Background hero left desktop"
         width={200}
         height={200}
         className="-z-10 absolute lg:-left-12 xl:left-0 top-28 md:block hidden"
@@ -59,8 +64,8 @@ export function Hero({ data }: HeroProps) {
                 xs:-top-16
                 3xs:top-0
                 3xs:h-24
-                3xs:w-auto
                 3xs:right-0
+                3xs:!w-auto
                 4xs:-right-2
                 `}
             />
@@ -70,6 +75,7 @@ export function Hero({ data }: HeroProps) {
               width={200}
               height={50}
               className={`
+                opacity-60
                 mx-auto
                 mb-8
                 md:hidden
@@ -96,36 +102,26 @@ export function Hero({ data }: HeroProps) {
           </div>
 
           <div className="text-center 4xs:mt-12 3xs:mt-0">
-            <h1
+            <Title
               className={`
                 text-left
                 sm:text-center
-                xs:text-2xl
                 3xs:mb-0
-                3xs:text-xl
-                4xs:text-lg
-                sm:text-3xl
-                md:text-4xl
-                lg:text-4xl
-                xl:text-4xl
-                2xl:text-5xl
-                3xl:text-6xl
-                font-bold
                 h-667:mb-0
                 xs:mb-12
-                mb-2
                 md:mb-4
-                tracking-tight
-                ${titleFont.className}`}
+                mb-2
+                lg:!mb-2
+                `}
             >
               {data.title.toUpperCase()}
-            </h1>
+            </Title>
 
             <div className="mb-8 hidden md:block">
               <p
                 className={`text-2xl xl:text-3xl 2xl:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
               >
-                {data.subtitle}
+                {data.subtitle.toUpperCase()}
               </p>
             </div>
             <div
@@ -134,9 +130,9 @@ export function Hero({ data }: HeroProps) {
               <p className="w-3/4 xs:w-3/5">{data.subtitle.toUpperCase()}</p>
             </div>
 
-            <p className="max-w-3xl mx-auto xs:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm  sm:text-base 2xl:text-lg text-left p-0 sm:mt-0 h-667:mt-2 mt-10 md:mt-20 xs:mt-8">
+            <Paragraph className="max-w-3xl mx-auto text-left p-0 sm:mt-0 h-667:mt-2 mt-10 md:mt-20 xs:mt-8">
               {data.description}
-            </p>
+            </Paragraph>
           </div>
         </div>
         <Divider className="absolute bottom-0 !w-2/3" />

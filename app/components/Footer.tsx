@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useLanguage } from "../LanguageContext";
 import { mapLayoutData } from "../api/wordpress/mappers/mapLayoutData";
 import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
+import { Paragraph } from "./Paragraph";
 
 const GradientSeparator = () => (
   <div className="w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] mt-0 md:mt-12 lg:mt-6" />
@@ -55,7 +56,7 @@ export function Footer({ content }: { content: WordPressLayout }) {
         alt="Background"
         width={600}
         height={500}
-        className="-z-10 absolute lg:-right-48 xl:right-0 md:block hidden"
+        className="-z-10 absolute  xl:right-0 md:block hidden lg:w-[400px] lg:right-20 lg:-bottom-24"
       />
       <Image
         src={"https://i.ibb.co/PQ1Dcbv/Casas-8.png"}
@@ -76,14 +77,14 @@ export function Footer({ content }: { content: WordPressLayout }) {
                 width={24}
                 height={24}
                 layout="responsive"
-                className="object-contain  md:block hidden"
+                className="object-contain md:block hidden"
               />
             </div>
           </div>
 
           <GradientSeparator />
-          <p className="mt-4 text-xs md:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm">{localizedFooter.text}</p>
-          <p className="mt-4 text-xs md:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm">{localizedFooter.contact}</p>
+          <Paragraph className="mt-4">{localizedFooter.text}</Paragraph>
+          <Paragraph className="mt-4">{localizedFooter.contact}</Paragraph>
         </div>
       </div>
     </footer>

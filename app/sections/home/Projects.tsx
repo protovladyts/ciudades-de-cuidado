@@ -8,6 +8,9 @@ import {
   GradientUnderlineButton,
   Template,
   Divider,
+  Paragraph,
+  Subtitle,
+  Title,
 } from "../../components";
 import { LocalizedPost } from "@/app/api/wordpress/types/Post";
 
@@ -29,30 +32,16 @@ export function Projects({ data, posts }: ProjectsProps) {
       <Image
         src="https://i.ibb.co/8PFqG48/Group-31.png"
         alt="Tree"
-        className="absolute lg:-right-4 xl:right-0 top-60 xl:top-48 z-10 md:block hidden"
+        className="absolute lg:w-[80px] lg:right-0 xl:right-0 top-60 xl:top-48 z-10 md:block hidden"
         width={100}
         height={100}
       />
       <Template className="text-left pt-36 pb-36 3xl:pb-0">
         <div className="w-full relative">
           <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
-            <h2
-              className={`
-                text-2xl
-                4xs:text-base
-                3xs:text-lg
-                sm:text-2xl
-                md:text-3xl
-                lg:text-3xl
-                xl:text-3xl
-                2xl:text-4xl
-                3xl:text-5xl
-                font-bold
-                mt-8 sm:mt-0 mb-4 ${titleFont.className}`}
-            >
-              {data.title.toUpperCase()}
-            </h2>
-            <p className="mb-8 text-sm sm:text-base 2xl:text-lg 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm">{data.description}</p>
+            <Title className="mt-8 sm:mt-0 mb-4">{data.title.toUpperCase()}</Title>
+  
+            <Paragraph className="mb-8">{data.description}</Paragraph>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
               {/* BigCard for the main post */}

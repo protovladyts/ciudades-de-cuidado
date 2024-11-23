@@ -1,5 +1,4 @@
-import { ReactNode } from 'react';
-import { focusFont } from '../config';
+import { ReactNode } from "react";
 
 export const Paragraph = ({
   children,
@@ -10,9 +9,9 @@ export const Paragraph = ({
 }) => {
   return (
     <p
-      className={`${focusFont.className} py-2 text-xl lg:text-3xl text-center drop-shadow-2xl ${
-        className ?? ""
-      }`}
+      className={`text-xs md:text-base 4xs:text-[0.6rem] 4xs:leading-4 3xs:text-sm
+         xs:text-base  sm:text-base 2xl:text-lg
+          ${className ?? ""}`}
     >
       {children}
     </p>
