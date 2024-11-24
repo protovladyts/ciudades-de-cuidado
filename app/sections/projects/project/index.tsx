@@ -13,13 +13,13 @@ export const ProjectSection = ({ content }: { content: Post }) => {
   const localizedPost = localizedContent[0];
 
   return (
-    <Template className="container mx-auto px-4" fullScreen={true}>
+    <Template className="container mx-auto" fullScreen={false}>
       <div className="pt-40">
         <section className="relative">
           <Image
             src={`${localizedPost.image}`}
             alt="Background"
-            className="w-full h-64 object-cover"
+            className="w-full 4xl:h-[36rem] object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <h1 className="text-3xl font-bold text-white text-center">
@@ -43,7 +43,7 @@ export const ProjectSection = ({ content }: { content: Post }) => {
                   className="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg shadow"
                 >
                   <Image
-                    src="/placeholder.svg?height=80&width=80"
+                    src="https://placehold.co/80x80"
                     alt="Thumbnail"
                     className="rounded-lg"
                   />

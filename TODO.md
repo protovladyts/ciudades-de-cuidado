@@ -17,23 +17,23 @@
 ---
 
 ### 💻 **Laptops y Computadoras de Escritorio**
-- [ ] **1280x720 px**: Resoluciones básicas de laptops pequeñas (HD).
-- [ ] **1366x768 px**: Laptops comunes, como la mayoría de las Windows.
-- [ ] **1440x900 px**: Resolución de MacBooks más antiguas.
-- [ ] **1536x864 px**: Resoluciones intermedias.
+- [x] **1280x720 px**: Resoluciones básicas de laptops pequeñas (HD).
+- [x] **1366x768 px**: Laptops comunes, como la mayoría de las Windows.
+- [x] **1440x900 px**: Resolución de MacBooks más antiguas.
+- [x] **1536x864 px**: Resoluciones intermedias.
 
 ---
 
 ### 🖥️ **Pantallas Grandes**
-- [ ] **1920x1080 px**: Resolución estándar de monitores Full HD.
-- [ ] **2560x1440 px**: Monitores 2K.
+- [x] **1920x1080 px**: Resolución estándar de monitores Full HD.
+- [x] **2560x1440 px**: Monitores 2K.
 
 ---
 
 ### **Aspectos Clave**
-- [ ] Validar el comportamiento en **ancho mínimo** (320 px).
-- [ ] Validar el diseño en **ancho máximo** (2560 px o más).
-- [ ] Verificar el comportamiento con **alturas variables** (scroll y barras de navegación).
+- [x] Validar el comportamiento en **ancho mínimo** (320 px).
+- [x] Validar el diseño en **ancho máximo** (2560 px o más).
+- [x] Verificar el comportamiento con **alturas variables** (scroll y barras de navegación).
 
 ## Paginas
 - [ ] /projects

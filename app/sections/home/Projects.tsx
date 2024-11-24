@@ -39,8 +39,10 @@ export function Projects({ data, posts }: ProjectsProps) {
       <Template className="text-left pt-36 pb-36 3xl:pb-0">
         <div className="w-full relative">
           <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
-            <Title className="mt-8 sm:mt-0 mb-4 4xs:mb-12">{data.title.toUpperCase()}</Title>
-  
+            <Title className="mt-8 sm:mt-0 mb-4 4xs:mb-12">
+              {data.title.toUpperCase()}
+            </Title>
+
             <Paragraph className="mb-8 4xs:mb-12">{data.description}</Paragraph>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
@@ -51,6 +53,7 @@ export function Projects({ data, posts }: ProjectsProps) {
                   title={mainPost.title || "No title available"}
                   alt="Main Project"
                   className="col-span-5 hidden lg:block"
+                  link={`projects/${mainPost.slug}`}
                 />
               )}
 
@@ -62,6 +65,7 @@ export function Projects({ data, posts }: ProjectsProps) {
                     imageSrc={post.image || ""}
                     title={post.title || "No title available"}
                     alt={`Project ${index + 2}`}
+                    link={`projects/${post.slug}`}
                   />
                 ))}
               </div>

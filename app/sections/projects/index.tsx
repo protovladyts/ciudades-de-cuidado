@@ -16,13 +16,13 @@ export const ProjectsSection = ({ content }: { content: Array<Post> }) => {
       <Template>
         <div className="grid grid-cols-3 lg:grid-cols-3 gap-6 mb-8">
           {localizedContent.map((post: LocalizedPost) => (
-            <Link key={post.title} href={`projects/${post.slug}`}>
-              <SmallCard
-                imageSrc={post.image}
-                title={post.title}
-                alt={post.title}
-              />
-            </Link>
+            <SmallCard
+              key={post.title}
+              imageSrc={post.image}
+              title={post.title}
+              alt={post.title}
+              link={`projects/${post.slug}`}
+            />
           ))}
         </div>
       </Template>
