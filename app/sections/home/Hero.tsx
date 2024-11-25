@@ -57,6 +57,7 @@ export function Hero({ data }: HeroProps) {
           right-0
           -z-50
           4xs:w-[60px]
+          3xs:w-[100px]
         `}
 /*         h-667:w-[70px]
         min-[458px]:-top-16
@@ -80,6 +81,8 @@ export function Hero({ data }: HeroProps) {
           -z-50
           4xs:w-[100px]
           4xs:-top-16
+          3xs:w-[125px]
+          3xs:-top-8
         `}
         
 /*         -top-24

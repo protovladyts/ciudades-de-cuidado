@@ -43,6 +43,8 @@ export function Concept({ data }: ConceptProps) {
         block
         4xs:w-[80px]
         4xs:top-96
+        3xs:w-[120px]
+        3xs:top-2/3
         "
     />
   );
