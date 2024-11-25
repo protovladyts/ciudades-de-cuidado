@@ -13,8 +13,9 @@ export const Paragraph = ({
         4xs:text-sm
         3xs:text-base
         xs:text-lg
-        sm:text-base
-        md:text-base
+        sm:text-lg
+        md:text-lg
+        lg:text-lg
         2xl:text-lg
         3xl:text-xl
         4xl:text-2xl

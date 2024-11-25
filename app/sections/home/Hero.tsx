@@ -18,7 +18,18 @@ export function Hero({ data }: HeroProps) {
         alt="Background hero right desktop"
         width={500}
         height={500}
-        className="-z-10 absolute 4xl:w-[600px] lg:w-[400px] lg:-top-10 lg:right-0 xl:right-0 md:block hidden"
+        className="
+          md:block hidden
+          absolute
+          -z-10
+
+          lg:w-[400px]
+          lg:-top-40
+          lg:right-0
+
+          xl:right-0
+          4xl:w-[600px]
+          "
       />
       <Image
         src={"https://i.ibb.co/S62McZM/Recurso-9-2x-8-1.png"}
@@ -125,7 +136,7 @@ export function Hero({ data }: HeroProps) {
   const HeroDesktopSubtitle = (
     <div className="mb-8 hidden md:block">
       <p
-        className={`text-2xl xl:text-3xl 2xl:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
+        className={`lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
       >
         {data.subtitle.toUpperCase()}
       </p>

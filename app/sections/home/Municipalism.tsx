@@ -30,7 +30,7 @@ export function Municipalism({ data }: MunicipalismProps) {
     </>
   );
   const MunicipalismTitle = (
-    <Title className="md:mb-0 md:w-1/3 pb-12">{data.title.toUpperCase()}</Title>
+    <Title className="md:mb-0 pb-12">{data.title.toUpperCase()}</Title>
   );
   const MunicipalismDescription = (
     <Paragraph className="pb-12">{data.description}</Paragraph>
