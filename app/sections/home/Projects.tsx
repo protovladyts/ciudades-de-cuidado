@@ -29,7 +29,18 @@ export function Projects({ data, posts }: ProjectsProps) {
     <Image
       src="https://i.ibb.co/8PFqG48/Group-31.png"
       alt="Tree background desktop"
-      className="absolute 4xl:w-[150px] lg:w-[80px] lg:right-0 xl:right-0 top-60 xl:top-48 z-10 md:block hidden"
+      className="
+      absolute 
+      z-10 
+      md:block 
+      hidden
+      top-60 
+      lg:w-[80px] 
+      lg:right-0 
+      xl:right-0 
+      xl:top-48 
+      3xl:w-[150px] 
+      "
       width={100}
       height={100}
     />

@@ -26,11 +26,11 @@ function GradientBorderButton({
         xs:h-8
         lg:h-8
         lg:w-8
-        4xl:w-16
-        4xl:h-12
+        3xl:w-16
+        3xl:h-12
         rounded-full
         transition-all duration-300 ease-in-out
-        ${isSelected ? "border-transparent" : "border-2 border-[#EBEAED]"}
+        ${isSelected ? "border-transparent" : "border-2 3xl:border-[3px] border-[#EBEAED]"}
         text-gray-800
         overflow-hidden
         flex items-center justify-center
@@ -39,7 +39,7 @@ function GradientBorderButton({
       `}
       onClick={onClick}
     >
-      <span className="relative z-10 4xs:text-[0.6rem] lg:!text-sm 4xl:!text-lg font-semibold">{children}</span>
+      <span className="relative z-10 4xs:text-[0.6rem] lg:text-sm 3xl:text-lg font-semibold">{children}</span>
       <span
         className={`
           absolute inset-0 
@@ -51,7 +51,9 @@ function GradientBorderButton({
       />
       <span
         className={`
-          absolute inset-[2px]
+          absolute
+          inset-[2px]
+          3xl:inset-[3px]
           rounded-full 
           bg-white
           transition-all duration-300 ease-in-out

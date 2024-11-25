@@ -25,7 +25,7 @@
 ---
 
 ### 🖥️ **Pantallas Grandes**
-- [ ] **1920x1080 px**: Resolución estándar de monitores Full HD.
+- [x] **1920x1080 px**: Resolución estándar de monitores Full HD.
 - [ ] **2560x1440 px**: Monitores 2K.
 
 ---

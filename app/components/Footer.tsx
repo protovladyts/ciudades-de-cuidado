@@ -26,7 +26,7 @@ const CircleLink = ({
   <a
     href={href}
     aria-label={label}
-    className="border-[2.5px] rounded-full border-[#383D38]  text-[#383D38] hover:text-[#5a5c5a] min-[360]:border-[2.5px] min-[360]:rounded-full p-1 min-[360]:border-[#383D38] hover:border-[#5a5c5a] transition-colors"
+    className="border-[2.5px] 3xl:border-[3.5px] rounded-full border-[#383D38]  text-[#383D38] hover:text-[#5a5c5a] min-[360]:border-[2.5px] min-[360]:rounded-full p-1 min-[360]:border-[#383D38] hover:border-[#5a5c5a] transition-colors"
   >
     {children}
   </a>
@@ -69,7 +69,20 @@ export function Footer({ content }: { content: WordPressLayout }) {
         alt="Background footer desktop"
         width={600}
         height={500}
-        className="-z-10 absolute 4xl:w-[700px] xl:right-0 md:block hidden lg:w-[400px] lg:right-20 lg:-bottom-24"
+        className="
+          -z-10
+          absolute
+          hidden
+          md:block
+          lg:w-[400px]
+          lg:right-20
+          lg:-bottom-24
+          xl:right-0
+          xl:w-[470px]
+          2xl:w-[500px]
+          3xl:w-[700px]
+          4xl:w-[700px] 
+          "
       />
       <Image
         src={"https://i.ibb.co/PQ1Dcbv/Casas-8.png"}

@@ -17,7 +17,7 @@ export const Paragraph = ({
         md:text-lg
         lg:text-lg
         2xl:text-lg
-        3xl:text-xl
+        3xl:text-2xl
         4xl:text-2xl
         ${className ?? ""}`}
     >

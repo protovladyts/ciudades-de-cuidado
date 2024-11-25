@@ -19,14 +19,33 @@ export function Concept({ data }: ConceptProps) {
         alt="Background concept desktop right"
         width={300}
         height={300}
-        className="-z-10 absolute 4xl:w-[350px] lg:w-[250px] lg:right-0 xl:right-0 md:block hidden"
+        className="
+          -z-10
+          absolute
+          md:block
+          hidden
+          lg:w-[250px]
+          lg:right-0
+          xl:right-0
+          3xl:w-[350px]
+          "
       />
       <Image
         src={"https://i.ibb.co/rGFCZxx/Capa-1.png"}
         alt="Background concept desktop left"
         width={300}
         height={300}
-        className="-z-10 absolute 4xl:w-[500px] lg:top-24 lg:-left-24 xl:left-0 top-52 md:block hidden"
+        className="
+          -z-10
+          absolute
+          md:block
+          hidden
+          top-52
+          lg:top-24
+          lg:-left-24
+          xl:left-0
+          3xl:w-[450px]
+          "
       />
     </>
   );
@@ -63,7 +82,7 @@ export function Concept({ data }: ConceptProps) {
       {MobilepBgImages}
 
       <Template fullScreen={false}>
-        <div className="relative container z-10 max-w-7xl 4xs:py-24 lg:py-64 px-8 md:px-12 lg:px-20 2xl:px-0">
+        <div className="relative container z-10 max-w-7xl 4xs:py-24 lg:py-64 3xl:py-96 px-8 md:px-12 lg:px-20 2xl:px-0">
           <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center justify-between gap-4">
             {ConceptTitle}
             {ConceptDescription}

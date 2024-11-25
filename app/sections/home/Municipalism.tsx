@@ -18,14 +18,33 @@ export function Municipalism({ data }: MunicipalismProps) {
         alt="Background desktop municipalism right"
         width={150}
         height={300}
-        className="-z-10 absolute 4xl:w-[200px] lg:top-10 lg:right-0 xl:right-0 md:block hidden"
+        className="
+          -z-10
+          absolute
+          md:block
+          hidden
+          lg:top-40
+          lg:right-0
+          xl:right-0
+          3xl:w-[200px]
+          "
       />
       <Image
         src={"https://i.ibb.co/LxRHgnv/Group-68.png"}
         alt="Background desktop municipalism right"
         width={500}
         height={300}
-        className="-z-10 absolute 4xl:w-[700px] lg:left-0 xl:left-0 lg:top-20 xl:top-52 md:block hidden"
+        className="
+          -z-10
+          absolute
+          md:block
+          hidden
+          lg:left-0
+          lg:top-32
+          xl:left-0
+          xl:top-52
+          3xl:w-[700px]
+          "
       />
     </>
   );
@@ -42,7 +61,7 @@ export function Municipalism({ data }: MunicipalismProps) {
     <div className="relative">
       {BgImagesDesktop}
       <Template fullScreen={false}>
-        <div className="container relative z-10 max-w-6xl 4xs:py-24 px-8 md:px-20 2xl:px-0">
+        <div className="container relative z-10 max-w-6xl 4xs:py-24 lg:py-64 3xl:py-96 px-8 md:px-20 2xl:px-0">
           <div className="flex flex-col">
             {MunicipalismTitle}
             {MunicipalismDescription}

@@ -20,7 +20,7 @@ export function GradientArrowButton({
         4xs:text-[0.7rem]
         xs:text-sm
         lg:text-sm
-        4xl:text-lg
+        3xl:text-lg
         font-semibold
         transition-colors
         duration-200

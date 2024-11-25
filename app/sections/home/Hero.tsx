@@ -28,6 +28,7 @@ export function Hero({ data }: HeroProps) {
           lg:right-0
 
           xl:right-0
+          3xl:w-[600px]
           4xl:w-[600px]
           "
       />
@@ -36,7 +37,17 @@ export function Hero({ data }: HeroProps) {
         alt="Background hero left desktop"
         width={200}
         height={200}
-        className="-z-10 absolute 4xl:w-[300px] lg:-left-12 xl:left-0 top-28 md:block hidden"
+        className="
+          -z-10
+          md:block
+          hidden
+          absolute
+          top-28
+          lg:-left-12
+          xl:left-0
+          3xl:w-[300px]
+          4xl:w-[300px]
+          "
       />
     </>
   );
@@ -136,7 +147,7 @@ export function Hero({ data }: HeroProps) {
   const HeroDesktopSubtitle = (
     <div className="mb-8 hidden md:block">
       <p
-        className={`lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4 font-medium tracking-wide ${focusFont.className}`}
+        className={`lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl mb-4 font-medium tracking-wide ${focusFont.className}`}
       >
         {data.subtitle.toUpperCase()}
       </p>

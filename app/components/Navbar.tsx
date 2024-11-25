@@ -12,7 +12,7 @@ import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
 
 const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
   return (
-    <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center text-[0.6rem] xs:text-[0.75rem] leading-3 sm:!text-lg lg:!text-base xl:text-base 4xl:!text-xl">
+    <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center">
       <li className="col-span-1">
         <GradientUnderlineButton>
           <Link href="/concept" className="px-6 py-2">
@@ -69,7 +69,20 @@ export function Navbar({
   );
 
   const refBtns = (
-    <div className="w-full 4xs:py-0 py-2">
+    <div
+      className="
+      w-full
+      4xs:py-0
+      py-2
+      text-[0.6rem]
+      leading-3
+      xs:text-[0.75rem]
+      sm:text-lg
+      lg:text-base
+      xl:text-base
+      3xl:text-xl
+      4xl:text-xl"
+    >
       <ReferenceButtons {...localizedHeader} />
     </div>
   );
