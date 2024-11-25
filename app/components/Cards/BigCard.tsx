@@ -13,7 +13,7 @@ interface CardGrandeProps {
 export function BigCard({ imageSrc, title, alt, className, link }: CardGrandeProps) {
   console.log({imageSrc})
   return (
-    <div className={`relative h-full ${className}`}>
+    <div className={`relative h-full ${className} transform transition-transform duration-300 hover:scale-105`}>
       <Link href={link}>
       <div className="absolute inset-0 rounded-3xl bg-black/20 blur-xl -z-10 scale-[0.95] translate-y-4" />
       <div className="relative h-full w-full overflow-hidden rounded-3xl">

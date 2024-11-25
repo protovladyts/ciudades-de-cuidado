@@ -10,7 +10,7 @@ interface CardPequenaProps {
 
 export function SmallCard({ imageSrc, title, alt, link }: CardPequenaProps) {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-xl w-full sm:w-4/5">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-xl w-full sm:w-4/5 transform transition-transform duration-300 hover:scale-105">
       <Link href={link}>
         <div className="relative h-28 lg:!h-28 sm:h-40 4xs:h-20">
           <Image src={imageSrc} alt={alt} layout="fill" objectFit="cover" />
