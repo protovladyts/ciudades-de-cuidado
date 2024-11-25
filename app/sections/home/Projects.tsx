@@ -25,24 +25,34 @@ export function Projects({ data, posts }: ProjectsProps) {
   const mainPost = posts[0]; // The first post for the BigCard
   const secondaryPosts = posts.slice(1, 5); // The next 4 posts for SmallCards
 
+  const BgImage = (
+    <Image
+      src="https://i.ibb.co/8PFqG48/Group-31.png"
+      alt="Tree background desktop"
+      className="absolute 4xl:w-[150px] lg:w-[80px] lg:right-0 xl:right-0 top-60 xl:top-48 z-10 md:block hidden"
+      width={100}
+      height={100}
+    />
+  );
+
+  const ProjectsTitle = (
+    <Title className="mt-8 sm:mt-0 mb-4 4xs:mb-12">
+      {data.title.toUpperCase()}
+    </Title>
+  );
+
+  const ProjectsDescription = (
+    <Paragraph className="mb-8 4xs:mb-12">{data.description}</Paragraph>
+  );
+
   return (
     <div className="relative">
-      <Image
-        src="https://i.ibb.co/8PFqG48/Group-31.png"
-        alt="Tree background desktop"
-        className="absolute 4xl:w-[150px] lg:w-[80px] lg:right-0 xl:right-0 top-60 xl:top-48 z-10 md:block hidden"
-        width={100}
-        height={100}
-      />
-      <Template className="text-left pt-36 pb-36 3xl:pb-0">
-        <div className="w-full relative">
+      {BgImage}
+      <Template className="text-left">
+        <div className="w-full relative 4xs:py-24">
           <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
-            <Title className="mt-8 sm:mt-0 mb-4 4xs:mb-12">
-              {data.title.toUpperCase()}
-            </Title>
-
-            <Paragraph className="mb-8 4xs:mb-12">{data.description}</Paragraph>
-
+            {ProjectsTitle}
+            {ProjectsDescription}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
               {/* BigCard for the main post */}
               {mainPost && (

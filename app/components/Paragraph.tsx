@@ -10,9 +10,8 @@ export const Paragraph = ({
   return (
     <p
       className={`
-        text-xs
-        4xs:text-[0.6rem] 4xs:leading-4
-        3xs:text-sm
+        4xs:text-sm
+        3xs:text-base
         xs:text-base 
         sm:text-base
         md:text-base
