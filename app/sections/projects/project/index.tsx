@@ -4,22 +4,55 @@ import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
 import { Post } from "@/app/api/wordpress/types/Post";
 import { Image, Template } from "@/app/components";
-import ReactMarkdown from "react-markdown";
+import MarkdownWrapper from "@/app/components/MarkdownWrapper";
+import { RelatedCard } from "@/app/components/";
+import { useEffect, useState } from "react";
 
-export const ProjectSection = ({ content }: { content: Post }) => {
+// Configuración: Número máximo de posts
+const MAX_POSTS_MOBILE = 2; // Configurable para mobile
+const MAX_POSTS_DESKTOP = 5; // Configurable para desktop
+
+export const ProjectSection = ({
+  content,
+  relatedPosts,
+  slug,
+}: {
+  content: Post;
+  relatedPosts: Array<Post>;
+  slug: string;
+}) => {
   const { language } = useLanguage();
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detectar si el dispositivo es móvil
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Mobile si el ancho es menor a 768px
+    };
+
+    handleResize(); // Detectar en el primer render
+    window.addEventListener("resize", handleResize); // Detectar cambios de tamaño
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Obtener contenido localizado
   const localizedContent = mapLocalizedPosts([content], language);
   const localizedPost = localizedContent[0];
 
+  // Filtrar y limitar los posts relacionados
+  const localizedPosts = mapLocalizedPosts(relatedPosts, language)
+    .filter((post) => post.slug !== slug) // Remover el post con el mismo slug
+    .slice(0, isMobile ? MAX_POSTS_MOBILE : MAX_POSTS_DESKTOP); // Limitar posts
+
   return (
-    <Template className="container mx-auto" fullScreen={false}>
-      <div className="pt-40">
-        <section className="relative">
+    <Template className="w-full !mx-0" fullScreen={false}>
+      <div>
+        <section className="relative w-full">
           <Image
             src={`${localizedPost.image}`}
             alt="Background"
-            className="w-full 4xl:h-[36rem] object-cover"
+            className="w-full 4xs:h-[12rem] md:h-[18rem] 3xl:h-[24rem] 4xl:h-[36rem] object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <h1 className="text-3xl font-bold text-white text-center">
@@ -28,31 +61,20 @@ export const ProjectSection = ({ content }: { content: Post }) => {
           </div>
         </section>
         <div className="my-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="px-6 md:px-10 xl:px-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             <article className="md:col-span-2 space-y-4">
-              <ReactMarkdown className="prose lg:prose-xl">
-                {localizedPost.text}
-              </ReactMarkdown>
+              <MarkdownWrapper content={localizedPost.text} />
             </article>
 
             <aside className="space-y-4">
               <h3 className="text-xl font-bold">Otras entradas</h3>
-              {[1, 2, 3].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg shadow"
-                >
-                  <Image
-                    src="https://placehold.co/80x80"
-                    alt="Thumbnail"
-                    className="rounded-lg"
-                  />
-                  <div>
-                    <h4 className="font-semibold">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </h4>
-                  </div>
-                </div>
+              {localizedPosts.map((item) => (
+                <RelatedCard
+                  key={item.slug}
+                  image={item.image}
+                  title={item.title}
+                  link={`/projects/${item.slug}`}
+                />
               ))}
             </aside>
           </div>

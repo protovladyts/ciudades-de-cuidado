@@ -14,6 +14,8 @@ import { SmallCard } from "./Cards/SmallCard";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { GradientUnderline } from "./Gradient/GradientUnderline";
 import { GradientArrowButton } from "./Gradient/GradientArrowButton";
+import { DynamicNavbar } from "./DynamicNavbar";
+import { RelatedCard } from "./Cards/RelatedCard";
 
 export {
   Image,
@@ -32,4 +34,6 @@ export {
   GradientUnderlineButton,
   GradientUnderline,
   GradientArrowButton,
+  DynamicNavbar,
+  RelatedCard,
 };

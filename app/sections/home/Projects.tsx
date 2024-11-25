@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { titleFont } from "@/app/config";
 
 import {
   BigCard,
@@ -9,7 +8,6 @@ import {
   Template,
   Divider,
   Paragraph,
-  Subtitle,
   Title,
 } from "../../components";
 import { LocalizedPost } from "@/app/api/wordpress/types/Post";

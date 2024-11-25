@@ -4,7 +4,6 @@ import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
 import { LocalizedPost, Post } from "@/app/api/wordpress/types/Post";
 import { SmallCard, Template } from "@/app/components";
-import Link from "next/link";
 
 export const ProjectsSection = ({ content }: { content: Array<Post> }) => {
   const { language } = useLanguage();
