@@ -6,7 +6,7 @@ import { FaXTwitter, FaLink, FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import Image from "next/image";
 import { useLanguage } from "../LanguageContext";
 import { mapLayoutData } from "../api/wordpress/mappers/mapLayoutData";
-import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
+import { SocialMediaLinks, WordPressLayout } from "../api/wordpress/types/WordPressLayout";
 import { Paragraph } from "./Paragraph";
 
 // Separadores y componentes estilizados
@@ -32,12 +32,12 @@ const CircleLink = ({
   </a>
 );
 
-const ContactLinks = ({ className }: { className?: string }) => {
+const ContactLinks = ({ className, socialMedia }: { className?: string, socialMedia: SocialMediaLinks }) => {
   const links = [
-    { href: "#", label: "Instagram", icon: <FaInstagram /> },
-    { href: "#", label: "WhatsApp", icon: <FaWhatsapp /> },
-    { href: "#", label: "Twitter", icon: <FaXTwitter /> },
-    { href: "#", label: "Website", icon: <FaLink /> },
+    { href: socialMedia.instagram_link, label: "Instagram", icon: <FaInstagram /> },
+    { href: socialMedia.whatsapp_link, label: "WhatsApp", icon: <FaWhatsapp /> },
+    { href: socialMedia.twitter_link, label: "Twitter", icon: <FaXTwitter /> },
+    { href: socialMedia.custom_link, label: "Website", icon: <FaLink /> },
   ];
 
   return (
@@ -118,7 +118,7 @@ export function Footer({ content }: { content: WordPressLayout }) {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 lg:w-3/4 xl:w-3/5 3xl:w-3/4 mb-8 md:mb-0 md:pr-8 lg:ml-16 xl:ml-52 2xl:ml-36 3xl:ml-0">
           <div className="w-full grid grid-cols-12 place-items-start">
-            <ContactLinks className="col-span-10" />
+            <ContactLinks className="col-span-10" socialMedia={localizedFooter.social_media} />
           </div>
 
           <GradientSeparator />
