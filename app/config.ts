@@ -13,7 +13,7 @@ export const focusFont = Roboto_Condensed({
 });
 
 export const basicFont = DM_Sans({
-  weight: "400",
+  weight: ["400","500","600","700"],
   subsets: ["latin"],
 });
 

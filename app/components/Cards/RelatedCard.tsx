@@ -11,7 +11,7 @@ export const RelatedCard = ({
   link: string;
 }) => {
   return (
-    <div className="relative w-full h-40 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div className="3xl:text-2xl 4xl:text-3xl relative w-full h-40 rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
       <Link href={link}>
         {/* Imagen que ocupa tdo el rectángulo */}
         <Image
