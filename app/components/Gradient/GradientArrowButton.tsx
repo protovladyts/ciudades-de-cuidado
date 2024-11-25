@@ -5,9 +5,11 @@ import React, { useState } from "react";
 export function GradientArrowButton({
   children,
   href = "#",
+  isRotated = false, // Nueva prop para controlar la rotación
 }: {
   children: React.ReactNode;
   href?: string;
+  isRotated?: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -26,13 +28,15 @@ export function GradientArrowButton({
         duration-200
         ease-in-ou
         hover:text-gray-600
-        "
+      "
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {children}
       <svg
-        className="ml-2 w-5 h-5 transition-opacity duration-200 ease-in-out"
+        className={`ml-2 w-5 h-5 transition-transform duration-300 ease-in-out ${
+          isRotated ? "rotate-180" : "rotate-0"
+        }`}
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,12 @@
 import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
 import { Post } from "@/app/api/wordpress/types/Post";
-import { Image, Template } from "@/app/components";
+import {
+  GradientArrowButton,
+  GradientUnderlineButton,
+  Image,
+  Template,
+} from "@/app/components";
 import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 import { RelatedCard } from "@/app/components/";
 import { useEffect, useState } from "react";
@@ -45,7 +50,7 @@ export const ProjectSection = ({
   const localizedPosts = mapLocalizedPosts(relatedPosts, language)
     .filter((post) => post.slug !== slug) // Remover el post con el mismo slug
     .slice(0, isMobile ? MAX_POSTS_MOBILE : MAX_POSTS_DESKTOP); // Limitar posts
-  
+
   return (
     <Template className="w-full !mx-0" fullScreen={false}>
       <div>
@@ -69,7 +74,11 @@ export const ProjectSection = ({
 
             <aside className="space-y-4">
               {/* TODO: mover al cms Otras entradas */}
-              <h3 className={`text-xl 3xl:text-5xl ${basicFont.className} font-bold`}>Otras entradas</h3>
+              <h3
+                className={`text-xl 3xl:text-5xl ${basicFont.className} font-bold`}
+              >
+                Otras entradas
+              </h3>
               {localizedPosts.map((item) => (
                 <RelatedCard
                   key={item.slug}
@@ -78,6 +87,13 @@ export const ProjectSection = ({
                   link={`/projects/${item.slug}`}
                 />
               ))}
+              <div className="col-span-2 w-full flex justify-end">
+                <GradientUnderlineButton>
+                  <GradientArrowButton href="/projects" isRotated={true}>
+                    VOLVER A PROYECTOS
+                  </GradientArrowButton>
+                </GradientUnderlineButton>
+              </div>
             </aside>
           </div>
         </div>
