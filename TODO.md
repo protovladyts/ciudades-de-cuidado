@@ -5,9 +5,9 @@
 ### 📱 **Dispositivos Móviles (Smartphones)**
 - [x] **320x480 px**: iPhone SE y dispositivos más antiguos.
 - [x] **360x640 px**: Android común, como Samsung Galaxy S8/S9/S10.
-- [ ] **375x667 px**: iPhone 6/7/8.
-- [ ] **375x812 px**: iPhone X, 11 Pro.
-- [ ] **414x896 px**: iPhone 11, 11 Pro Max.
+- [x] **375x667 px**: iPhone 6/7/8.
+- [x] **375x812 px**: iPhone X, 11 Pro.
+- [x] **414x896 px**: iPhone 11, 11 Pro Max.
 
 ---
 

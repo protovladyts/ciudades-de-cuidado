@@ -42,7 +42,7 @@ export function Municipalism({ data }: MunicipalismProps) {
     <div className="relative">
       {BgImagesDesktop}
       <Template fullScreen={false}>
-        <div className="relative z-10 max-w-6xl 4xs:py-24 px-8 md:px-20 2xl:px-0">
+        <div className="container relative z-10 max-w-6xl 4xs:py-24 px-8 md:px-20 2xl:px-0">
           <div className="flex flex-col">
             {MunicipalismTitle}
             {MunicipalismDescription}

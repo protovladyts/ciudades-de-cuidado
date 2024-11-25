@@ -12,7 +12,7 @@ export const Paragraph = ({
       className={`
         4xs:text-sm
         3xs:text-base
-        xs:text-base 
+        xs:text-lg
         sm:text-base
         md:text-base
         2xl:text-lg

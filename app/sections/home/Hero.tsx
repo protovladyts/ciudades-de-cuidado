@@ -151,7 +151,7 @@ export function Hero({ data }: HeroProps) {
       {DesktopBgImages}
       {MobileBgImages}
       <Template fullScreen={false}>
-        <div className="relative container !w-full px-8 md:px-12 lg:px-4 4xs:pt-8 4xs:pb-16 3xs:pt-24 xs:py-0 md:py-16">
+        <div className="relative container !w-full px-8 md:px-12 lg:px-4 4xs:pt-8 4xs:pb-16 3xs:pt-24 xs:py-16 md:py-16">
           {DesktopHeroLogo}
 
           <div className="text-center 4xs:mt-2 3xs:mt-0">

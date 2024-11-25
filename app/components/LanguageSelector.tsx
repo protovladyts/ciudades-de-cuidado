@@ -22,10 +22,12 @@ function GradientBorderButton({
         w-8 h-8
         4xs:w-6
         4xs:h-6
-        lg:!h-8
-        lg:!w-8
-        4xl:!w-16
-        4xl:!h-12
+        xs:w-8
+        xs:h-8
+        lg:h-8
+        lg:w-8
+        4xl:w-16
+        4xl:h-12
         rounded-full
         transition-all duration-300 ease-in-out
         ${isSelected ? "border-transparent" : "border-2 border-[#EBEAED]"}

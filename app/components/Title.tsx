@@ -12,7 +12,7 @@ export const Title = ({
       className={`${className ?? ""}
         4xs:text-lg
         3xs:text-xl
-        xs:text-2xl
+        xs:text-4xl 
         sm:!text-3xl
         md:!text-4xl
         lg:!text-4xl
@@ -22,6 +22,8 @@ export const Title = ({
         4xl:!text-6xl
         font-bold
         tracking-tight
+        break-words
+        w-full
         ${titleFont.className}
         `}
     >

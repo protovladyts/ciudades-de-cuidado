@@ -63,7 +63,7 @@ export function Concept({ data }: ConceptProps) {
       {MobilepBgImages}
 
       <Template fullScreen={false}>
-        <div className="relative z-10 max-w-7xl 4xs:py-24 mx-auto  px-8 md:px-12 lg:px-20 2xl:px-0">
+        <div className="relative container z-10 max-w-7xl 4xs:py-24 px-8 md:px-12 lg:px-20 2xl:px-0">
           <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center justify-between gap-4">
             {ConceptTitle}
             {ConceptDescription}
