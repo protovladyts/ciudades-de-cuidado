@@ -47,7 +47,17 @@ export function Navbar({
   const localizedHeader = header[language];
 
   const Logo = (
-    <div className="min-[2500px]:col-span-11 3xl:col-span-10 2xl:col-span-10 xl:col-span-9 lg:col-span-9 md:col-span-10 sm:col-span-10 col-span-6 4xs:col-span-8 p-0">
+    <div className="
+      4xl:col-span-10
+      3xl:col-span-10
+      2xl:col-span-10
+      xl:col-span-9
+      lg:col-span-9
+      md:col-span-10
+      sm:col-span-10
+      col-span-6
+      4xs:col-span-8
+      p-0">
       <Link href="/">
         <Image
           src="https://i.ibb.co/NpSbzWp/logo.png"
@@ -64,7 +74,18 @@ export function Navbar({
       onLanguageChange={(lang) => {
         setLanguage(lang.toLowerCase() as "es" | "de" | "en");
       }}
-      className="min-[2500px]:col-span-1 3xl:col-span-2 2xl:col-span-2 xl:col-span-3 lg:col-span-3 md:col-span-2 sm:col-span-2 col-span-6 4xs:col-span-4 grid grid-cols-3"
+      className="
+        min-[2500px]:col-span-2
+        3xl:col-span-2
+        2xl:col-span-2
+        xl:col-span-3
+        lg:col-span-3 
+        md:col-span-2 
+        sm:col-span-2 
+        col-span-6 
+        4xs:col-span-4 
+        grid 
+        grid-cols-3"
     />
   );
 
