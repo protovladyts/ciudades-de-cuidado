@@ -2,16 +2,56 @@
 
 import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
+import { mapLocalizedProjects } from "@/app/api/wordpress/mappers/mapLocalizedProjects";
 import { LocalizedPost, Post } from "@/app/api/wordpress/types/Post";
+import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
 import { Image, SmallCard, Template } from "@/app/components";
 
-export const ProjectsSection = ({ content }: { content: Array<Post> }) => {
+export const ProjectsSection = ({
+  content,
+  pageContent,
+}: {
+  content: Array<Post>;
+  pageContent: WordPressProjectsPage;
+}) => {
   const { language } = useLanguage();
 
+  /*   console.log("🎈",{pageContent})
+   */
   const localizedContent = mapLocalizedPosts(content, language);
+  const localizedPageContent = mapLocalizedProjects(pageContent, language);
+
+  const bgImages = (
+    <>
+      <Image
+        src="https://i.ibb.co/ngZwpMr/Recurso-9-2x-8-3-2.png"
+        alt="background image left"
+        className="
+        md:block hidden
+        absolute
+        -z-10
+        top-40
+        w-[450px]
+        "
+      />
+      <Image
+        src="https://i.ibb.co/p1YTzd5/Recurso-9-2x-8-2.png"
+        alt="background image right"
+        className="
+        md:block hidden
+        absolute
+        -z-10
+        top-1/2
+        right-0
+        w-[450px]
+        "
+      />
+    </>
+  );
 
   return (
     <div className="relative">
+      {bgImages}
       <Template>
         <div className="w-full">
           <section className="relative !w-full">
@@ -21,13 +61,13 @@ export const ProjectsSection = ({ content }: { content: Array<Post> }) => {
               className="w-full 4xs:h-[12rem] md:h-[18rem] 3xl:h-[24rem] 4xl:h-[36rem] object-cover"
             />
             <div className="absolute inset-0 flex items-end justify-start bg-white bg-opacity-50">
-              <h1 className="text-3xl 3xl:text-5xl 4xl:text-6xl font-bold text-black text-center pb-4 pl-4">
-                PROJECTS
+              <h1 className="text-3xl 3xl:text-5xl 4xl:text-6xl font-bold text-black text-center pb-4 pl-4 lg:pb-8 lg:pl-16 xl:pl-64">
+                {localizedPageContent.title}
               </h1>
             </div>
           </section>
-          <div className="pt-8 px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8">
+          <div className="pt-8 px-8 xl:px-52">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8 place-items-center">
               {localizedContent.map((post: LocalizedPost) => (
                 <SmallCard
                   key={post.title}

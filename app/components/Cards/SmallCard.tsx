@@ -16,7 +16,7 @@ export function SmallCard({ imageSrc, title, alt, link }: CardPequenaProps) {
           <Image src={imageSrc} alt={alt} layout="fill" objectFit="cover" />
         </div>
         <div className="h-24 lg:!h-24 sm:h-36 4xs:h-10">
-          <h3 className="font-bold px-4 pt-6 lg:!text-base 4xs:pt-2 4xs:text-sm">
+          <h3 className="font-bold px-4 pt-6 4xl:text-xl lg:text-base 4xs:pt-2 4xs:text-sm">
             {title}
           </h3>
         </div>

@@ -13,6 +13,8 @@ import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 import { RelatedCard } from "@/app/components/";
 import { useEffect, useState } from "react";
 import { basicFont } from "@/app/config";
+import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
+import { mapLocalizedProjects } from "@/app/api/wordpress/mappers/mapLocalizedProjects";
 
 // Configuración: Número máximo de posts
 const MAX_POSTS_MOBILE = 2; // Configurable para mobile
@@ -22,14 +24,20 @@ export const ProjectSection = ({
   content,
   relatedPosts,
   slug,
+  pageContent,
 }: {
   content: Post;
   relatedPosts: Array<Post>;
   slug: string;
+  pageContent: WordPressProjectsPage
 }) => {
   const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
 
+  const localizedPageContent = mapLocalizedProjects(pageContent,language);
+
+/*   console.log('🎈',localizedPageContent)
+ */
   // Detectar si el dispositivo es móvil
   useEffect(() => {
     const handleResize = () => {
@@ -73,11 +81,10 @@ export const ProjectSection = ({
             </article>
 
             <aside className="space-y-4">
-              {/* TODO: mover al cms Otras entradas */}
               <h3
                 className={`text-xl 3xl:text-5xl ${basicFont.className} font-bold`}
               >
-                Otras entradas
+                {localizedPageContent.other_projects_label.toUpperCase()}
               </h3>
               {localizedPosts.map((item) => (
                 <RelatedCard
@@ -90,7 +97,7 @@ export const ProjectSection = ({
               <div className="col-span-2 w-full flex justify-end">
                 <GradientUnderlineButton>
                   <GradientArrowButton href="/projects" isRotated={true}>
-                    VOLVER A PROYECTOS
+                    {localizedPageContent.back_btn_label.toUpperCase()}
                   </GradientArrowButton>
                 </GradientUnderlineButton>
               </div>

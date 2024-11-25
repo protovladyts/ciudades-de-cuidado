@@ -11,7 +11,6 @@ interface CardGrandeProps {
 }
 
 export function BigCard({ imageSrc, title, alt, className, link }: CardGrandeProps) {
-  console.log({imageSrc})
   return (
     <div className={`relative h-full ${className} transform transition-transform duration-300 hover:scale-105`}>
       <Link href={link}>
