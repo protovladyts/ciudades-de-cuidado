@@ -15,11 +15,8 @@ export const ProjectsSection = ({
   pageContent: WordPressProjectsPage;
 }) => {
   const { language } = useLanguage();
-
-  /*   console.log("🎈",{pageContent})
-   */
   const localizedContent = mapLocalizedPosts(content, language);
-  const localizedPageContent = mapLocalizedProjects(pageContent, language);
+  const localizedPageContent = mapLocalizedProjects(pageContent, language)
 
   const bgImages = (
     <>

@@ -16,6 +16,5 @@ export default async function Project({ params }: Props) {
   const relatedPosts = await fetchPosts();
   const page = await fetchPage<WordPressProjectsPage>("projects");
 
-  console.log(page.acf.project)
   return <ProjectSection content={posts[0]} relatedPosts={relatedPosts} slug={slug} pageContent={page}/>;
 }

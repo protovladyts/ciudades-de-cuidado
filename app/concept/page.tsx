@@ -1,23 +1,10 @@
-// app/concepto/page.js
-import Link from 'next/link';
-import { Template } from '../components';
+import { fetchPage } from "../api/wordpress/services/fetchPage";
+import { fetchPosts } from "../api/wordpress/services/fetchPosts";
+import { WordPressConceptPage } from "../api/wordpress/types/Concept";
+import { ConceptSection } from "../sections/concept";
 
-export default function ConceptoPage() {
-  const articles = [
-    { title: 'Artículo 1', slug: 'articulo-1' },
-    { title: 'Artículo 2', slug: 'articulo-2' },
-  ];
-
-  return (
-    <Template>
-      <h1>Concepto</h1>
-      <ul>
-        {articles.map((article) => (
-          <li key={article.slug}>
-            <Link href={`/concepto/${article.slug}`}>{article.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </Template>
-  );
+export default async function ConceptPage() {
+  const projects = await fetchPosts();
+  const page = await fetchPage<WordPressConceptPage>("concept");
+  return <ConceptSection content={projects} pageContent={page} />;
 }

@@ -35,9 +35,6 @@ export const ProjectSection = ({
   const [isMobile, setIsMobile] = useState(false);
 
   const localizedPageContent = mapLocalizedProjects(pageContent,language);
-
-/*   console.log('🎈',localizedPageContent)
- */
   // Detectar si el dispositivo es móvil
   useEffect(() => {
     const handleResize = () => {

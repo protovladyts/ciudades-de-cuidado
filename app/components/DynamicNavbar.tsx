@@ -6,10 +6,10 @@ import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
 
 export const DynamicNavbar = ({ content }: { content: WordPressLayout }) => {
   const pathname = usePathname();
-
-  // Detecta si estás en /projects/[slug]
   const isSlugPage =
     pathname.startsWith("/projects/") && pathname.split("/").length > 2;
-
-  return <Navbar content={content} displayNavButtons={!isSlugPage} />;
+  const isProjectsPage = pathname.startsWith("/projects");
+  const isConceptPage = pathname.startsWith("/concept");
+  const displayNavButtons = !(isProjectsPage || isConceptPage || isSlugPage);
+  return <Navbar content={content} displayNavButtons={displayNavButtons} />;
 };
