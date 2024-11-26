@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { basicFont } from "@/app/config";
 import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
 import { mapLocalizedProjects } from "@/app/api/wordpress/mappers/mapLocalizedProjects";
+import { useBackToTopVisibility } from "@/app/hooks/useBackToTopVisibility";
 
 // Configuración: Número máximo de posts
 const MAX_POSTS_MOBILE = 2; // Configurable para mobile
@@ -29,13 +30,13 @@ export const ProjectSection = ({
   content: Post;
   relatedPosts: Array<Post>;
   slug: string;
-  pageContent: WordPressProjectsPage
+  pageContent: WordPressProjectsPage;
 }) => {
   const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
-  const [showBackToTop, setShowBackToTop] = useState(false);
+  const showBackToTop = useBackToTopVisibility();
 
-  const localizedPageContent = mapLocalizedProjects(pageContent,language);
+  const localizedPageContent = mapLocalizedProjects(pageContent, language);
   // Detectar si el dispositivo es móvil
   useEffect(() => {
     const handleResize = () => {
@@ -46,15 +47,6 @@ export const ProjectSection = ({
     window.addEventListener("resize", handleResize); // Detectar cambios de tamaño
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Obtener contenido localizado

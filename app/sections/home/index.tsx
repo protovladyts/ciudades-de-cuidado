@@ -10,7 +10,7 @@ import { mapLocalizedData } from "@/app/api/wordpress/mappers/mapLocalizedData";
 import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
 import { Post } from "@/app/api/wordpress/types/Post";
 import { BackToTopButton } from "@/app/components";
-import { useEffect, useState } from "react";
+import { useBackToTopVisibility } from "@/app/hooks/useBackToTopVisibility";
 
 type SectionKey = keyof AcfHomeResponse;
 
@@ -33,7 +33,7 @@ export const HomeSections = ({
   content: any;
   posts: Array<Post>;
 }) => {
-  const [showBackToTop, setShowBackToTop] = useState(false);
+  const showBackToTop = useBackToTopVisibility();
   const { language } = useLanguage();
 
   const localizedContent = mapLocalizedData(
@@ -42,15 +42,6 @@ export const HomeSections = ({
   );
 
   const localizedPosts = mapLocalizedPosts(posts, language);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
