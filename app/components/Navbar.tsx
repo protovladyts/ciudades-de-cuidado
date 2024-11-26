@@ -15,14 +15,14 @@ const ReferenceButtons = ({ concept, projects, municipalism }: Header) => {
     <ul className="col-span-2 grid grid-cols-3 gap-0 place-items-center">
       <li className="col-span-1">
         <GradientUnderlineButton>
-          <Link href="/concept" className="px-6 py-2">
+          <Link href="/#concept" className="px-6 py-2">
             {concept.toUpperCase()}
           </Link>
         </GradientUnderlineButton>
       </li>
       <li className="col-span-1">
         <GradientUnderlineButton>
-          <Link href="/projects" className="px-6 py-2">
+          <Link href="/#projects" className="px-6 py-2">
             {projects.toUpperCase()}
           </Link>
         </GradientUnderlineButton>
