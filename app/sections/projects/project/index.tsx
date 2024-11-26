@@ -6,7 +6,6 @@ import { Post } from "@/app/api/wordpress/types/Post";
 import {
   GradientArrowButton,
   GradientUnderlineButton,
-  Image,
   Template,
 } from "@/app/components";
 import MarkdownWrapper from "@/app/components/MarkdownWrapper";
