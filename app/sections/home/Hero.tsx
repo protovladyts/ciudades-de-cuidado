@@ -23,6 +23,10 @@ export function Hero({ data }: HeroProps) {
           absolute
           -z-10
 
+          md:w-[300px]
+          md:top-0
+          md:right-0
+
           lg:w-[400px]
           lg:-top-40
           lg:right-0
@@ -43,6 +47,10 @@ export function Hero({ data }: HeroProps) {
           hidden
           absolute
           top-28
+          
+          md:top-20
+          md:w-[120px]
+          
           lg:-left-12
           xl:left-0
           3xl:w-[300px]

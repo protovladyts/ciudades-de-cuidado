@@ -23,6 +23,8 @@ export function Municipalism({ data }: MunicipalismProps) {
           absolute
           md:block
           hidden
+          md:right-0
+          md:w-[110px]
           lg:top-40
           lg:right-0
           xl:right-0
@@ -39,6 +41,8 @@ export function Municipalism({ data }: MunicipalismProps) {
           absolute
           md:block
           hidden
+          md:w-[370px]
+          md:top-72
           lg:left-0
           lg:top-32
           xl:left-0
@@ -61,7 +65,7 @@ export function Municipalism({ data }: MunicipalismProps) {
     <div className="relative">
       {BgImagesDesktop}
       <Template fullScreen={false}>
-        <div className="container relative z-10 max-w-6xl 4xs:py-24 lg:py-64 3xl:py-96 px-8 md:px-20 2xl:px-0">
+        <div className="container relative z-10 max-w-6xl 4xs:py-24 md:py-64 lg:py-64 3xl:py-96 px-8 md:px-20 2xl:px-0">
           <div className="flex flex-col">
             {MunicipalismTitle}
             {MunicipalismDescription}

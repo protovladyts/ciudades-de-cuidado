@@ -24,6 +24,10 @@ export function Concept({ data }: ConceptProps) {
           absolute
           md:block
           hidden
+          
+          md:w-[200px]
+          md:right-0
+
           lg:w-[250px]
           lg:right-0
           xl:right-0
@@ -41,6 +45,7 @@ export function Concept({ data }: ConceptProps) {
           md:block
           hidden
           top-52
+          md:w-[250px]
           lg:top-24
           lg:-left-24
           xl:left-0
@@ -82,7 +87,7 @@ export function Concept({ data }: ConceptProps) {
       {MobilepBgImages}
 
       <Template fullScreen={false}>
-        <div className="relative container z-10 max-w-7xl 4xs:py-24 lg:py-64 3xl:py-96 px-8 md:px-12 lg:px-20 2xl:px-0">
+        <div className="relative container z-10 max-w-7xl 4xs:py-24 md:py-64 lg:py-64 3xl:py-96 px-8 md:px-12 lg:px-20 2xl:px-0">
           <div className="flex flex-col md:grid md:grid-cols-2 items-start md:items-center justify-between gap-4">
             {ConceptTitle}
             {ConceptDescription}

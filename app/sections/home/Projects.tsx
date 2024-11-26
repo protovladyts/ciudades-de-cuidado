@@ -35,6 +35,8 @@ export function Projects({ data, posts }: ProjectsProps) {
       md:block 
       hidden
       top-60 
+      md:w-[80px]
+      md:right-0
       lg:w-[80px] 
       lg:right-0 
       xl:right-0 
