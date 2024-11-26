@@ -4,6 +4,7 @@ import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
 import { Post } from "@/app/api/wordpress/types/Post";
 import {
+  BackToTopButton,
   GradientArrowButton,
   GradientUnderlineButton,
   Template,
@@ -32,6 +33,7 @@ export const ProjectSection = ({
 }) => {
   const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const localizedPageContent = mapLocalizedProjects(pageContent,language);
   // Detectar si el dispositivo es móvil
@@ -44,6 +46,15 @@ export const ProjectSection = ({
     window.addEventListener("resize", handleResize); // Detectar cambios de tamaño
 
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Obtener contenido localizado
@@ -89,6 +100,7 @@ export const ProjectSection = ({
           </div>
         </div>
       </div>
+      <BackToTopButton showBackToTop={showBackToTop} />
     </Template>
   );
 };

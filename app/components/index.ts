@@ -16,6 +16,7 @@ import { GradientUnderline } from "./Gradient/GradientUnderline";
 import { GradientArrowButton } from "./Gradient/GradientArrowButton";
 import { DynamicNavbar } from "./DynamicNavbar";
 import { RelatedCard } from "./Cards/RelatedCard";
+import { BackToTopButton } from "./BackToTopButton";
 
 export {
   Image,
@@ -36,4 +37,5 @@ export {
   GradientArrowButton,
   DynamicNavbar,
   RelatedCard,
+  BackToTopButton,
 };
