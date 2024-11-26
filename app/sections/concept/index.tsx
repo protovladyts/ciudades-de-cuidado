@@ -2,30 +2,19 @@
 
 import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedConcept } from "@/app/api/wordpress/mappers/mapLocalizedConcept";
-import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
-import { WordPressConceptPage } from "@/app/api/wordpress/types/Concept";
-import { LocalizedPost, Post } from "@/app/api/wordpress/types/Post";
 import {
-  BigCard,
-  Image,
-  Paragraph,
-  SmallCard,
-  Template,
-  Title,
-} from "@/app/components";
+  ConceptItem,
+  WordPressConceptPage,
+} from "@/app/api/wordpress/types/Concept";
+import { Image, Paragraph, SmallCard, Template, Title } from "@/app/components";
 
 export const ConceptSection = ({
-  content,
   pageContent,
 }: {
-  content: Array<Post>;
   pageContent: WordPressConceptPage;
 }) => {
   const { language } = useLanguage();
-  const localizedContent = mapLocalizedPosts(content, language);
   const localizedPageContent = mapLocalizedConcept(pageContent, language);
-  const mainPost = localizedContent[0]; // The first post for the BigCard
-  const secondaryPosts = localizedContent.slice(1, 12);
 
   const bgImages = (
     <>
@@ -107,24 +96,14 @@ export const ConceptSection = ({
             </Paragraph>
           </section>
           <div className="pt-8 xl:px-52">
-            <div className="pb-16 grid grid-cols-1 gap-4 place-items-center px-8">
-              <BigCard
-                imageSrc={mainPost.image}
-                title={mainPost.title}
-                alt="Main Project"
-                className="w-full 4xs:h-[12rem] md:h-[18rem] 3xl:h-[24rem] 4xl:h-[36rem] object-cover hidden md:block"
-                link={`projects/${mainPost.slug}`}
-              />
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8 place-items-center">
-              {secondaryPosts.map((post: LocalizedPost) => (
+              {localizedPageContent.items.map((post: ConceptItem) => (
                 <SmallCard
                   key={post.title}
                   imageSrc={post.image}
                   title={post.title}
                   alt={post.title}
-                  link={`projects/${post.slug}`}
+                  link={post.link}
                   className="2xl:!text-xl 4xl:!text-2xl"
                 />
               ))}

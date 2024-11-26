@@ -9,6 +9,7 @@ export interface WordPressPost {
   };
   acf?: {
     project?: {
+      display_on_homepage?: boolean;
       image?: string;
       en?: {
         title?: string;

@@ -2,13 +2,19 @@
 
 const nextConfig = {
   images: {
-    domains: ['ciudades-de-cuidado.org'], // Agrega tu dominio aquí
+    domains: ["ciudades-de-cuidado.org"], // Agrega tu dominio aquí
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.ibb.co',
-        port: '',
-        pathname: '**',
+        protocol: "https",
+        hostname: "i.ibb.co",
+        port: "",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "fakeimg.pl",
+        port: "",
+        pathname: "**",
       },
     ],
   },

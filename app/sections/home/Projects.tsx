@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import {
-  BigCard,
   SmallCard,
   GradientArrowButton,
   GradientUnderlineButton,
@@ -22,8 +21,9 @@ type ProjectsProps = {
 };
 
 export function Projects({ data, posts }: ProjectsProps) {
-  const mainPost = posts[0]; // The first post for the BigCard
-  const secondaryPosts = posts.slice(1, 5); // The next 4 posts for SmallCards
+  const filteredPosts = posts.filter(
+    (post) => post.display_on_homepage === true
+  );
 
   const BgImage = (
     <Image
@@ -65,20 +65,9 @@ export function Projects({ data, posts }: ProjectsProps) {
             {ProjectsTitle}
             {ProjectsDescription}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
-              {/* BigCard for the main post */}
-              {mainPost && (
-                <BigCard
-                  imageSrc={mainPost.image || ""}
-                  title={mainPost.title || "No title available"}
-                  alt="Main Project"
-                  className="col-span-5 hidden lg:block"
-                  link={`projects/${mainPost.slug}`}
-                />
-              )}
-
               {/* SmallCards for the secondary posts */}
-              <div className="col-span-7 grid sm:grid-cols-2 gap-x-16 gap-y-5 place-items-center">
-                {secondaryPosts.map((post, index) => (
+              <div className="col-span-12 grid sm:grid-cols-2 gap-x-16 gap-y-5 place-items-center">
+                {filteredPosts.map((post, index) => (
                   <SmallCard
                     key={post.title}
                     imageSrc={post.image || ""}

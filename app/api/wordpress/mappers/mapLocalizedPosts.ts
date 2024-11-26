@@ -9,5 +9,6 @@ export function mapLocalizedPosts(
     text: post[language].text,
     image: post[language].image,
     slug: post[language].slug,
+    display_on_homepage: post[language].display_on_homepage,
   }));
 }
