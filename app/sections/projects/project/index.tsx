@@ -59,18 +59,6 @@ export const ProjectSection = ({
   return (
     <Template className="w-full !mx-0" fullScreen={false}>
       <div>
-        <section className="relative w-full">
-          <Image
-            src={`${localizedPost.image}`}
-            alt="Background"
-            className="w-full 4xs:h-[12rem] md:h-[18rem] 3xl:h-[24rem] 4xl:h-[36rem] object-cover"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <h1 className="text-3xl 3xl:text-5xl 4xl:text-6xl font-bold text-white text-center">
-              {localizedPost.title}
-            </h1>
-          </div>
-        </section>
         <div className="my-8">
           <div className="px-6 md:px-10 lg:px-16 xl:px-56 grid grid-cols-1 md:grid-cols-3 gap-8">
             <article className="md:col-span-2 space-y-4">
