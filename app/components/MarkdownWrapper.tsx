@@ -3,6 +3,8 @@
 import React from "react";
 import ReactMarkdown, { Components } from "react-markdown";
 import { basicFont } from "@/app/config";
+import { Paragraph } from "./Paragraph";
+import { GradientLink } from "./Gradient/GradientLink";
 
 interface MarkdownWrapperProps {
   content: string;
@@ -33,13 +35,11 @@ const markdownComponents: Components = {
       {props.children}
     </h3>
   ),
-  p: ({ ...props }) => (
-    <p className="leading-relaxed 3xl:text-xl 4xl:text-2xl mb-4" {...props} />
-  ),
+  p: ({ ...props }) => <Paragraph className="mb-4">{props.children}</Paragraph>,
   a: ({ ...props }) => (
-    <a className="text-blue-500 underline hover:text-blue-700" {...props}>
+    <GradientLink href={props.href ?? ""} {...props}>
       {props.children}
-    </a>
+    </GradientLink>
   ),
   ul: ({ ...props }) => (
     <ul className="list-disc pl-6 mb-4 3xl:text-xl 4xl:text-2xl" {...props} />

@@ -1,15 +1,8 @@
 import Image from "next/image";
 
-import {
-  SmallCard,
-  GradientArrowButton,
-  GradientUnderlineButton,
-  Template,
-  Divider,
-  Paragraph,
-  Title,
-} from "../../components";
-import { LocalizedPost } from "@/app/api/wordpress/types/Post";
+import { SmallCard, Template, Divider, Title, BigCard } from "../../components";
+import { Post } from "@/app/api/wordpress/types/Post";
+import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 
 type ProjectsProps = {
   data: {
@@ -17,13 +10,13 @@ type ProjectsProps = {
     description: string;
     cta_label: string;
   };
-  posts: Array<LocalizedPost>;
+  posts: Array<Post>;
 };
 
 export function Projects({ data, posts }: ProjectsProps) {
-  const filteredPosts = posts.filter(
-    (post) => post.display_on_homepage === true
-  );
+  const filteredPosts = posts
+    .filter((post) => post.display_on_homepage === true)
+    .slice(0, 3);
 
   const BgImage = (
     <Image
@@ -55,7 +48,9 @@ export function Projects({ data, posts }: ProjectsProps) {
   );
 
   const ProjectsDescription = (
-    <Paragraph className="mb-8 4xs:mb-12">{data.description}</Paragraph>
+    <div className="mb-8 4xs:mb-12">
+      <MarkdownWrapper content={data.description}></MarkdownWrapper>
+    </div>
   );
 
   return (
@@ -78,15 +73,14 @@ export function Projects({ data, posts }: ProjectsProps) {
                     link={`projects/${post.slug}`}
                   />
                 ))}
+                <BigCard
+                  key="projects-more-card"
+                  imageSrc={filteredPosts[0].image}
+                  title={data.cta_label.toUpperCase()}
+                  alt="projects more card"
+                  link={`/projects`}
+                />
               </div>
-            </div>
-
-            <div className="flex justify-end pb-8 sm:pb-0">
-              <GradientUnderlineButton>
-                <GradientArrowButton href="/projects">
-                  {data.cta_label.toUpperCase()}
-                </GradientArrowButton>
-              </GradientUnderlineButton>
             </div>
           </div>
         </div>

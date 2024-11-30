@@ -2,15 +2,16 @@
 
 import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedConcept } from "@/app/api/wordpress/mappers/mapLocalizedConcept";
-import {
-  ConceptItem,
-  WordPressConceptPage,
-} from "@/app/api/wordpress/types/Concept";
-import { Image, Paragraph, SmallCard, Template, Title } from "@/app/components";
+import { WordPressConceptPage } from "@/app/api/wordpress/types/Concept";
+import { Post } from "@/app/api/wordpress/types/Post";
+import { Image, SmallCard, Template, Title } from "@/app/components";
+import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 
-export const ConceptSection = ({
+export const ConceptsSection = ({
+  content,
   pageContent,
 }: {
+  content: Array<Post>;
   pageContent: WordPressConceptPage;
 }) => {
   const { language } = useLanguage();
@@ -91,19 +92,19 @@ export const ConceptSection = ({
         <div className="w-full px-6">
           <section className="w-full mt-8 mb-16 lg:px-8 lg:mt-16 xl:px-52 relative">
             <Title>{localizedPageContent.title}</Title>
-            <Paragraph className="pt-6 lg:pt-12">
-              {localizedPageContent.description}
-            </Paragraph>
+            <div className="pt-6 lg:pt-12">
+              <MarkdownWrapper content={localizedPageContent.description} />
+            </div>
           </section>
           <div className="pt-8 xl:px-52">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8 place-items-center">
-              {localizedPageContent.items.map((post: ConceptItem) => (
+              {content.map((post: Post) => (
                 <SmallCard
                   key={post.title}
                   imageSrc={post.image}
                   title={post.title}
                   alt={post.title}
-                  link={post.link}
+                  link={`concepts/${post.slug}`}
                   className="2xl:!text-xl 4xl:!text-2xl"
                 />
               ))}

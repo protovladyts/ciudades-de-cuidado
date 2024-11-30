@@ -1,9 +1,8 @@
 "use client";
 
 import { useLanguage } from "@/app/LanguageContext";
-import { mapLocalizedPosts } from "@/app/api/wordpress/mappers/mapLocalizedPosts";
 import { mapLocalizedProjects } from "@/app/api/wordpress/mappers/mapLocalizedProjects";
-import { LocalizedPost, Post } from "@/app/api/wordpress/types/Post";
+import { Post } from "@/app/api/wordpress/types/Post";
 import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
 import { Image, SmallCard, Template } from "@/app/components";
 
@@ -15,7 +14,6 @@ export const ProjectsSection = ({
   pageContent: WordPressProjectsPage;
 }) => {
   const { language } = useLanguage();
-  const localizedContent = mapLocalizedPosts(content, language);
   const localizedPageContent = mapLocalizedProjects(pageContent, language);
 
   const bgImages = (
@@ -56,7 +54,7 @@ export const ProjectsSection = ({
               {localizedPageContent.title}
             </h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8 place-items-center">
-              {localizedContent.map((post: LocalizedPost) => (
+              {content.map((post: Post) => (
                 <SmallCard
                   key={post.title}
                   imageSrc={post.image}

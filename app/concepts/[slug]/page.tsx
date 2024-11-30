@@ -3,7 +3,7 @@ import { fetchPost } from "@/app/api/wordpress/services/fetchPost";
 import { fetchPosts } from "@/app/api/wordpress/services/fetchPosts";
 import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
 import { SERVER_LOCALE } from "@/app/config";
-import { ProjectSection } from "@/app/sections/projects/project";
+import { ConceptSection } from "@/app/sections/concepts/concept";
 
 type Props = {
   params: {
@@ -11,19 +11,20 @@ type Props = {
   };
 };
 
-export default async function Project({ params }: Props) {
+export default async function Concept({ params }: Props) {
   const serverLanguage = SERVER_LOCALE;
   const { slug } = params;
   const posts = await fetchPost(slug);
-  let relatedPosts = await fetchPosts(serverLanguage);
+  const relatedPosts = await fetchPosts(serverLanguage);
+  const relatedConcepts = shuffleArray(
+    relatedPosts.filter((post) => post.post_types.includes("concept"))
+  );
   const page = await fetchPage<WordPressProjectsPage>("projects");
 
-  relatedPosts = shuffleArray(relatedPosts);
-
   return (
-    <ProjectSection
+    <ConceptSection
       content={posts[0]}
-      relatedPosts={relatedPosts}
+      relatedPosts={relatedConcepts}
       slug={slug}
       pageContent={page}
     />

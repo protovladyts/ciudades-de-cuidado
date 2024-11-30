@@ -17,7 +17,7 @@ export function GradientUnderlineButton({
     >
       <span className="relative z-10">{children}</span>
       <span
-        className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#E551C7] via-[#D47C45] via-[#E5D548] to-[#83F42F] transition-all duration-300 ease-in-out ${
+        className={`absolute bottom-0 left-0 w-full h-0.5   transition-all duration-300 ease-in-out ${
           isHovered ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
         }`}
       ></span>

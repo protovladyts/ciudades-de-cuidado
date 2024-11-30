@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Divider, Paragraph, Template, Title } from "../../components";
+import { Divider, Template, Title } from "../../components";
 import { focusFont } from "@/app/config";
+import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 
 type HeroProps = {
   data: {
@@ -73,9 +74,7 @@ export function Hero({ data }: HeroProps) {
   );
 
   const MobileBgImages = (
-    <div
-      className="md:hidden"
-    >
+    <div className="md:hidden">
       <Image
         src="https://i.ibb.co/Xtg0Yfw/Group.png"
         alt="Houses"
@@ -89,7 +88,7 @@ export function Hero({ data }: HeroProps) {
           4xs:w-[60px]
           3xs:w-[100px]
         `}
-/*         h-667:w-[70px]
+        /*         h-667:w-[70px]
         min-[458px]:-top-16
         min-[458px]:h-24
         min-[458px]:w-auto
@@ -114,8 +113,8 @@ export function Hero({ data }: HeroProps) {
           3xs:w-[125px]
           3xs:-top-8
         `}
-        
-/*         -top-24
+
+        /*         -top-24
         -left-8
         h-667:-left-24
         xs:-top-36
@@ -171,9 +170,9 @@ export function Hero({ data }: HeroProps) {
   );
 
   const HeroDescription = (
-    <Paragraph className="max-w-3xl 2xl:max-w-5xl mx-auto text-left p-0 sm:mt-0 h-667:mt-2 4xs:mt-4 md:mt-20 xs:mt-8">
-      {data.description}
-    </Paragraph>
+    <div className="max-w-3xl 2xl:max-w-5xl mx-auto text-left p-0 sm:mt-0 h-667:mt-2 4xs:mt-4 md:mt-20 xs:mt-8">
+      <MarkdownWrapper content={data.description} />
+    </div>
   );
 
   return (

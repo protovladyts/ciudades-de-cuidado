@@ -20,7 +20,7 @@ import { useBackToTopVisibility } from "@/app/hooks/useBackToTopVisibility";
 const MAX_POSTS_MOBILE = 2; // Configurable para mobile
 const MAX_POSTS_DESKTOP = 5; // Configurable para desktop
 
-export const ProjectSection = ({
+export const ConceptSection = ({
   content: localizedPost,
   relatedPosts,
   slug,

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useLanguage } from "../LanguageContext";
 import { mapLayoutData } from "../api/wordpress/mappers/mapLayoutData";
 import { WordPressLayout } from "../api/wordpress/types/WordPressLayout";
-import { Paragraph } from "./Paragraph";
+import MarkdownWrapper from "./MarkdownWrapper";
 
 // Separadores y componentes estilizados
 const GradientSeparator = () => (
@@ -90,8 +90,12 @@ export function Footer({ content }: { content: WordPressLayout }) {
           <GradientSeparator />
 
           {/* Texto localizado */}
-          <Paragraph className="mt-4">{localizedFooter.text}</Paragraph>
-          <Paragraph className="mt-4">{localizedFooter.contact}</Paragraph>
+          <div className="mt-4">
+            <MarkdownWrapper content={localizedFooter.text} />
+          </div>
+          <div className="mt-4">
+            <MarkdownWrapper content={localizedFooter.contact} />
+          </div>
         </div>
       </div>
     </footer>

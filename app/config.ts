@@ -13,7 +13,7 @@ export const focusFont = Roboto_Condensed({
 });
 
 export const basicFont = DM_Sans({
-  weight: ["400","500","600","700"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -41,6 +41,18 @@ export const SITE_URL = {
   en: process.env.NEXT_PUBLIC_URL_EN_SITE ?? "https://caring-cities.org",
   de: process.env.NEXT_PUBLIC_URL_DE_SITE ?? "https://sorgende-staedte.org",
 };
+
+export const SERVER_LOCALE = (() => {
+  const envLocale = process.env.LOCALE?.toLowerCase();
+
+  const validLocales: Language[] = ["es", "en", "de"];
+
+  if (validLocales.includes(envLocale as Language)) {
+    return envLocale as Language;
+  }
+
+  return "de";
+})();
 
 const metadataByLanguage: Record<string, Metadata> = {
   es: {

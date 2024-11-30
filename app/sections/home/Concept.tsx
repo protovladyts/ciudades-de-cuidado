@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Divider, Paragraph, Template, Title } from "../../components";
+import { Divider, Template, Title } from "../../components";
 import { GradientArrowButton, GradientUnderlineButton } from "@/app/components";
+import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 
 type ConceptProps = {
   data: {
@@ -78,7 +79,9 @@ export function Concept({ data }: ConceptProps) {
   );
 
   const ConceptDescription = (
-    <Paragraph className="pl-0 md:pl-8 4xl:pl-24">{data.description}</Paragraph>
+    <div className="pl-0 md:pl-8 4xl:pl-24">
+      <MarkdownWrapper content={data.description} />
+    </div>
   );
 
   return (
@@ -94,7 +97,7 @@ export function Concept({ data }: ConceptProps) {
 
             <div className="col-span-2 w-full flex justify-end">
               <GradientUnderlineButton>
-                <GradientArrowButton href="/concept">
+                <GradientArrowButton href="/concepts">
                   {data.cta_label.toUpperCase()}
                 </GradientArrowButton>
               </GradientUnderlineButton>

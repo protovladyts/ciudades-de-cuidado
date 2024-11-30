@@ -2,7 +2,7 @@ import { Image } from "./Image";
 import { GenericSection } from "./GenericSection";
 import { Navbar } from "./Navbar";
 import { Paragraph } from "./Paragraph";
-import { Span } from "./Span"
+import { Span } from "./Span";
 import { Subtitle } from "./Subtitle";
 import { Title } from "./Title";
 import { Template } from "./Template";
@@ -14,9 +14,9 @@ import { SmallCard } from "./Cards/SmallCard";
 import { GradientUnderlineButton } from "./Gradient/GradientUnderlineButton";
 import { GradientUnderline } from "./Gradient/GradientUnderline";
 import { GradientArrowButton } from "./Gradient/GradientArrowButton";
-import { DynamicNavbar } from "./DynamicNavbar";
 import { RelatedCard } from "./Cards/RelatedCard";
 import { BackToTopButton } from "./BackToTopButton";
+import { GradientLink } from "./Gradient/GradientLink";
 
 export {
   Image,
@@ -35,7 +35,7 @@ export {
   GradientUnderlineButton,
   GradientUnderline,
   GradientArrowButton,
-  DynamicNavbar,
   RelatedCard,
   BackToTopButton,
+  GradientLink,
 };

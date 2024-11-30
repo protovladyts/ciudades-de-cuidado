@@ -1,3 +1,11 @@
+import { Language } from "@/app/types";
+import { PostType } from "./Post";
+
+export interface PostTypeOption {
+  value: PostType;
+  label: string;
+}
+
 // Tipo base de la respuesta de WordPress
 export interface WordPressPost {
   id: number;
@@ -7,22 +15,18 @@ export interface WordPressPost {
   title: {
     rendered: string;
   };
-  acf?: {
-    project?: {
-      display_on_homepage?: boolean;
+  acf: {
+    project: {
+      config: {
+        language: {
+          value: Language;
+          label: string;
+        };
+        display_on_homepage: boolean;
+        post_type: Array<PostTypeOption>;
+      };
+      text?: string;
       image?: string;
-      en?: {
-        title?: string;
-        text?: string;
-      };
-      es?: {
-        title?: string;
-        text?: string;
-      };
-      de?: {
-        title?: string;
-        text?: string;
-      };
     };
   };
   _embedded?: {

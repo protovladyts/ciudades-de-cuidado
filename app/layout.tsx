@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer, DynamicNavbar } from "@/app/components";
+import { Footer, Navbar } from "@/app/components";
 import Head from "next/head";
-import { metadata as localizedMetadata, SITE_LOCALE } from "./config";
+import { metadata as localizedMetadata, SERVER_LOCALE } from "./config";
 import { LanguageProvider } from "./LanguageContext";
 import { fetchLayout } from "./api/wordpress/services/fetchLayout";
 
@@ -13,7 +13,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const language = SITE_LOCALE;
+  const language = SERVER_LOCALE;
+
   const layout = await fetchLayout();
 
   return (
@@ -23,7 +24,7 @@ export default async function RootLayout({
       </Head>
       <body>
         <LanguageProvider>
-          <DynamicNavbar content={layout} />
+          <Navbar content={layout} />
           {children}
           <Footer content={layout} />
         </LanguageProvider>

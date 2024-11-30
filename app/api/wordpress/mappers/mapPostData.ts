@@ -1,18 +1,26 @@
 import { Post } from "../types/Post";
-import { WordPressPost } from "../types/WordPressPost";
+import { PostTypeOption, WordPressPost } from "../types/WordPressPost";
 
 export function mapPostData(rawPost: WordPressPost): Post {
-  const mapLocalizedData = (locale: "en" | "es" | "de") => ({
-    title: rawPost.acf?.project?.[locale]?.title ?? "",
-    image: rawPost.acf?.project?.image ?? "",
-    text: rawPost.acf?.project?.[locale]?.text ?? "",
-    slug: rawPost.slug ?? "",
-    display_on_homepage: rawPost.acf?.project?.display_on_homepage === true,
-  });
+  const {
+    acf: {
+      project: { config, text, image },
+    },
+    title,
+    slug,
+  } = rawPost;
+
+  if (config.post_type.length < 1) throw new Error("POST TYPE NOT DEFINED");
 
   return {
-    en: mapLocalizedData("en"),
-    es: mapLocalizedData("es"),
-    de: mapLocalizedData("de"),
+    image: image ?? "",
+    title: title.rendered ?? "",
+    text: text ?? "",
+    slug: slug ?? "",
+    display_on_homepage: config?.display_on_homepage ?? false,
+    language: config.language.value ?? "en",
+    post_types: config.post_type.map(
+      (post_type: PostTypeOption) => post_type.value
+    ),
   };
 }

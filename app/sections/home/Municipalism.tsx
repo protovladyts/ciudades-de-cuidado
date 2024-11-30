@@ -1,4 +1,5 @@
-import { Divider, Paragraph, Title, Template } from "../../components";
+import MarkdownWrapper from "@/app/components/MarkdownWrapper";
+import { Divider, Title, Template } from "../../components";
 import Image from "next/image";
 
 type MunicipalismProps = {
@@ -56,7 +57,9 @@ export function Municipalism({ data }: MunicipalismProps) {
     <Title className="md:mb-0 pb-12">{data.title.toUpperCase()}</Title>
   );
   const MunicipalismDescription = (
-    <Paragraph className="pb-12">{data.description}</Paragraph>
+    <div className="pb-12">
+      <MarkdownWrapper content={data.description} />
+    </div>
   );
   const MunicipalismEndTitle = (
     <Title className="text-right">{data.end_title.toUpperCase()}</Title>

@@ -1,13 +1,11 @@
-export type LocalizedPost = {
+export type PostType = "concept" | "project";
+
+export type Post = {
   image: string;
   title: string;
   text: string;
   slug: string;
   display_on_homepage: boolean;
-};
-
-export type Post = {
-  en: LocalizedPost;
-  es: LocalizedPost;
-  de: LocalizedPost;
+  language: string;
+  post_types: Array<PostType>;
 };
