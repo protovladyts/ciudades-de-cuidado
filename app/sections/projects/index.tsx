@@ -4,7 +4,7 @@ import { useLanguage } from "@/app/LanguageContext";
 import { mapLocalizedProjects } from "@/app/api/wordpress/mappers/mapLocalizedProjects";
 import { Post } from "@/app/api/wordpress/types/Post";
 import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
-import { Image, SmallCard, Template } from "@/app/components";
+import { Image, SmallCard, Template, Title } from "@/app/components";
 
 export const ProjectsSection = ({
   content,
@@ -47,12 +47,12 @@ export const ProjectsSection = ({
   return (
     <div className="relative">
       {bgImages}
-      <Template>
-        <div className="w-full">
-          <div className="pt-8 px-8 xl:px-52">
-            <h1 className="text-3xl 3xl:text-5xl 4xl:text-6xl font-bold text-black pb-8 pl-4 lg:pb-16 lg:pl-16 xl:pl-64">
-              {localizedPageContent.title}
-            </h1>
+      <Template fullScreen={false}>
+        <div className="w-full px-6">
+          <section className="w-full mt-8 mb-16 lg:px-8 lg:mt-16 xl:px-52 relative">
+            <Title>{localizedPageContent.title}</Title>
+          </section>
+          <div className="pt-8 xl:px-52">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-8 place-items-center">
               {content.map((post: Post) => (
                 <SmallCard
@@ -63,8 +63,9 @@ export const ProjectsSection = ({
                   link={
                     post.redirect_url
                       ? post.redirect_url
-                      : `projects/${post.slug}`
+                      : `concepts/${post.slug}`
                   }
+                  className="2xl:!text-xl 4xl:!text-2xl"
                 />
               ))}
             </div>

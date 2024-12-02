@@ -49,6 +49,7 @@ export function Concept({ data }: ConceptProps) {
           md:w-[250px]
           lg:top-24
           lg:-left-24
+          lg:w-[290px]
           xl:left-0
           3xl:w-[450px]
           "

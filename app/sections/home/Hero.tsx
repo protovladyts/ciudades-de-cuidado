@@ -54,6 +54,7 @@ export function Hero({ data }: HeroProps) {
           
           lg:-left-12
           xl:left-0
+          xl:w-[180px]
           3xl:w-[300px]
           4xl:w-[300px]
           "
