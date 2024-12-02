@@ -17,6 +17,7 @@ import { GradientArrowButton } from "./Gradient/GradientArrowButton";
 import { RelatedCard } from "./Cards/RelatedCard";
 import { BackToTopButton } from "./BackToTopButton";
 import { GradientLink } from "./Gradient/GradientLink";
+import { CollapsibleList } from "./CollapsibleList";
 
 export {
   Image,
@@ -38,4 +39,5 @@ export {
   RelatedCard,
   BackToTopButton,
   GradientLink,
+  CollapsibleList,
 };

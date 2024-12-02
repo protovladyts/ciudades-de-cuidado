@@ -3,8 +3,8 @@
 import React from "react";
 import ReactMarkdown, { Components } from "react-markdown";
 import { basicFont } from "@/app/config";
-import { Paragraph } from "./Paragraph";
 import { GradientLink } from "./Gradient/GradientLink";
+import { CollapsibleList, Paragraph } from "./index";
 
 interface MarkdownWrapperProps {
   content: string;
@@ -41,15 +41,62 @@ const markdownComponents: Components = {
       {props.children}
     </GradientLink>
   ),
-  ul: ({ ...props }) => (
-    <ul className="list-disc pl-6 mb-4 3xl:text-xl 4xl:text-2xl" {...props} />
-  ),
-  ol: ({ ...props }) => (
-    <ol
-      className="list-decimal pl-6 mb-4 3xl:text-xl 4xl:text-2xl"
-      {...props}
-    />
-  ),
+  ul: ({ ...props }) => {
+    const children = React.Children.toArray(props.children).filter(
+      (child) => child !== "\n"
+    );
+
+    if (children.length === 2) {
+      const liItems = children.map((child) => {
+        if (child && React.isValidElement(child) && child.props.children) {
+          if (Array.isArray(child.props.children)) {
+            const el = child.props.children.filter(
+              (nestedChild: unknown) => nestedChild !== "\n"
+            )[0];
+            return `${el.key}#.-${el.props.children}`;
+          }
+          return child.props.children;
+        }
+        return null;
+      });
+      if (liItems.every(Boolean)) {
+        return <CollapsibleList items={liItems} />;
+      }
+    }
+
+    return (
+      <ul className="list-disc pl-6 mb-4 3xl:text-xl 4xl:text-2xl" {...props} />
+    );
+  },
+  ol: ({ ...props }) => {
+    const children = React.Children.toArray(props.children).filter(
+      (child) => child !== "\n"
+    );
+
+    if (children.length === 2) {
+      const liItems = children.map((child) => {
+        if (child && React.isValidElement(child) && child.props.children) {
+          if (Array.isArray(child.props.children)) {
+            return child.props.children.filter(
+              (nestedChild: unknown) => nestedChild !== "\n"
+            )[0].props.children;
+          }
+          return child.props.children;
+        }
+        return null;
+      });
+      if (liItems.every(Boolean)) {
+        return <CollapsibleList items={liItems} />;
+      }
+    }
+
+    return (
+      <ol
+        className="list-decimal pl-6 mb-4 3xl:text-xl 4xl:text-2xl"
+        {...props}
+      />
+    );
+  },
   blockquote: ({ ...props }) => (
     <blockquote
       className="border-l-4 border-gray-300 pl-4 italic text-gray-500 3xl:text-xl 4xl:text-2xl"

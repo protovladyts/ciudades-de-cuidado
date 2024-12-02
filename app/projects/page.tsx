@@ -9,7 +9,6 @@ export default async function ProjectsPage() {
   const posts = await fetchPosts(serverLanguage);
 
   const projects = posts.filter((post) => {
-    console.log("POST TYPE", post.title, post.post_types);
     return post.post_types.includes("project");
   });
 
