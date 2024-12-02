@@ -4,6 +4,7 @@ import { fetchPosts } from "@/app/api/wordpress/services/fetchPosts";
 import { WordPressConceptPage } from "@/app/api/wordpress/types/Concept";
 import { SERVER_LOCALE } from "@/app/config";
 import { ConceptSection } from "@/app/sections/concepts/concept";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -15,6 +16,9 @@ export default async function Concept({ params }: Props) {
   const serverLanguage = SERVER_LOCALE;
   const { slug } = params;
   const posts = await fetchPost(slug);
+
+  if (posts[0].redirect_url) notFound();
+
   const relatedPosts = await fetchPosts(serverLanguage);
   const relatedConcepts = shuffleArray(
     relatedPosts.filter((post) => post.post_types.includes("concept"))

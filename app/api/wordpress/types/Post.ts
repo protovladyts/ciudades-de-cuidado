@@ -8,4 +8,5 @@ export type Post = {
   display_on_homepage: boolean;
   language: string;
   post_types: Array<PostType>;
+  redirect_url?: string;
 };

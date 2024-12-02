@@ -4,6 +4,7 @@ import { fetchPosts } from "@/app/api/wordpress/services/fetchPosts";
 import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
 import { SERVER_LOCALE } from "@/app/config";
 import { ProjectSection } from "@/app/sections/projects/project";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: {
@@ -15,6 +16,9 @@ export default async function Project({ params }: Props) {
   const serverLanguage = SERVER_LOCALE;
   const { slug } = params;
   const posts = await fetchPost(slug);
+
+  if (posts[0].redirect_url) notFound();
+
   let relatedPosts = await fetchPosts(serverLanguage);
   const page = await fetchPage<WordPressProjectsPage>("projects");
 

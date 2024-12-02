@@ -85,6 +85,7 @@ export const ConceptsSection = ({
       />
     </>
   );
+
   return (
     <div className="relative">
       {bgImages}
@@ -104,7 +105,11 @@ export const ConceptsSection = ({
                   imageSrc={post.image}
                   title={post.title}
                   alt={post.title}
-                  link={`concepts/${post.slug}`}
+                  link={
+                    post.redirect_url
+                      ? post.redirect_url
+                      : `concepts/${post.slug}`
+                  }
                   className="2xl:!text-xl 4xl:!text-2xl"
                 />
               ))}

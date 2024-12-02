@@ -18,6 +18,7 @@ export interface WordPressPost {
   acf: {
     project: {
       config: {
+        redirect_url?: string;
         language: {
           value: Language;
           label: string;

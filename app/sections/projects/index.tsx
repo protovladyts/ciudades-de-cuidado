@@ -60,7 +60,11 @@ export const ProjectsSection = ({
                   imageSrc={post.image}
                   title={post.title}
                   alt={post.title}
-                  link={`projects/${post.slug}`}
+                  link={
+                    post.redirect_url
+                      ? post.redirect_url
+                      : `projects/${post.slug}`
+                  }
                 />
               ))}
             </div>
