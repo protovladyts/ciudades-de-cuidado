@@ -1,19 +1,8 @@
-export type ConceptItem = {
-  title: string;
-  image: string;
-  link: string;
-};
-
 export type ConceptLabels = {
   title: string;
   description: string;
-  items: string;
-};
-
-export type ConceptLabelsParsed = {
-  title: string;
-  description: string;
-  items: Array<ConceptItem>;
+  back_btn_label: string;
+  other_concepts_label: string;
 };
 
 type AcfConceptsResponse = {

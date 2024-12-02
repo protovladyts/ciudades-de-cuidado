@@ -12,9 +12,9 @@ import MarkdownWrapper from "@/app/components/MarkdownWrapper";
 import { RelatedCard } from "@/app/components/";
 import { useEffect, useState } from "react";
 import { basicFont } from "@/app/config";
-import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
-import { mapLocalizedProjects } from "@/app/api/wordpress/mappers/mapLocalizedProjects";
 import { useBackToTopVisibility } from "@/app/hooks/useBackToTopVisibility";
+import { WordPressConceptPage } from "@/app/api/wordpress/types/Concept";
+import { mapLocalizedConcept } from "@/app/api/wordpress/mappers/mapLocalizedConcept";
 
 // Configuración: Número máximo de posts
 const MAX_POSTS_MOBILE = 2; // Configurable para mobile
@@ -29,13 +29,13 @@ export const ConceptSection = ({
   content: Post;
   relatedPosts: Array<Post>;
   slug: string;
-  pageContent: WordPressProjectsPage;
+  pageContent: WordPressConceptPage;
 }) => {
   const { language } = useLanguage();
   const [isMobile, setIsMobile] = useState(false);
   const showBackToTop = useBackToTopVisibility();
 
-  const localizedPageContent = mapLocalizedProjects(pageContent, language);
+  const localizedPageContent = mapLocalizedConcept(pageContent, language);
   // Detectar si el dispositivo es móvil
   useEffect(() => {
     const handleResize = () => {
@@ -66,7 +66,7 @@ export const ConceptSection = ({
               <h3
                 className={`text-xl 3xl:text-5xl ${basicFont.className} font-bold`}
               >
-                {localizedPageContent.other_projects_label.toUpperCase()}
+                {localizedPageContent.other_concepts_label}
               </h3>
               {filteredRelatedPosts.map((item) => (
                 <RelatedCard
@@ -79,7 +79,7 @@ export const ConceptSection = ({
               <div className="col-span-2 w-full flex justify-end">
                 <GradientUnderlineButton>
                   <GradientArrowButton href="/projects" isRotated={true}>
-                    {localizedPageContent.back_btn_label.toUpperCase()}
+                    {localizedPageContent.back_btn_label}
                   </GradientArrowButton>
                 </GradientUnderlineButton>
               </div>

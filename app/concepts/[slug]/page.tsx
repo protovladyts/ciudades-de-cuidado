@@ -1,7 +1,7 @@
 import { fetchPage } from "@/app/api/wordpress/services/fetchPage";
 import { fetchPost } from "@/app/api/wordpress/services/fetchPost";
 import { fetchPosts } from "@/app/api/wordpress/services/fetchPosts";
-import { WordPressProjectsPage } from "@/app/api/wordpress/types/Projects";
+import { WordPressConceptPage } from "@/app/api/wordpress/types/Concept";
 import { SERVER_LOCALE } from "@/app/config";
 import { ConceptSection } from "@/app/sections/concepts/concept";
 
@@ -19,7 +19,7 @@ export default async function Concept({ params }: Props) {
   const relatedConcepts = shuffleArray(
     relatedPosts.filter((post) => post.post_types.includes("concept"))
   );
-  const page = await fetchPage<WordPressProjectsPage>("projects");
+  const page = await fetchPage<WordPressConceptPage>("concept");
 
   return (
     <ConceptSection
