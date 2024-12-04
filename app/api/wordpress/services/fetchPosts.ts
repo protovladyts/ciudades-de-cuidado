@@ -10,7 +10,7 @@ export const fetchPosts = async (language: Language) => {
     de: "5",
   };
   const data = await fetchFromApi<WordPressPost[]>(
-    `https://ciudades-de-cuidado.org/wp-json/wp/v2/posts?_embed=true&acf_format=standard&categories=${
+    `https://admin.ciudades-de-cuidado.org/wp-json/wp/v2/posts?_embed=true&acf_format=standard&categories=${
       categoryLanguage[language] ?? "4"
     }`
   );

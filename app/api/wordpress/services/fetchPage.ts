@@ -3,7 +3,7 @@ import { fetchFromApi } from "../../helpers/fetchFromApi";
 export async function fetchPage<T>(slug: string) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [page] = await fetchFromApi<T[]>(
-    `https://ciudades-de-cuidado.org/wp-json/wp/v2/pages?_embed=true&acf_format=standard&slug=${slug}`,
+    `https://admin.ciudades-de-cuidado.org/wp-json/wp/v2/pages?_embed=true&acf_format=standard&slug=${slug}`,
     3600
   );
 

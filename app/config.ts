@@ -70,7 +70,7 @@ const metadataByLanguage: Record<string, Metadata> = {
       description: "Estrategias para la socialización feminista",
       images: [
         {
-          url: "https://ciudades-de-cuidado.org/background.png",
+          url: "https://admin.ciudades-de-cuidado.org/background.png",
           width: 1200,
           height: 630,
           alt: "Ciudades de Cuidado",
@@ -93,7 +93,7 @@ const metadataByLanguage: Record<string, Metadata> = {
       description: "Strategies for feminist socialization",
       images: [
         {
-          url: "https://caring-cities.org/background.png",
+          url: "https://admin.ciudades-de-cuidado.org/background.png",
           width: 1200,
           height: 630,
           alt: "Caring Cities",
@@ -116,7 +116,7 @@ const metadataByLanguage: Record<string, Metadata> = {
       description: "Strategien für feministisches Vergesellschaften",
       images: [
         {
-          url: "https://sorgende-staedte.org/background.png",
+          url: "https://admin.ciudades-de-cuidado.org/background.png",
           width: 1200,
           height: 630,
           alt: "Sorgende Städte",
