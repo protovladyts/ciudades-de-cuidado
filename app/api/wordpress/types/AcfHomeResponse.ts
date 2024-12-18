@@ -1,7 +1,7 @@
 export type AcfHomeResponse = {
   hero: LanguageHero;
   concept: LanguageSections;
-  projects: LanguageSections;
+  projects: LanguageSections & Image;
   municipalism: LanguageMunicipalism;
 };
 
@@ -10,6 +10,10 @@ export type LanguageSections = {
   en: SectionContent;
   de: SectionContent;
 };
+
+export type Image = {
+  more_image: string;
+}
 
 export type LanguageHero = {
   es: HeroContent;

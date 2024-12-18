@@ -9,6 +9,7 @@ type ProjectsProps = {
     title: string;
     description: string;
     cta_label: string;
+    more_image: string;
   };
   posts: Array<Post>;
 };
@@ -58,29 +59,27 @@ export function Projects({ data, posts }: ProjectsProps) {
       {BgImage}
       <Template className="text-left">
         <div className="w-full relative 4xs:py-24">
-          <div className="max-w-6xl container mx-auto  px-8 md:px-20 2xl:px-0">
+          <div className="max-w-6xl container mx-auto px-8 md:px-20 2xl:px-0">
             {ProjectsTitle}
             {ProjectsDescription}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
-              {/* SmallCards for the secondary posts */}
-              <div className="col-span-12 grid sm:grid-cols-2 gap-x-16 gap-y-5 place-items-center">
-                {filteredPosts.map((post, index) => (
-                  <SmallCard
-                    key={post.title}
-                    imageSrc={post.image || ""}
-                    title={post.title || "No title available"}
-                    alt={`Project ${index + 2}`}
-                    link={`projects/${post.slug}`}
-                  />
-                ))}
-                <BigCard
-                  key="projects-more-card"
-                  imageSrc={filteredPosts[0].image}
-                  title={data.cta_label.toUpperCase()}
-                  alt="projects more card"
-                  link={`/projects`}
+            {/* SmallCards for the secondary posts */}
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-5 place-items-center">
+              {filteredPosts.map((post, index) => (
+                <SmallCard
+                  key={post.title}
+                  imageSrc={post.image || ""}
+                  title={post.title || "No title available"}
+                  alt={`Project ${index + 2}`}
+                  link={`projects/${post.slug}`}
                 />
-              </div>
+              ))}
+              <BigCard
+                key="projects-more-card"
+                imageSrc={data.more_image}
+                title={data.cta_label.toUpperCase()}
+                alt="projects more card"
+                link={`/projects`}
+              />
             </div>
           </div>
         </div>

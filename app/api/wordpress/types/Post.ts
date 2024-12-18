@@ -9,4 +9,5 @@ export type Post = {
   language: string;
   post_types: Array<PostType>;
   redirect_url?: string;
+  position: number;
 };

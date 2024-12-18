@@ -25,6 +25,7 @@ export interface WordPressPost {
         };
         display_on_homepage: boolean;
         post_type: Array<PostTypeOption>;
+        position: number;
       };
       text?: string;
       image?: string;

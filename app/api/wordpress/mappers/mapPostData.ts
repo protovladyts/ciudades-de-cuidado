@@ -23,5 +23,6 @@ export function mapPostData(rawPost: WordPressPost): Post {
       (post_type: PostTypeOption) => post_type.value
     ),
     redirect_url: config.redirect_url ?? "",
+    position: config.position,
   };
 }

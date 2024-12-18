@@ -76,7 +76,7 @@ export function Concept({ data }: ConceptProps) {
   );
 
   const ConceptTitle = (
-    <Title className="md:mb-0 mb-4">{data.title.toUpperCase()}</Title>
+    <Title className="md:mb-0 mb-4 text-left sm:text-right">{data.title.toUpperCase()}</Title>
   );
 
   const ConceptDescription = (

@@ -18,7 +18,7 @@ export function BigCard({
 }: CardGrandeProps) {
   return (
     <div
-      className={`relative h-full ${className} w-full sm:w-4/5 transform transition-transform duration-300 hover:scale-105`}
+      className={`relative ${className} lg:h-72 sm:h-64 4xs:h-36 w-full sm:w-4/5 transform transition-transform duration-300 hover:scale-105`}
     >
       <Link href={link}>
         <div className="absolute inset-0 rounded-3xl bg-black/20 blur-xl -z-10 scale-[0.95] translate-y-4" />
