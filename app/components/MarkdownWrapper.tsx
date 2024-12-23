@@ -46,9 +46,13 @@ const markdownComponents: Components = {
       (child) => child !== "\n"
     );
 
-    if (children.length === 2) {
+    if (
+      children.length === 2 &&
+      React.isValidElement(children[0]) &&
+      Array.isArray(children[0].props.children)
+    ) {
       const liItems = children.map((child) => {
-        if (child && React.isValidElement(child) && child.props.children) {
+        if (child && React.isValidElement(child) && child.props?.children) {
           if (Array.isArray(child.props.children)) {
             const el = child.props.children.filter(
               (nestedChild: unknown) => nestedChild !== "\n"
@@ -73,7 +77,11 @@ const markdownComponents: Components = {
       (child) => child !== "\n"
     );
 
-    if (children.length === 2) {
+    if (
+      children.length === 2 &&
+      React.isValidElement(children[0]) &&
+      Array.isArray(children[0].props.children)
+    ) {
       const liItems = children.map((child) => {
         if (child && React.isValidElement(child) && child.props.children) {
           if (Array.isArray(child.props.children)) {
